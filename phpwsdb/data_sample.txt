@@ -1,0 +1,42 @@
+{"data":[
+	[
+		"6001",		"6322",		"23-12-2020 19:48:08",		"Logoff",		"Undefined",		"Undefined",		"",		"",		"OnConnectionCleared",		"0"
+	],
+	[
+		"6002",
+		"6323",
+		"23-12-2020 19:48:08",
+		"Logoff",
+		"Undefined",
+		"Undefined",
+		"",
+		"",
+		"OnConnectionCleared",
+		"0"
+	],
+		[
+		"6003",
+		"6324",
+		"23-12-2020 19:48:08",
+		"Logoff",
+		"Undefined",
+		"Undefined",
+		"",
+		"",
+		"OnConnectionCleared",
+		"0"
+	],
+		[
+		"6003",
+		"6324",
+		"23-12-2020 19:48:08",
+		"Logoff",
+		"Undefined",
+		"Undefined",
+		"",
+		"",
+		"OnConnectionCleared",
+		"0"
+	]
+]
+}
