@@ -463,7 +463,7 @@ if ($_SESSION['admin'] == false){
     </div>
     <!-- /.content-wrapper -->
 
-            <!-- Footer -->
+      <!-- Footer -->
         <footer class="sticky-footer bg-white">
           <div class="container my-auto">
             <div class="copyright text-center my-auto">
