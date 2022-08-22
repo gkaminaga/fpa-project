@@ -5,16 +5,16 @@ $skill = isset($_SESSION['skill']) ? $_SESSION['skill'] : null;
 $pdv = isset($_SESSION['pdv']) ? $_SESSION['pdv'] : null;
 $nome = isset($_SESSION['nome']) ? $_SESSION['nome'] : null;
 $admin = isset($_SESSION['admin']) ? $_SESSION['admin'] : null;
-$id = isset($_SESSION['id']) ? $_SESSION['id'] : null;  
+$id = isset($_SESSION['id']) ? $_SESSION['id'] : null;
 $url = isset($_SESSION['url']) ? $_SESSION['url'] : null;
 
-if (!$nome){
+if (!$nome) {
   echo ("<script LANGUAGE='JavaScript'>    
     window.location.href='login.html';
-    </script>"); 
+    </script>");
 }
 
-if ($_SESSION['admin'] == false){
+if ($_SESSION['admin'] == false) {
   echo ("<script LANGUAGE='JavaScript'>    
   window.location.href='bi.php';
   </script>");
@@ -63,12 +63,11 @@ if ($_SESSION['admin'] == false){
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
   <script src="js/config.js?versao=1" type="text/javascript"></script>
   <style>
-
-table.table-bordered.dataTable tbody th, table.table-bordered.dataTable tbody td {
-  cursor: pointer;
-  border-bottom-width: 0;
-}
-
+    table.table-bordered.dataTable tbody th,
+    table.table-bordered.dataTable tbody td {
+      cursor: pointer;
+      border-bottom-width: 0;
+    }
   </style>
 </head>
 
@@ -118,7 +117,7 @@ table.table-bordered.dataTable tbody th, table.table-bordered.dataTable tbody td
         <!-- Sidebar user panel (optional) -->
         <div class="user-panel mt-3 pb-3 mb-3 d-flex">
           <div class="info">
-            <a href="#" class="d-block"><?php echo $nome;?></a>
+            <a href="#" class="d-block"><?php echo $nome; ?></a>
             <a href="javascript:AlterarSenha();" style="color:#c2c7d0;font-size:12px;text-decoration:underline">Alterar Senha</a>
           </div>
         </div>
@@ -129,37 +128,37 @@ table.table-bordered.dataTable tbody th, table.table-bordered.dataTable tbody td
             <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
 
-          <li class="nav-item">
-            <a href="listapainelAdmin.php" class="nav-link active">
-              <i class="nav-icon fa fa-laptop"></i>
-              <p>
-                BI
-              </p>
-            </a>   
-          </li> 
-		 
-          <!--<li class="nav-item">-->
-		    <!--<script type="text/javascript"> var $skill="<?php echo $skill;?>"; console.log("Skill", $skill)</script>-->
-        <!--<a href="pausas.php" class="nav-link">
+            <li class="nav-item">
+              <a href="listapainelAdmin.php" class="nav-link active">
+                <i class="nav-icon fa fa-laptop"></i>
+                <p>
+                  BI
+                </p>
+              </a>
+            </li>
+
+            <!--<li class="nav-item">-->
+            <!--<script type="text/javascript"> var $skill="<?php echo $skill; ?>"; console.log("Skill", $skill)</script>-->
+            <!--<a href="pausas.php" class="nav-link">
               <i class="nav-icon fa fa-user-clock"></i>
               <p>
                 Relatório de Pausas
               </p>
             </a>
-          </li> -->  
+          </li> -->
 
-          <!--<li class="nav-item">-->
-		    <!--<script type="text/javascript"> var $skill="<?php echo $skill;?>"; console.log("Skill", $skill)</script>-->
-        <!--<a href="pausas_detalhadas.php" class="nav-link">
+            <!--<li class="nav-item">-->
+            <!--<script type="text/javascript"> var $skill="<?php echo $skill; ?>"; console.log("Skill", $skill)</script>-->
+            <!--<a href="pausas_detalhadas.php" class="nav-link">
               <i class="nav-icon fa fa-user-clock"></i>
               <p>
                 Relatório de Pausas Detalhadas
               </p>
             </a>
           </li> -->
-          <!--<li class="nav-item">-->
-		    <!--<script type="text/javascript"> var $skill="<?php echo $skill;?>"; console.log("Skill", $skill)</script>-->
-        <!--<a href="contatos.php" class="nav-link">
+            <!--<li class="nav-item">-->
+            <!--<script type="text/javascript"> var $skill="<?php echo $skill; ?>"; console.log("Skill", $skill)</script>-->
+            <!--<a href="contatos.php" class="nav-link">
               <i class="nav-icon fa fa-id-card"></i>
               <p>
                 Relatório de Contatos
@@ -174,16 +173,16 @@ table.table-bordered.dataTable tbody th, table.table-bordered.dataTable tbody td
               </p>
             </a>
           </li> -->
-        <li class="nav-item" id="li-panel">
-		    <!--<script type="text/javascript"> var $skill="<?php echo $skill;?>"; console.log("Skill", $skill)</script>-->
-        <a href="painel.php" class="nav-link">
-              <i class="nav-icon fa fa-chart-line"></i>
-              <p>
-                Painéis
-              </p>
-            </a>
-          </li>
-          <li class="nav-item" id="li-user">
+            <li class="nav-item" id="li-panel">
+              <!--<script type="text/javascript"> var $skill="<?php echo $skill; ?>"; console.log("Skill", $skill)</script>-->
+              <a href="painel.php" class="nav-link">
+                <i class="nav-icon fa fa-chart-line"></i>
+                <p>
+                  Painéis
+                </p>
+              </a>
+            </li>
+            <li class="nav-item" id="li-user">
               <!--<script type="text/javascript"> var $skill="<?php echo $skill; ?>"; console.log("Skill", $skill)</script>-->
               <a href="usuarios.php" class="nav-link">
                 <i class="nav-icon fa fa-users"></i>
@@ -299,7 +298,7 @@ table.table-bordered.dataTable tbody th, table.table-bordered.dataTable tbody td
             <tbody>
             </tbody>
             <tfoot>
-              <tr>                
+              <tr>
                 <th>ID</th>
                 <th>CLIENTE</th>
                 <th>DESCRIÇÃO</th>
@@ -337,7 +336,7 @@ table.table-bordered.dataTable tbody th, table.table-bordered.dataTable tbody td
               <div class="form-group col-md-6">
                 <label class="col-form-label">Cliente:</label>
                 <!--<input id="txtSigla" type="text" class="form-control" maxlenght="250" placeholder="Cliente"> -->
-                 <select id="ddlEps" class="form-control">                  
+                <select id="ddlEps" class="form-control">
                 </select>
               </div>
               <div class="form-group col-md-6">
@@ -370,13 +369,13 @@ table.table-bordered.dataTable tbody th, table.table-bordered.dataTable tbody td
           <div id="divModalAlterarSenha"></div>
           <form>
             <div class="form-row">
-            <div class="form-group col-md-6">
+              <div class="form-group col-md-6">
                 <label class="col-form-label">Nome:</label>
-                <input id="txtNome" type="text" class="form-control" value=<?php echo $nome;?> disabled>
+                <input id="txtNome" type="text" class="form-control" value=<?php echo $nome; ?> disabled>
               </div>
               <div class="form-group col-md-6">
                 <label class="col-form-label">ID:</label>
-                <input id="txtID" type="text" class="form-control" value=<?php echo $id;?> disabled>
+                <input id="txtID" type="text" class="form-control" value=<?php echo $id; ?> disabled>
               </div>
               <div class="form-group col-md-6">
                 <label class="col-form-label">Nova senha:</label>
@@ -448,9 +447,9 @@ table.table-bordered.dataTable tbody th, table.table-bordered.dataTable tbody td
   <script src="plugins/datatables-buttons/js/buttons.print.min.js"></script>
   <script src="plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
   <script>
-    function LoggerSenha(){
+    function LoggerSenha() {
       var acao = 'Alterando a propria senha'
-      var nome = "<?php echo $nome;?>";
+      var nome = "<?php echo $nome; ?>";
       var dt = new Date();
       var datetime = `${dt.getDate().toString().padStart(2, '0')}/${(dt.getMonth()+1).toString().padStart(2, '0')}/${dt.getFullYear().toString().padStart(4, '0')} ${dt.getHours().toString().padStart(2, '0')}:${dt.getMinutes().toString().padStart(2, '0')}:${dt.getSeconds().toString().padStart(2, '0')}`;
       var jsonData = {
@@ -458,7 +457,7 @@ table.table-bordered.dataTable tbody th, table.table-bordered.dataTable tbody td
         datetime: datetime,
         acao: acao,
         nomeAntigo: '',
-        emailAntigo : '',
+        emailAntigo: '',
         ativoAntigo: '',
         adminAntigo: '',
         epsAntiga: '',
@@ -467,7 +466,7 @@ table.table-bordered.dataTable tbody th, table.table-bordered.dataTable tbody td
         ativoNovo: '',
         adminNovo: '',
         epsNova: ''
-        
+
       };
 
       $.ajax({
@@ -484,13 +483,13 @@ table.table-bordered.dataTable tbody th, table.table-bordered.dataTable tbody td
     var siglaAntiga;
     var pdvAntigo;
     var Id;
-    var nome = "<?php echo $nome;?>";
-    
+    var nome = "<?php echo $nome; ?>";
 
-    function Logger(){
+
+    function Logger() {
       var siglaNova = document.getElementById('ddlEps').value;
       var pdvNovo = document.getElementById('txtPdv').value;
-      var nome = "<?php echo $nome;?>";
+      var nome = "<?php echo $nome; ?>";
       var dt = new Date();
       var datetime = `${
           dt.getDate().toString().padStart(2, '0')}/${
@@ -503,52 +502,51 @@ table.table-bordered.dataTable tbody th, table.table-bordered.dataTable tbody td
       var alteraEps = 'Alteracao de EPS';
       var criaEps = 'Criacao de EPS';
       if (pdvAntigo == '' || pdvAntigo == null) {
-          pdvAntigo = 'Todos';
+        pdvAntigo = 'Todos';
       }
       if (pdvNovo == '') {
         pdvNovo = 'Todos';
       }
       if (Id != '') {
-        
+
         var jsonData = {
           usuario: nome,
           datetime: datetime,
           acao: alteraEps,
-          siglaAntiga: siglaAntiga, 
-          pdvAntigo: pdvAntigo, 
+          siglaAntiga: siglaAntiga,
+          pdvAntigo: pdvAntigo,
           siglaNova: siglaNova,
-          pdvNovo:pdvNovo
+          pdvNovo: pdvNovo
         };
-      }
-      else {
-        
+      } else {
+
         var jsonData = {
           usuario: nome,
           datetime: datetime,
           acao: criaEps,
-          siglaAntiga: '', 
+          siglaAntiga: '',
           pdvAntigo: '',
           siglaNova: siglaNova,
-          pdvNovo:pdvNovo
+          pdvNovo: pdvNovo
         };
       }
 
-      
-      
+
+
       console.log(jsonData);
 
       $.ajax({
-          url: "../phpwsdb/log_insert_eps.php",
-          data: jsonData,
-          type: 'POST',
-          success: function(data) {
-            console.log('logs gravados com sucesso!');
-          }
-        });
+        url: "../phpwsdb/log_insert_eps.php",
+        data: jsonData,
+        type: 'POST',
+        success: function(data) {
+          console.log('logs gravados com sucesso!');
+        }
+      });
 
     }
 
- 
+
     function Listar() {
 
       var table = $('#dash1').DataTable();
@@ -560,14 +558,12 @@ table.table-bordered.dataTable tbody th, table.table-bordered.dataTable tbody td
           url: "../phpwsdb/get_paineisAdmin.php",
           type: 'GET'
           //body: form
-        }, 
-               
+        },
+
         "responsive": true,
         "lengthChange": false,
-        "autoWidth": false
-       ,
-        "columns": [
-          {
+        "autoWidth": false,
+        "columns": [{
             mData: 'Id'
           },
           {
@@ -581,57 +577,57 @@ table.table-bordered.dataTable tbody th, table.table-bordered.dataTable tbody td
           }
         ]
       }));
-      
 
-      $('#dash1 tbody').on('dblclick', 'td', function () {
-          var $row = $(this).closest("tr"),        // Finds the closest row <tr> 
+
+      $('#dash1 tbody').on('dblclick', 'td', function() {
+        var $row = $(this).closest("tr"), // Finds the closest row <tr> 
           $tds = $row.find("td:nth-child(4)"); // Finds the 2nd <td> element  
-          var url = $tds.text();
+        var url = $tds.text();
 
-          $.ajax({
-            method: "POST",
-            url: "biAdmin.php",
-            data: "{ $url: "+url+"}"
-         });
+        $.ajax({
+          method: "POST",
+          url: "biAdmin.php",
+          data: "{ $url: " + url + "}"
+        });
 
-          //window.location.href="bi.php";
-          window.location = "biAdmin.php?url="+url;
-          //Carregar($tds.text());
+        //window.location.href="bi.php";
+        window.location = "biAdmin.php?url=" + url;
+        //Carregar($tds.text());
       });
 
 
     }
-    
+
 
     $(document).ready(async function() {
       await Listar();
       await CarregarComboPDV();
-        
-   
-		var pdv = <?php echo json_encode($pdv) ?>;
 
-        console.log(pdv.length);
-        /*
-        if (pdv.length > 0){            
-            $('#li-bi').addClass('d-lg-none');
-        }
-        */
+
+      var pdv = <?php echo json_encode($pdv) ?>;
+
+      console.log(pdv.length);
+      /*
+      if (pdv.length > 0){            
+          $('#li-bi').addClass('d-lg-none');
+      }
+      */
     });
 
-    function CarregarComboPDV(){
-      $.getJSON("../phpwsdb/pdv_get.php", function(data){
-          for (var i = 0, len = data.length; i < len; i++) {
-            jQuery('#ddlEps').append($('<option>', {
-                value: data[i].Id,
-                text: data[i].Sigla
-            }));
-          }
+    function CarregarComboPDV() {
+      $.getJSON("../phpwsdb/pdv_get.php", function(data) {
+        for (var i = 0, len = data.length; i < len; i++) {
+          jQuery('#ddlEps').append($('<option>', {
+            value: data[i].Id,
+            text: data[i].Sigla
+          }));
+        }
       });
     }
 
-    function NovoUsuario() { 
+    function NovoUsuario() {
       Id = '';
-  
+
       ClearForm();
       $("#modalUsuario").modal('show');
     }
@@ -646,7 +642,7 @@ table.table-bordered.dataTable tbody th, table.table-bordered.dataTable tbody td
         id: id
       };
 
-      $.getJSON("../phpwsdb/painel_get_id.php?id=" + id, function(data){
+      $.getJSON("../phpwsdb/painel_get_id.php?id=" + id, function(data) {
         $("#hidIdUsuario").val(data[0].Id);
         $("#ddlEps").val(data[0].EpsId);
         $("txtDescr").val(data[0].Descricao)
@@ -655,8 +651,8 @@ table.table-bordered.dataTable tbody th, table.table-bordered.dataTable tbody td
         //pdvAntigo = (data[0].Pdv);
         //siglaAntiga = (data[0].Sigla);
         Id = (data[0].Id);
-        
-        
+
+
 
         $("#modalUsuario").modal('show');
       });
@@ -671,7 +667,7 @@ table.table-bordered.dataTable tbody th, table.table-bordered.dataTable tbody td
       if (senha != confirmacao) {
         erro += '- Senha e confirmação precisam ser iguais <br />';
       }
-      if (senha == ''){
+      if (senha == '') {
         erro += '- Senha e confirmação não podem ser vazias <br />';
       }
       console.log(erro.length);
@@ -692,7 +688,7 @@ table.table-bordered.dataTable tbody th, table.table-bordered.dataTable tbody td
           success: function(data) {
             alert("Senha alterada com sucesso")
             $("#modalAlteraSenha").modal('hide');
-              ClearForm();
+            ClearForm();
           }
         });
 
@@ -724,7 +720,7 @@ table.table-bordered.dataTable tbody th, table.table-bordered.dataTable tbody td
 
         ClearForm();
       }
-	  
+
     }
 
     function Salvar() {
@@ -743,7 +739,7 @@ table.table-bordered.dataTable tbody th, table.table-bordered.dataTable tbody td
         erro += '- Eps <br />';
       }
 
-       if (descr.length == 0) {
+      if (descr.length == 0) {
         erro += '- Descr <br />';
       }
 
@@ -766,11 +762,11 @@ table.table-bordered.dataTable tbody th, table.table-bordered.dataTable tbody td
           type: 'POST',
           success: function(data) {
             $("#modalUsuario").modal('hide');
-              ClearForm();
+            ClearForm();
           }
         });
       }
-	  Listar();
+      Listar();
       CarregarComboPDV();
     }
 
