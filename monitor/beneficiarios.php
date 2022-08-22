@@ -107,7 +107,7 @@ if ($_SESSION['admin'] == false){
       <li class="nav-item active">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
           <i class="nav-icon fa fa-user-circle"></i>
-          <span>PSR</span>
+          <span>PRS</span>
         </a>
         <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
