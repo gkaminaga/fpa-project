@@ -223,7 +223,7 @@ if ($_SESSION['admin'] == false){
           <div class="modal-body">Selecione logout caso deseje finalizar a sessão.</div>
           <div class="modal-footer">
             <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-            <a class="btn btn-primary" href="index.html">Logout</a>
+            <a class="btn btn-primary" href="../phpwsdb/logout.php">Logout</a>
           </div>
         </div>
       </div>
