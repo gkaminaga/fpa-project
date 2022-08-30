@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 17-Ago-2022 às 21:30
+-- Tempo de geração: 30-Ago-2022 às 19:31
 -- Versão do servidor: 10.4.24-MariaDB
 -- versão do PHP: 8.1.6
 
@@ -120,7 +120,8 @@ INSERT INTO `beneficiarios` (`id`, `unidade`, `data_cadastro`, `encaminhado_por`
 (14, 'uuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuu', '0000-00-00', '', 1, NULL, NULL, NULL, NULL, '', '', '', '', '', '', '', '', '0000-00-00', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 0, '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '0000-00-00', '0000-00-00', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '0000-00-00'),
 (15, 'asd11111111111111111', '2022-08-02', 'asd', 1, NULL, NULL, NULL, NULL, 'asd', 'asd', 'asd', '', '', '', '', '', '0000-00-00', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 0, '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '0000-00-00', '0000-00-00', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '0000-00-00'),
 (16, '', '0000-00-00', '', 1, NULL, NULL, NULL, NULL, '', '', '', '', '', '', '', '', '0000-00-00', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 0, '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '0000-00-00', '0000-00-00', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '0000-00-00'),
-(17, '', '0000-00-00', '', 1, NULL, NULL, NULL, NULL, '', '', '', '', '', '', '', '', '0000-00-00', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 0, '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '0000-00-00', '0000-00-00', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '0000-00-00');
+(17, '', '0000-00-00', '', 1, NULL, NULL, NULL, NULL, '', '', '', '', '', '', '', '', '0000-00-00', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 0, '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '0000-00-00', '0000-00-00', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '0000-00-00'),
+(18, 'Osasco', '2022-08-22', 'Teste', 1, NULL, NULL, NULL, NULL, 'Teste', 'Teste', 'Teste', 'Teste', 'Teste', 'Masculino', 'amarela', 'heterossexual', '2022-08-22', 'solteiro', '100000', 'Teste', 'Situação de Rua', 'Teste', '123456789', 'asd', 'PA', '123456789123', '123456', '123456', '111111111', '111111111', 'Teste', 'Teste', 2, 'Teste', '4', '', '', '', '', '', '', '', '', 'Cursando', 'Teste', 'Teste', 'Teste', '15 a 18', 'Teste', 'Teste', 'alcool,tabaco,maconha,cocaina', 'Teste', 'Teste', 'Teste', 'Teste', 'Teste', '2022-08-22', '2022-08-22', 'Teste', 'Teste', 'Teste', 'Teste', 'Teste', 'Teste', 'sim', 'Teste', 'nao', 'higienizacao e limpeza', 'Teste', 'Teste', 'Teste', 'Teste', 'Teste', '123456', 'Teste', 'Teste', 'Teste', '2022-08-22');
 
 -- --------------------------------------------------------
 
@@ -291,7 +292,9 @@ CREATE TABLE `usuario` (
 
 INSERT INTO `usuario` (`id`, `Senha`, `Email`, `Nome`, `EpsId`, `Admin`, `Ativo`, `pdv`, `Skill`) VALUES
 (23, 'MTIz', 'fabiana@teste.com', 'Fabiana ', 26, '0', 1, NULL, NULL),
-(24, 'MTIz', 'admin@teste.com', 'Admin', 27, '1', 1, NULL, NULL);
+(24, 'MTIz', 'admin@teste.com', 'Admin', 27, '1', 1, NULL, NULL),
+(25, 'MTIz', 'lucas@teste.com', 'Lucas', 28, '0', 1, NULL, NULL),
+(26, 'MTIz', 'amanda@teste.com', 'Amanda', 29, '0', 1, NULL, NULL);
 
 --
 -- Índices para tabelas despejadas
@@ -348,7 +351,7 @@ ALTER TABLE `usuario`
 -- AUTO_INCREMENT de tabela `beneficiarios`
 --
 ALTER TABLE `beneficiarios`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT de tabela `cliente`
@@ -378,7 +381,7 @@ ALTER TABLE `prs`
 -- AUTO_INCREMENT de tabela `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 
 --
 -- Restrições para despejos de tabelas
