@@ -78,8 +78,8 @@ if ($_SESSION['admin'] == false){
     <!-- Carrega o Menu para a EPS - Diretor -->
     <?php if ($_SESSION['eps'] === '26') include __DIR__.'/header/diretor_header.php'; ?>
 
-    <!-- Carrega o Menu para a EPS - Coordenador -->
-    <?php if ($_SESSION['eps'] === '28') include __DIR__.'/header/coordenador_header.php'; ?>
+    <!-- Controle de acessos para a EPS - Coordenador -->
+    <?php if ($_SESSION['eps'] === '28') header('Location: beneficiarios.php'); ?>
 
     <!-- Controle de acessos para a EPS - Educador -->
     <?php if ($_SESSION['eps'] === '29') header('Location: beneficiarios.php'); ?>
