@@ -104,7 +104,7 @@ $senha = $_POST["password"];
                 success: function(data) {
                   if(obj[0].Admin == 0)
                   {
-                    window.location.href = 'index.php';
+                    window.location.href = 'beneficiarios.php';
                   }
                   else
                   {
