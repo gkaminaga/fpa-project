@@ -70,7 +70,7 @@ if (!$nome) {
     <?php if ($_SESSION['eps'] === '28') include __DIR__.'/header/coordenador_header.php'; ?>
 
     <!-- Carrega o Menu para a EPS - Educador -->
-    <?php if ($_SESSION['eps'] === '29') include __DIR__.'/header/educador_header.php'; ?>
+    <?php if ($_SESSION['eps'] === '29') header('Location: beneficiarios.php'); ?>
 
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
