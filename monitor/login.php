@@ -108,7 +108,7 @@ $senha = $_POST["password"];
                   }
                   else
                   {
-                    window.location.href = 'indexAdm.php';
+                    window.location.href = 'beneficiarios.php';
                   }
                 }
               });

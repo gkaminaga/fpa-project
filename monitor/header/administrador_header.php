@@ -19,12 +19,26 @@
 
             <!-- Nav Item - Pages Collapse Menu -->
             <li class="nav-item active">
+                <a class="nav-link collapsed" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+                <i class="nav-icon fa fa-address-card"></i>
+                    <span>Usuários</span>
+                </a>
+                <div class="collapse" id="collapseExample">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                    <a class="collapse-item" href="usuarios.php">Cadastrar</a>                    </div>
+                </div>
+            </li>
+
+            <!-- Nav Item - Pages Collapse Menu -->
+            <li class="nav-item active">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
                     <i class="nav-icon fa fa-address-card"></i>
                     <span>Beneficiários</span>
                 </a>
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
+                        <a class="collapse-item" href="index.php">Cadastrar</a>
+                        <a class="collapse-item" href="inativar_beneficiario.php">Inativar</a>
                         <a class="collapse-item" href="beneficiarios.php">Todos</a>
                         <a class="collapse-item" href="beneficiarios_ativos.php">Ativos</a>
                         <a class="collapse-item" href="beneficiarios_inativos.php">Inativos</a>
@@ -40,6 +54,7 @@
                 </a>
                 <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
+                        <a class="collapse-item" href="prs.php">Novo</a>
                         <a class="collapse-item" href="buscar_prs.php">Buscar</a>
                     </div>
                 </div>
@@ -88,7 +103,6 @@
                                 </form>
                             </div>
                         </li>
-
                         <!-- Nav Item - Alerts -->
                         <!-- <li class="nav-item dropdown no-arrow mx-1">
                             <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
