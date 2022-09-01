@@ -87,7 +87,7 @@ if ($_SESSION['admin'] == false){
       </div> -->
   <div class="card">
     <div class="card-header">
-      <h3 class="card-title">Listagem de Beneficiários</h3>
+      <h3 class="card-title">Listagem de Beneficiários Ativos</h3>
     </div>
     <!-- /.card-header -->
     <div class="card-body">
@@ -95,12 +95,13 @@ if ($_SESSION['admin'] == false){
         <thead>
           <tr>
             <th>ID</th>
+            <th>NOME REGISTRO</th>
             <th>UNIDADE</th>
             <th>DATA CADASTRO</th>
             <th>ENCAMINHADO POR</th>
             <th>ATIVO</th>
             <th>NUMERO DO BENEFICIARIO</th>
-            <th>NOME REGISTRO</th>
+            
             <th>NOME SOCIAL</th>
             <th>NACIONALIDADE</th>
             <th>NATURALIDADE</th>
@@ -176,12 +177,13 @@ if ($_SESSION['admin'] == false){
         <tfoot>
           <tr>
             <th>ID</th>
+            <th>NOME REGISTRO</th>
             <th>UNIDADE</th>
             <th>DATA CADASTRO</th>
             <th>ENCAMINHADO POR</th>
             <th>ATIVO</th>
             <th>NUMERO DO BENEFICIARIO</th>
-            <th>NOME REGISTRO</th>
+            
             <th>NOME SOCIAL</th>
             <th>NACIONALIDADE</th>
             <th>NATURALIDADE</th>
@@ -367,6 +369,9 @@ if ($_SESSION['admin'] == false){
           mData: 'id'
         },
         {
+          mData: 'nome_registro'
+        },
+        {
           mData: 'unidade'
         },
         {
@@ -382,9 +387,7 @@ if ($_SESSION['admin'] == false){
         {
           mData: 'numero_beneficiario'
         },
-        {
-          mData: 'nome_registro'
-        },
+        
         {
           mData: 'nome_social'
         },

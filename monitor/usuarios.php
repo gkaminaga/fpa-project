@@ -101,7 +101,7 @@ if ($_SESSION['admin'] == false){
             <th>EMAIL</th>
             <th>ATIVO</th>
             <th>ADMIN</th>
-            <th>EMPRESA</th>
+            <th>CARGO</th>
             <!--<th>PDV</th> -->
           </tr>
         </thead>
@@ -114,7 +114,7 @@ if ($_SESSION['admin'] == false){
             <th>EMAIL</th>
             <th>ATIVO</th>
             <th>ADMIN</th>
-            <th>EMPRESA</th>
+            <th>CARGO</th>
             <!--<th>PDV</th> -->
           </tr>
         </tfoot>
@@ -197,7 +197,7 @@ if ($_SESSION['admin'] == false){
           </div>
           <div class="form-row">
             <div class="form-group col-md-12">
-              <label class="col-form-label">Cliente:</label>
+              <label class="col-form-label">Cargo:</label>
               <select id="ddlEps" class="form-control">
               </select>
             </div>

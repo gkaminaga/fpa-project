@@ -96,6 +96,7 @@ if ($_SESSION['admin'] == false){
         <thead>
           <tr>
             <th>ID</th>
+            <th>NOME REGISTRO</th>
             <th>UNIDADE</th>
             <th>DATA CADASTRO</th>
             <th>ENCAMINHADO POR</th>
@@ -104,7 +105,7 @@ if ($_SESSION['admin'] == false){
             <th>OBITO</th>
             <th>DATA OBITO</th>
             <th>NUMERO DO BENEFICIARIO</th>
-            <th>NOME REGISTRO</th>
+            
             <th>NOME SOCIAL</th>
             <th>NACIONALIDADE</th>
             <th>NATURALIDADE</th>
@@ -180,6 +181,7 @@ if ($_SESSION['admin'] == false){
         <tfoot>
           <tr>
             <th>ID</th>
+            <th>NOME REGISTRO</th>
             <th>UNIDADE</th>
             <th>DATA CADASTRO</th>
             <th>ENCAMINHADO POR</th>
@@ -188,7 +190,7 @@ if ($_SESSION['admin'] == false){
             <th>OBITO</th>
             <th>DATA OBITO</th>
             <th>NUMERO DO BENEFICIARIO</th>
-            <th>NOME REGISTRO</th>
+            
             <th>NOME SOCIAL</th>
             <th>NACIONALIDADE</th>
             <th>NATURALIDADE</th>
@@ -374,6 +376,9 @@ if ($_SESSION['admin'] == false){
           mData: 'id'
         },
         {
+          mData: 'nome_registro'
+        },
+        {
           mData: 'unidade'
         },
         {
@@ -397,9 +402,7 @@ if ($_SESSION['admin'] == false){
         {
           mData: 'numero_beneficiario'
         },
-        {
-          mData: 'nome_registro'
-        },
+        
         {
           mData: 'nome_social'
         },

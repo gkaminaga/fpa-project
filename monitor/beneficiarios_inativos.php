@@ -87,7 +87,7 @@ if ($_SESSION['admin'] == false){
       </div> -->
           <div class="card">
             <div class="card-header">
-              <h3 class="card-title">Listagem de Beneficiários</h3>
+              <h3 class="card-title">Listagem de Beneficiários Inativos</h3>
             </div>
             <!-- /.card-header -->
             <div class="card-body">

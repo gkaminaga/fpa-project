@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 30-Ago-2022 às 19:31
+-- Tempo de geração: 01-Set-2022 às 05:46
 -- Versão do servidor: 10.4.24-MariaDB
 -- versão do PHP: 8.1.6
 
@@ -114,25 +114,15 @@ CREATE TABLE `beneficiarios` (
 --
 
 INSERT INTO `beneficiarios` (`id`, `unidade`, `data_cadastro`, `encaminhado_por`, `ativo`, `motivo_saida`, `data_saida`, `obito`, `data_obito`, `numero_beneficiario`, `nome_registro`, `nome_social`, `nacionalidade`, `naturalidade`, `sexo`, `etnia`, `orientacao_sexual`, `data_nascimento`, `estado_civil`, `renda_familiar`, `beneficio`, `tipo_moradia`, `endereco`, `rg`, `orgao_emissor`, `uf_emissor`, `cpf`, `cartao_sus`, `cartao_cidadao`, `telefone_fixo`, `telefone_celular`, `nome_mae`, `nome_pai`, `qtd_filhos`, `nome_filho1`, `idade_filho1`, `nome_filho2`, `idade_filho2`, `nome_filho3`, `idade_filho3`, `nome_filho4`, `idade_filho4`, `nome_filho5`, `idade_filho5`, `grau_escolaridade`, `nome_curso_se_cursando`, `deficiencia`, `necessidade_educacional`, `gestante`, `doenca`, `tratamento`, `substancia_psicoativa`, `peridiocidade`, `tempo_uso`, `medicacao`, `ubs_referencia`, `raps_referencia`, `ultimo_trabalho_formal`, `ultimo_trabalho_informal`, `experiencias_anteriores`, `trabalho_marcante`, `area_interesse`, `cursos_anteriores`, `capacitacao_tecnica`, `atividade_complementar`, `pendencia_judicial`, `tipo_pendencia_judicial`, `egresso_sistema_prisional`, `processo_formativo_inserido`, `o_que_espera`, `observacoes`, `servico_referencia`, `tecnico_referencia`, `cargo_tecnico`, `contato_tecnico`, `territorio_referencia`, `tecnico_ref_fpa`, `responsavel_pelo_cadastro`, `data_corrente`) VALUES
-(3, 'Campo Belo ', '2021-10-07', 'CAPS - Capela do Socorro', 0, 'Desistencia sem justificativa', '2022-08-16', 0, '0000-00-00', '', 'Aldjanio dos Santos Pereira', 'Aldjanio dos Santos Pereira', 'Brasileiro', 'Saloá - PE', 'Masculino', 'parda', 'heterossexual', '1977-01-28', 'solteiro', '150', 'Bolsa Familia', 'Residência Prórpia', 'Rua Manga Natal, 261 - casa 1', '255752155', 'ssp', 'SP', '26957073807', '', '', '11972297897', '11949633256', 'Ivanete dos Santos Pereira', 'Severino Pereira da Silva', 0, '', '', '', '', '', '', '', '', '', '', 'Ens Fund Incompleto', '', '', '', '', 'Cirrose Hepatica ', '', 'alcool,cocaina', '2 dias atras alcool / 1 semana atras cocaina', '30 anos', 'Fluoxtina, carbamazepina', 'Jardim Clipa', 'CAPS - Capela do Socorro', '2021-01-06', '2021-12-15', 'Auxiliar de cozinha, Estoquista, Ajudante de pedreiro, Porteiro, Metalurgico', 'Auxiliar de Limpeza', 'Auxiliar de Limpeza', 'Corte e Costura (FPA)', '', '', 'nao', '', 'nao', 'higienizacao e limpeza', 'Trabalhar para continuar a construção da sua casa', '', 'CAPS - Capela do Socorro', 'Luciana', 'Psicologa', '', '', 'Fabiana', 'Fabiana dos Santos de Souza', '2021-10-07'),
-(12, '', '0000-00-00', '', 1, 'asd', '2022-08-09', 1, '2022-08-01', '', '', '', '', '', '', '', '', '0000-00-00', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 0, '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '0000-00-00', '0000-00-00', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '0000-00-00'),
-(13, 'asd', '0000-00-00', '', 0, 'zxczxczxc', '2022-08-07', 0, '2022-08-01', '', '', '', '', '', '', '', '', '0000-00-00', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 0, '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '0000-00-00', '0000-00-00', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '0000-00-00'),
+(3, 'Campo Belo ', '2021-10-07', 'CAPS - Capela do Socorro', 1, NULL, NULL, NULL, NULL, '', 'Aldjanio dos Santos Pereira', 'Aldjanio dos Santos Pereira', 'Brasileiro', 'Saloá - PE', 'Masculino', 'parda', 'heterossexual', '1977-01-28', 'solteiro', '150', 'Bolsa Familia', 'Residência Prórpia', 'Rua Manga Natal, 261 - casa 1', '255752155', 'ssp', 'SP', '26957073807', '', '', '11972297897', '11949633256', 'Ivanete dos Santos Pereira', 'Severino Pereira da Silva', 0, '', '', '', '', '', '', '', '', '', '', 'Ens Fund Incompleto', '', '', '', '', 'Cirrose Hepatica ', '', 'alcool,cocaina', '2 dias atras alcool / 1 semana atras cocaina', '30 anos', 'Fluoxtina, carbamazepina', 'Jardim Clipa', 'CAPS - Capela do Socorro', '2021-01-06', '2021-12-15', 'Auxiliar de cozinha, Estoquista, Ajudante de pedreiro, Porteiro, Metalurgico', 'Auxiliar de Limpeza', 'Auxiliar de Limpeza', 'Corte e Costura (FPA)', '', '', 'nao', '', 'nao', 'higienizacao e limpeza', 'Trabalhar para continuar a construção da sua casa', '', 'CAPS - Capela do Socorro', 'Luciana', 'Psicologa', '', '', 'Fabiana', 'Fabiana dos Santos de Souza', '2021-10-07'),
+(12, '', '0000-00-00', '', 1, NULL, NULL, NULL, NULL, '', '', '', '', '', '', '', '', '0000-00-00', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 0, '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '0000-00-00', '0000-00-00', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '0000-00-00'),
+(13, 'asd', '0000-00-00', '', 1, NULL, NULL, NULL, NULL, '', '', '', '', '', '', '', '', '0000-00-00', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 0, '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '0000-00-00', '0000-00-00', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '0000-00-00'),
 (14, 'uuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuu', '0000-00-00', '', 1, NULL, NULL, NULL, NULL, '', '', '', '', '', '', '', '', '0000-00-00', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 0, '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '0000-00-00', '0000-00-00', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '0000-00-00'),
 (15, 'asd11111111111111111', '2022-08-02', 'asd', 1, NULL, NULL, NULL, NULL, 'asd', 'asd', 'asd', '', '', '', '', '', '0000-00-00', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 0, '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '0000-00-00', '0000-00-00', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '0000-00-00'),
 (16, '', '0000-00-00', '', 1, NULL, NULL, NULL, NULL, '', '', '', '', '', '', '', '', '0000-00-00', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 0, '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '0000-00-00', '0000-00-00', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '0000-00-00'),
 (17, '', '0000-00-00', '', 1, NULL, NULL, NULL, NULL, '', '', '', '', '', '', '', '', '0000-00-00', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 0, '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '0000-00-00', '0000-00-00', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '0000-00-00'),
-(18, 'Osasco', '2022-08-22', 'Teste', 1, NULL, NULL, NULL, NULL, 'Teste', 'Teste', 'Teste', 'Teste', 'Teste', 'Masculino', 'amarela', 'heterossexual', '2022-08-22', 'solteiro', '100000', 'Teste', 'Situação de Rua', 'Teste', '123456789', 'asd', 'PA', '123456789123', '123456', '123456', '111111111', '111111111', 'Teste', 'Teste', 2, 'Teste', '4', '', '', '', '', '', '', '', '', 'Cursando', 'Teste', 'Teste', 'Teste', '15 a 18', 'Teste', 'Teste', 'alcool,tabaco,maconha,cocaina', 'Teste', 'Teste', 'Teste', 'Teste', 'Teste', '2022-08-22', '2022-08-22', 'Teste', 'Teste', 'Teste', 'Teste', 'Teste', 'Teste', 'sim', 'Teste', 'nao', 'higienizacao e limpeza', 'Teste', 'Teste', 'Teste', 'Teste', 'Teste', '123456', 'Teste', 'Teste', 'Teste', '2022-08-22');
-
--- --------------------------------------------------------
-
---
--- Estrutura da tabela `cliente`
---
-
-CREATE TABLE `cliente` (
-  `Id` int(11) NOT NULL,
-  `Nome` varchar(45) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+(18, 'Osasco', '2022-08-22', 'Teste', 1, NULL, NULL, NULL, NULL, 'Teste', 'Teste', 'Teste', 'Teste', 'Teste', 'Masculino', 'amarela', 'heterossexual', '2022-08-22', 'solteiro', '100000', 'Teste', 'Situação de Rua', 'Teste', '123456789', 'asd', 'PA', '123456789123', '123456', '123456', '111111111', '111111111', 'Teste', 'Teste', 2, 'Teste', '4', '', '', '', '', '', '', '', '', 'Cursando', 'Teste', 'Teste', 'Teste', '15 a 18', 'Teste', 'Teste', 'alcool,tabaco,maconha,cocaina', 'Teste', 'Teste', 'Teste', 'Teste', 'Teste', '2022-08-22', '2022-08-22', 'Teste', 'Teste', 'Teste', 'Teste', 'Teste', 'Teste', 'sim', 'Teste', 'nao', 'higienizacao e limpeza', 'Teste', 'Teste', 'Teste', 'Teste', 'Teste', '123456', 'Teste', 'Teste', 'Teste', '2022-08-22'),
+(19, '', '0000-00-00', '', 1, NULL, NULL, NULL, NULL, '', '', '', '', '', '', '', '', '0000-00-00', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 0, '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '0000-00-00', '0000-00-00', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '0000-00-00');
 
 -- --------------------------------------------------------
 
@@ -152,25 +142,10 @@ CREATE TABLE `eps` (
 --
 
 INSERT INTO `eps` (`Id`, `sigla`, `descricao`, `pdv`) VALUES
-(26, 'Diretoria, Coordenação geral, Coordenação ped', 'Todas as funções', NULL),
+(26, 'Diretoria, Coord geral, Coord pedagogica', 'Todas as funções', NULL),
 (27, 'Administrador', 'Todas as funções e autorizações para criação de usuários', NULL),
-(28, 'Coordenação administrativa, Técnico administr', 'Relatórios gerenciais', NULL),
+(28, 'Coord adm, Téc administrador', 'Relatórios gerenciais', NULL),
 (29, 'Educador e Agente de ação social', 'Atividades pedagógicas', NULL);
-
--- --------------------------------------------------------
-
---
--- Estrutura da tabela `logeps`
---
-
-CREATE TABLE `logeps` (
-  `UsuarioLogado` varchar(300) DEFAULT NULL,
-  `DateTime` varchar(300) DEFAULT NULL,
-  `SiglaAntiga` varchar(300) DEFAULT NULL,
-  `PdvAntigo` varchar(300) DEFAULT NULL,
-  `SiglaNova` varchar(300) DEFAULT NULL,
-  `PdvNovo` varchar(300) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -199,20 +174,8 @@ CREATE TABLE `logusuario` (
 --
 
 INSERT INTO `logusuario` (`UsuarioLogado`, `DateTime`, `Acao`, `NomeAntigo`, `EmailAntigo`, `AtivoAntigo`, `AdminAntigo`, `EpsAntiga`, `NomeNovo`, `EmailNovo`, `AtivoNovo`, `AdminNovo`, `EpsNova`) VALUES
+('Admin', '31/08/2022 10:12:11', 'Criacao de Usuario', '', '', '', '', '', 'Psicologa', 'psico@teste.com', '1', '1', '26'),
 ('Usuario teste', '08/08/2022 13:50:36', 'Criacao de Usuario', '', '', '', '', '', 'Fabiana ', 'fabiana@teste.com', '1', '0', '26');
-
--- --------------------------------------------------------
-
---
--- Estrutura da tabela `painel`
---
-
-CREATE TABLE `painel` (
-  `PainelId` int(11) NOT NULL,
-  `EpsId` int(11) DEFAULT NULL COMMENT 'Id do cliente',
-  `Descricao` varchar(100) DEFAULT NULL,
-  `url` varchar(500) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -266,7 +229,8 @@ CREATE TABLE `prs` (
 --
 
 INSERT INTO `prs` (`id`, `nome_beneficiario`, `unidade`, `data_corrente`, `composicao_familiar`, `hist_vida`, `hist_cuidados_clinicos`, `form_educacional`, `mundo_trabalho`, `cp_m1`, `cp_r1`, `cp_m2`, `cp_r2`, `cp_m3`, `cp_r3`, `cp_m4`, `cp_r4`, `mp_m1`, `mp_r1`, `mp_m2`, `mp_r2`, `mp_m3`, `mp_r3`, `mp_m4`, `mp_r4`, `lp_m1`, `lp_r1`, `lp_m2`, `lp_r2`, `lp_m3`, `lp_r3`, `lp_m4`, `lp_r4`, `obs1`, `resp_elaboração`, `data_reavaliacao`, `pontos_reavaliacao_prs`, `obs2`) VALUES
-(6, 'Gabriel Kaminaga', 'Campo Belo', '2022-08-16', 'asd', 'asd', 'asd', 'asd', 'asd', 'asd', '', 'ads', 'asd', 'asd', 'asd', 'asd', 'asd', 'asd', 'asd', 'asd', 'asd', 'asd', 'asd', 'asd', 'asd', 'ads', 'asd', 'asd', 'asd', 'asd', 'asd', 'asd', 'asd', 'asd', 'asd', '2022-08-31', 'asd', 'asd');
+(11, 'Aldjanio dos Santos Pereira', 'Campo Limpo', '2022-08-30', 'Mussum Ipsum, cacilds vidis litro abertis. Suco de cevadiss, é um leite divinis, qui tem lupuliz, matis, aguis e fermentis.Suco de cevadiss deixa as pessoas mais interessantis.Em pé sem cair, deitado sem dormir, sentado sem cochilar e fazendo pose.Delegadis gente finis, bibendum egestas augue arcu ut est.', 'Mussum Ipsum, cacilds vidis litro abertis. Suco de cevadiss, é um leite divinis, qui tem lupuliz, matis, aguis e fermentis.Suco de cevadiss deixa as pessoas mais interessantis.Em pé sem cair, deitado sem dormir, sentado sem cochilar e fazendo pose.Delegadis gente finis, bibendum egestas augue arcu ut est.', 'Mussum Ipsum, cacilds vidis litro abertis. Suco de cevadiss, é um leite divinis, qui tem lupuliz, matis, aguis e fermentis.Suco de cevadiss deixa as pessoas mais interessantis.Em pé sem cair, deitado sem dormir, sentado sem cochilar e fazendo pose.Delegadis gente finis, bibendum egestas augue arcu ut est.', 'Mussum Ipsum, cacilds vidis litro abertis. Suco de cevadiss, é um leite divinis, qui tem lupuliz, matis, aguis e fermentis.Suco de cevadiss deixa as pessoas mais interessantis.Em pé sem cair, deitado sem dormir, sentado sem cochilar e fazendo pose.Delegadis gente finis, bibendum egestas augue arcu ut est.', 'Mussum Ipsum, cacilds vidis litro abertis. Suco de cevadiss, é um leite divinis, qui tem lupuliz, matis, aguis e fermentis.Suco de cevadiss deixa as pessoas mais interessantis.Em pé sem cair, deitado sem dormir, sentado sem cochilar e fazendo pose.Delegadis gente finis, bibendum egestas augue arcu ut est.', 'Mussum Ipsum, cacilds vidis litro abertis. Suco de cevadiss, é um leite divinis, qui tem lupuliz, matis, aguis e fermentis.Suco de cevadiss deixa as pessoas mais interessantis.Em pé sem cair, deitado sem dormir, sentado sem cochilar e fazendo pose.Delegad', '', 'Mussum Ipsum, cacilds vidis litro abertis. Suco de cevadiss, é um leite divinis, qui tem lupuliz, matis, aguis e fermentis.Suco de cevadiss deixa as pessoas mais interessantis.Em pé sem cair, deitado sem dormir, sentado sem cochilar e fazendo pose.Delegad', 'Mussum Ipsum, cacilds vidis litro abertis. Suco de cevadiss, é um leite divinis, qui tem lupuliz, matis, aguis e fermentis.Suco de cevadiss deixa as pessoas mais interessantis.Em pé sem cair, deitado sem dormir, sentado sem cochilar e fazendo pose.Delegad', 'Mussum Ipsum, cacilds vidis litro abertis. Suco de cevadiss, é um leite divinis, qui tem lupuliz, matis, aguis e fermentis.Suco de cevadiss deixa as pessoas mais interessantis.Em pé sem cair, deitado sem dormir, sentado sem cochilar e fazendo pose.Delegad', 'Mussum Ipsum, cacilds vidis litro abertis. Suco de cevadiss, é um leite divinis, qui tem lupuliz, matis, aguis e fermentis.Suco de cevadiss deixa as pessoas mais interessantis.Em pé sem cair, deitado sem dormir, sentado sem cochilar e fazendo pose.Delegad', 'Mussum Ipsum, cacilds vidis litro abertis. Suco de cevadiss, é um leite divinis, qui tem lupuliz, matis, aguis e fermentis.Suco de cevadiss deixa as pessoas mais interessantis.Em pé sem cair, deitado sem dormir, sentado sem cochilar e fazendo pose.Delegad', 'Mussum Ipsum, cacilds vidis litro abertis. Suco de cevadiss, é um leite divinis, qui tem lupuliz, matis, aguis e fermentis.Suco de cevadiss deixa as pessoas mais interessantis.Em pé sem cair, deitado sem dormir, sentado sem cochilar e fazendo pose.Delegad', 'Mussum Ipsum, cacilds vidis litro abertis. Suco de cevadiss, é um leite divinis, qui tem lupuliz, matis, aguis e fermentis.Suco de cevadiss deixa as pessoas mais interessantis.Em pé sem cair, deitado sem dormir, sentado sem cochilar e fazendo pose.Delegad', 'Mussum Ipsum, cacilds vidis litro abertis. Suco de cevadiss, é um leite divinis, qui tem lupuliz, matis, aguis e fermentis.Suco de cevadiss deixa as pessoas mais interessantis.Em pé sem cair, deitado sem dormir, sentado sem cochilar e fazendo pose.Delegad', 'Mussum Ipsum, cacilds vidis litro abertis. Suco de cevadiss, é um leite divinis, qui tem lupuliz, matis, aguis e fermentis.Suco de cevadiss deixa as pessoas mais interessantis.Em pé sem cair, deitado sem dormir, sentado sem cochilar e fazendo pose.Delegad', 'Mussum Ipsum, cacilds vidis litro abertis. Suco de cevadiss, é um leite divinis, qui tem lupuliz, matis, aguis e fermentis.Suco de cevadiss deixa as pessoas mais interessantis.Em pé sem cair, deitado sem dormir, sentado sem cochilar e fazendo pose.Delegad', 'Mussum Ipsum, cacilds vidis litro abertis. Suco de cevadiss, é um leite divinis, qui tem lupuliz, matis, aguis e fermentis.Suco de cevadiss deixa as pessoas mais interessantis.Em pé sem cair, deitado sem dormir, sentado sem cochilar e fazendo pose.Delegad', 'Mussum Ipsum, cacilds vidis litro abertis. Suco de cevadiss, é um leite divinis, qui tem lupuliz, matis, aguis e fermentis.Suco de cevadiss deixa as pessoas mais interessantis.Em pé sem cair, deitado sem dormir, sentado sem cochilar e fazendo pose.Delegad', 'Mussum Ipsum, cacilds vidis litro abertis. Suco de cevadiss, é um leite divinis, qui tem lupuliz, matis, aguis e fermentis.Suco de cevadiss deixa as pessoas mais interessantis.Em pé sem cair, deitado sem dormir, sentado sem cochilar e fazendo pose.Delegad', 'Mussum Ipsum, cacilds vidis litro abertis. Suco de cevadiss, é um leite divinis, qui tem lupuliz, matis, aguis e fermentis.Suco de cevadiss deixa as pessoas mais interessantis.Em pé sem cair, deitado sem dormir, sentado sem cochilar e fazendo pose.Delegad', 'Mussum Ipsum, cacilds vidis litro abertis. Suco de cevadiss, é um leite divinis, qui tem lupuliz, matis, aguis e fermentis.Suco de cevadiss deixa as pessoas mais interessantis.Em pé sem cair, deitado sem dormir, sentado sem cochilar e fazendo pose.Delegad', 'Mussum Ipsum, cacilds vidis litro abertis. Suco de cevadiss, é um leite divinis, qui tem lupuliz, matis, aguis e fermentis.Suco de cevadiss deixa as pessoas mais interessantis.Em pé sem cair, deitado sem dormir, sentado sem cochilar e fazendo pose.Delegad', 'Mussum Ipsum, cacilds vidis litro abertis. Suco de cevadiss, é um leite divinis, qui tem lupuliz, matis, aguis e fermentis.Suco de cevadiss deixa as pessoas mais interessantis.Em pé sem cair, deitado sem dormir, sentado sem cochilar e fazendo pose.Delegad', 'Mussum Ipsum, cacilds vidis litro abertis. Suco de cevadiss, é um leite divinis, qui tem lupuliz, matis, aguis e fermentis.Suco de cevadiss deixa as pessoas mais interessantis.Em pé sem cair, deitado sem dormir, sentado sem cochilar e fazendo pose.Delegad', 'Mussum Ipsum, cacilds vidis litro abertis. Suco de cevadiss, é um leite divinis, qui tem lupuliz, matis, aguis e fermentis.Suco de cevadiss deixa as pessoas mais interessantis.Em pé sem cair, deitado sem dormir, sentado sem cochilar e fazendo pose.Delegad', 'Mussum Ipsum, cacilds vidis litro abertis. Suco de cevadiss, é um leite divinis, qui tem lupuliz, matis, aguis e fermentis.Suco de cevadiss deixa as pessoas mais interessantis.Em pé sem cair, deitado sem dormir, sentado sem cochilar e fazendo pose.Delegad', 'Mussum Ipsum, cacilds vidis litro abertis. Suco de cevadiss, é um leite divinis, qui tem lupuliz, matis, aguis e fermentis.Suco de cevadiss deixa as pessoas mais interessantis.Em pé sem cair, deitado sem dormir, sentado sem cochilar e fazendo pose.Delegad', 'Mussum Ipsum, cacilds vidis litro abertis. Suco de cevadiss, é um leite divinis, qui tem lupuliz, matis, aguis e fermentis.Suco de cevadiss deixa as pessoas mais interessantis.Em pé sem cair, deitado sem dormir, sentado sem cochilar e fazendo pose.Delegad', 'Mussum Ipsum, cacilds vidis litro abertis. Suco de cevadiss, é um leite divinis, qui tem lupuliz, matis, aguis e fermentis.Suco de cevadiss deixa as pessoas mais interessantis.Em pé sem cair, deitado sem dormir, sentado sem cochilar e fazendo pose.Delegadis gente finis, bibendum egestas augue arcu ut est.', 'Luciana', '2022-09-02', 'Mussum Ipsum, cacilds vidis litro abertis. Suco de cevadiss, é um leite divinis, qui tem lupuliz, matis, aguis e fermentis.Suco de cevadiss deixa as pessoas mais interessantis.Em pé sem cair, deitado sem dormir, sentado sem cochilar e fazendo pose.Delegadis gente finis, bibendum egestas augue arcu ut est.', 'Mussum Ipsum, cacilds vidis litro abertis. Suco de cevadiss, é um leite divinis, qui tem lupuliz, matis, aguis e fermentis.Suco de cevadiss deixa as pessoas mais interessantis.Em pé sem cair, deitado sem dormir, sentado sem cochilar e fazendo pose.Delegadis gente finis, bibendum egestas augue arcu ut est.'),
+(14, 'Aldjanio dos Santos Pereira', 'Campo Limpo', '2022-08-31', 'Mussum Ipsum, cacilds vidis litro abertis. Suco de cevadiss, é um leite divinis, qui tem lupuliz, matis, aguis e fermentis.Suco de cevadiss deixa as pessoas mais interessantis.Em pé sem cair, deitado sem dormir, sentado sem cochilar e fazendo pose.Delegadis gente finis, bibendum egestas augue arcu ut est.', 'Mussum Ipsum, cacilds vidis litro abertis. Suco de cevadiss, é um leite divinis, qui tem lupuliz, matis, aguis e fermentis.Suco de cevadiss deixa as pessoas mais interessantis.Em pé sem cair, deitado sem dormir, sentado sem cochilar e fazendo pose.Delegadis gente finis, bibendum egestas augue arcu ut est.', 'Mussum Ipsum, cacilds vidis litro abertis. Suco de cevadiss, é um leite divinis, qui tem lupuliz, matis, aguis e fermentis.Suco de cevadiss deixa as pessoas mais interessantis.Em pé sem cair, deitado sem dormir, sentado sem cochilar e fazendo pose.Delegadis gente finis, bibendum egestas augue arcu ut est.', 'Mussum Ipsum, cacilds vidis litro abertis. Suco de cevadiss, é um leite divinis, qui tem lupuliz, matis, aguis e fermentis.Suco de cevadiss deixa as pessoas mais interessantis.Em pé sem cair, deitado sem dormir, sentado sem cochilar e fazendo pose.Delegadis gente finis, bibendum egestas augue arcu ut est.', 'Mussum Ipsum, cacilds vidis litro abertis. Suco de cevadiss, é um leite divinis, qui tem lupuliz, matis, aguis e fermentis.Suco de cevadiss deixa as pessoas mais interessantis.Em pé sem cair, deitado sem dormir, sentado sem cochilar e fazendo pose.Delegadis gente finis, bibendum egestas augue arcu ut est.', 'Mussum Ipsum, cacilds vidis litro abertis. Suco de cevadiss, é um leite divinis, qui tem lupuliz, matis, aguis e fermentis.Suco de cevadiss deixa as pessoas mais interessantis.Em pé sem cair, deitado sem dormir, sentado sem cochilar e fazendo pose.Delegad', 'Mussum Ipsum, cacilds vidis litro abertis. Suco de cevadiss, é um leite divinis, qui tem lupuliz, matis, aguis e fermentis.Suco de cevadiss deixa as pessoas mais interessantis.Em pé sem cair, deitado sem dormir, sentado sem cochilar e fazendo pose.Delegad', 'Mussum Ipsum, cacilds vidis litro abertis. Suco de cevadiss, é um leite divinis, qui tem lupuliz, matis, aguis e fermentis.Suco de cevadiss deixa as pessoas mais interessantis.Em pé sem cair, deitado sem dormir, sentado sem cochilar e fazendo pose.Delegad', 'Mussum Ipsum, cacilds vidis litro abertis. Suco de cevadiss, é um leite divinis, qui tem lupuliz, matis, aguis e fermentis.Suco de cevadiss deixa as pessoas mais interessantis.Em pé sem cair, deitado sem dormir, sentado sem cochilar e fazendo pose.Delegad', 'Mussum Ipsum, cacilds vidis litro abertis. Suco de cevadiss, é um leite divinis, qui tem lupuliz, matis, aguis e fermentis.Suco de cevadiss deixa as pessoas mais interessantis.Em pé sem cair, deitado sem dormir, sentado sem cochilar e fazendo pose.Delegad', 'Mussum Ipsum, cacilds vidis litro abertis. Suco de cevadiss, é um leite divinis, qui tem lupuliz, matis, aguis e fermentis.Suco de cevadiss deixa as pessoas mais interessantis.Em pé sem cair, deitado sem dormir, sentado sem cochilar e fazendo pose.Delegad', 'Mussum Ipsum, cacilds vidis litro abertis. Suco de cevadiss, é um leite divinis, qui tem lupuliz, matis, aguis e fermentis.Suco de cevadiss deixa as pessoas mais interessantis.Em pé sem cair, deitado sem dormir, sentado sem cochilar e fazendo pose.Delegad', 'Mussum Ipsum, cacilds vidis litro abertis. Suco de cevadiss, é um leite divinis, qui tem lupuliz, matis, aguis e fermentis.Suco de cevadiss deixa as pessoas mais interessantis.Em pé sem cair, deitado sem dormir, sentado sem cochilar e fazendo pose.Delegad', 'Mussum Ipsum, cacilds vidis litro abertis. Suco de cevadiss, é um leite divinis, qui tem lupuliz, matis, aguis e fermentis.Suco de cevadiss deixa as pessoas mais interessantis.Em pé sem cair, deitado sem dormir, sentado sem cochilar e fazendo pose.Delegad', 'Mussum Ipsum, cacilds vidis litro abertis. Suco de cevadiss, é um leite divinis, qui tem lupuliz, matis, aguis e fermentis.Suco de cevadiss deixa as pessoas mais interessantis.Em pé sem cair, deitado sem dormir, sentado sem cochilar e fazendo pose.Delegad', 'Mussum Ipsum, cacilds vidis litro abertis. Suco de cevadiss, é um leite divinis, qui tem lupuliz, matis, aguis e fermentis.Suco de cevadiss deixa as pessoas mais interessantis.Em pé sem cair, deitado sem dormir, sentado sem cochilar e fazendo pose.Delegad', 'Mussum Ipsum, cacilds vidis litro abertis. Suco de cevadiss, é um leite divinis, qui tem lupuliz, matis, aguis e fermentis.Suco de cevadiss deixa as pessoas mais interessantis.Em pé sem cair, deitado sem dormir, sentado sem cochilar e fazendo pose.Delegad', 'Mussum Ipsum, cacilds vidis litro abertis. Suco de cevadiss, é um leite divinis, qui tem lupuliz, matis, aguis e fermentis.Suco de cevadiss deixa as pessoas mais interessantis.Em pé sem cair, deitado sem dormir, sentado sem cochilar e fazendo pose.Delegad', 'Mussum Ipsum, cacilds vidis litro abertis. Suco de cevadiss, é um leite divinis, qui tem lupuliz, matis, aguis e fermentis.Suco de cevadiss deixa as pessoas mais interessantis.Em pé sem cair, deitado sem dormir, sentado sem cochilar e fazendo pose.Delegad', 'Mussum Ipsum, cacilds vidis litro abertis. Suco de cevadiss, é um leite divinis, qui tem lupuliz, matis, aguis e fermentis.Suco de cevadiss deixa as pessoas mais interessantis.Em pé sem cair, deitado sem dormir, sentado sem cochilar e fazendo pose.Delegad', 'Mussum Ipsum, cacilds vidis litro abertis. Suco de cevadiss, é um leite divinis, qui tem lupuliz, matis, aguis e fermentis.Suco de cevadiss deixa as pessoas mais interessantis.Em pé sem cair, deitado sem dormir, sentado sem cochilar e fazendo pose.Delegad', 'Mussum Ipsum, cacilds vidis litro abertis. Suco de cevadiss, é um leite divinis, qui tem lupuliz, matis, aguis e fermentis.Suco de cevadiss deixa as pessoas mais interessantis.Em pé sem cair, deitado sem dormir, sentado sem cochilar e fazendo pose.Delegad', 'Mussum Ipsum, cacilds vidis litro abertis. Suco de cevadiss, é um leite divinis, qui tem lupuliz, matis, aguis e fermentis.Suco de cevadiss deixa as pessoas mais interessantis.Em pé sem cair, deitado sem dormir, sentado sem cochilar e fazendo pose.Delegad', 'Mussum Ipsum, cacilds vidis litro abertis. Suco de cevadiss, é um leite divinis, qui tem lupuliz, matis, aguis e fermentis.Suco de cevadiss deixa as pessoas mais interessantis.Em pé sem cair, deitado sem dormir, sentado sem cochilar e fazendo pose.Delegad', 'Mussum Ipsum, cacilds vidis litro abertis. Suco de cevadiss, é um leite divinis, qui tem lupuliz, matis, aguis e fermentis.Suco de cevadiss deixa as pessoas mais interessantis.Em pé sem cair, deitado sem dormir, sentado sem cochilar e fazendo pose.Delegad', 'Mussum Ipsum, cacilds vidis litro abertis. Suco de cevadiss, é um leite divinis, qui tem lupuliz, matis, aguis e fermentis.Suco de cevadiss deixa as pessoas mais interessantis.Em pé sem cair, deitado sem dormir, sentado sem cochilar e fazendo pose.Delegad', 'Mussum Ipsum, cacilds vidis litro abertis. Suco de cevadiss, é um leite divinis, qui tem lupuliz, matis, aguis e fermentis.Suco de cevadiss deixa as pessoas mais interessantis.Em pé sem cair, deitado sem dormir, sentado sem cochilar e fazendo pose.Delegad', 'Mussum Ipsum, cacilds vidis litro abertis. Suco de cevadiss, é um leite divinis, qui tem lupuliz, matis, aguis e fermentis.Suco de cevadiss deixa as pessoas mais interessantis.Em pé sem cair, deitado sem dormir, sentado sem cochilar e fazendo pose.Delegad', 'Mussum Ipsum, cacilds vidis litro abertis. Suco de cevadiss, é um leite divinis, qui tem lupuliz, matis, aguis e fermentis.Suco de cevadiss deixa as pessoas mais interessantis.Em pé sem cair, deitado sem dormir, sentado sem cochilar e fazendo pose.Delegad', 'Mussum Ipsum, cacilds vidis litro abertis. Suco de cevadiss, é um leite divinis, qui tem lupuliz, matis, aguis e fermentis.Suco de cevadiss deixa as pessoas mais interessantis.Em pé sem cair, deitado sem dormir, sentado sem cochilar e fazendo pose.Delegadis gente finis, bibendum egestas augue arcu ut est.', 'Luciana', '2022-09-05', 'Mussum Ipsum, cacilds vidis litro abertis. Suco de cevadiss, é um leite divinis, qui tem lupuliz, matis, aguis e fermentis.Suco de cevadiss deixa as pessoas mais interessantis.Em pé sem cair, deitado sem dormir, sentado sem cochilar e fazendo pose.Delegadis gente finis, bibendum egestas augue arcu ut est.', 'Mussum Ipsum, cacilds vidis litro abertis. Suco de cevadiss, é um leite divinis, qui tem lupuliz, matis, aguis e fermentis.Suco de cevadiss deixa as pessoas mais interessantis.Em pé sem cair, deitado sem dormir, sentado sem cochilar e fazendo pose.Delegadis gente finis, bibendum egestas augue arcu ut est.');
 
 -- --------------------------------------------------------
 
@@ -291,10 +255,12 @@ CREATE TABLE `usuario` (
 --
 
 INSERT INTO `usuario` (`id`, `Senha`, `Email`, `Nome`, `EpsId`, `Admin`, `Ativo`, `pdv`, `Skill`) VALUES
-(23, 'MTIz', 'fabiana@teste.com', 'Fabiana ', 26, '0', 1, NULL, NULL),
+(23, 'MTIz', 'psicologa@teste.com', 'Fabiana ', 26, '0', 1, NULL, NULL),
 (24, 'MTIz', 'admin@teste.com', 'Admin', 27, '1', 1, NULL, NULL),
 (25, 'MTIz', 'lucas@teste.com', 'Lucas', 28, '0', 1, NULL, NULL),
-(26, 'MTIz', 'amanda@teste.com', 'Amanda', 29, '0', 1, NULL, NULL);
+(26, 'MTIz', 'amanda@teste.com', 'Amanda', 29, '0', 1, NULL, NULL),
+(27, 'MTIz', 'psico@teste.com', 'Psicologa', 26, '0', 1, NULL, NULL),
+(29, 'MTIz', 'ivan@teste.com.br', 'Ivan', 26, '0', 1, NULL, NULL);
 
 --
 -- Índices para tabelas despejadas
@@ -307,12 +273,6 @@ ALTER TABLE `beneficiarios`
   ADD PRIMARY KEY (`id`);
 
 --
--- Índices para tabela `cliente`
---
-ALTER TABLE `cliente`
-  ADD PRIMARY KEY (`Id`);
-
---
 -- Índices para tabela `eps`
 --
 ALTER TABLE `eps`
@@ -323,13 +283,6 @@ ALTER TABLE `eps`
 --
 ALTER TABLE `logusuario`
   ADD PRIMARY KEY (`UsuarioLogado`);
-
---
--- Índices para tabela `painel`
---
-ALTER TABLE `painel`
-  ADD PRIMARY KEY (`PainelId`),
-  ADD KEY `EpsId_idx` (`EpsId`);
 
 --
 -- Índices para tabela `prs`
@@ -351,13 +304,7 @@ ALTER TABLE `usuario`
 -- AUTO_INCREMENT de tabela `beneficiarios`
 --
 ALTER TABLE `beneficiarios`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
-
---
--- AUTO_INCREMENT de tabela `cliente`
---
-ALTER TABLE `cliente`
-  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT de tabela `eps`
@@ -366,32 +313,16 @@ ALTER TABLE `eps`
   MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
 
 --
--- AUTO_INCREMENT de tabela `painel`
---
-ALTER TABLE `painel`
-  MODIFY `PainelId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
-
---
 -- AUTO_INCREMENT de tabela `prs`
 --
 ALTER TABLE `prs`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT de tabela `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
-
---
--- Restrições para despejos de tabelas
---
-
---
--- Limitadores para a tabela `painel`
---
-ALTER TABLE `painel`
-  ADD CONSTRAINT `EpsId` FOREIGN KEY (`EpsId`) REFERENCES `eps` (`Id`);
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

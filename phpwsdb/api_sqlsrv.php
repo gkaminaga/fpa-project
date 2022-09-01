@@ -277,6 +277,78 @@ class api_sqlsrv
 		$db->close();
 	}
 
+	function lista_prs()
+	{
+		$confdb = json_decode(file_get_contents('configuration.json'), TRUE);
+		
+		$db = new mysqli($confdb['host_sqlsrv'],$confdb['user_sqlsrv'],$confdb['password_sqlsrv'],$confdb['database_sqlsrv']);
+		//$teste = 3;
+		$query = "SELECT id, nome_beneficiario, unidade, data_corrente, resp_elaboração from prs";	
+		
+		$result = mysqli_query( $db, $query);
+		if (!$result) {
+			echo "Problem with query " . $query . "<br/>";
+			echo mysqli_errors();
+			exit();
+		}		
+		$list = array();
+		while($myrow = mysqli_fetch_object($result)) 
+		{
+			$list[] = $myrow;
+		}		
+		return $list;
+		$db->close();
+	}
+
+	function prs_detalhado($params)
+	{
+		$confdb = json_decode(file_get_contents('configuration.json'), TRUE);
+		
+		$db = new mysqli($confdb['host_sqlsrv'],$confdb['user_sqlsrv'],$confdb['password_sqlsrv'],$confdb['database_sqlsrv']);
+		//$teste = 3;
+		$query = "SELECT * FROM prs where id = {id}";	
+		$query = str_replace('{id}', $params['id'], $query);
+		$result = mysqli_query( $db, $query);
+		if (!$result) {
+			echo "Problem with query " . $query . "<br/>";
+			echo mysqli_errors();
+			exit();
+		}		
+		$list = array();
+		while($myrow = mysqli_fetch_object($result)) 
+		{
+			$list[] = $myrow;
+		}		
+		return $list;
+		$db->close();
+	}
+
+	function notificacoes($params)
+	{
+		$confdb = json_decode(file_get_contents('configuration.json'), TRUE);
+		
+		$db = new mysqli($confdb['host_sqlsrv'],$confdb['user_sqlsrv'],$confdb['password_sqlsrv'],$confdb['database_sqlsrv']);
+		//$teste = 3;
+		$query = "SELECT nome_beneficiario, unidade, data_corrente, data_reavaliacao, resp_elaboração FROM prs where (DATE(data_reavaliacao) BETWEEN '{data_inicial}' AND '{data_final}')";	
+		$query = str_replace('{data_inicial}', $params['data_inicial'], $query);
+		$query = str_replace('{data_final}', $params['data_final'], $query);
+		
+
+		$result = mysqli_query( $db, $query);
+		if (!$result) {
+			echo "Problem with query " . $query . "<br/>";
+			echo mysqli_errors();
+			exit();
+		}		
+		$list = array();
+		while($myrow = mysqli_fetch_object($result)) 
+		{
+			$list[] = $myrow;
+		}		
+		return $list;
+		$db->close();
+	}
+
 	function beneficiarios_inativos()
 	{
 		$confdb = json_decode(file_get_contents('configuration.json'), TRUE);

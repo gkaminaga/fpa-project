@@ -61,6 +61,7 @@ if ($_SESSION['admin'] == false){
     <link rel="stylesheet" href="plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     <link rel="stylesheet" href="/resources/demos/style.css">
+    <link href="fullscreenmodal/dist/bootstrap4-modal-fullscreen.min.css" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script src="js/config.js?versao=1" type="text/javascript"></script>
@@ -94,7 +95,8 @@ if ($_SESSION['admin'] == false){
       </div> -->
           <div class="card">
             <div class="card-header">
-              <h3 class="card-title">Listagem de Beneficiários</h3>
+              <h3 class="card-title">Inativar Beneficiário</h3>
+              <h5>Duplo clique no nome do beneficiário para inativá-lo!</h5>
             </div>
             <!-- /.card-header -->
             <div class="card-body">
@@ -128,7 +130,7 @@ if ($_SESSION['admin'] == false){
 
       <input type="hidden" id="hidIdUsuario" />
       <div id="modalUsuario" class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" data-keyboard="false" data-backdrop="static">
-        <div class="modal-dialog modal-lg">
+        <div class="modal-dialog modal-xl">
           <div class="modal-content">
             <div class="modal-header">
               Inativar Beneficiário
@@ -317,7 +319,7 @@ if ($_SESSION['admin'] == false){
 
         $('#dash1 tbody').on('dblclick', 'td', function() {
           var $row = $(this).closest("tr"), // Finds the closest row <tr> 
-            $tds = $row.find("td:nth-child(1)"); // Finds the 2nd <td> element     
+          $tds = $row.find("td:nth-child(1)"); // Finds the 2nd <td> element     
           $tds1 = $row.find("td:nth-child(2)");
           Carregar($tds.text(), $tds1.text());
         });

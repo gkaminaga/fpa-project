@@ -248,8 +248,8 @@ if ($_SESSION['admin'] == false){
             <div class="form-row">
               <div class="form-group col-md-12">
                 <label>Nome do Beneficiário:</label>
-                <input name="nome_beneficiario" id="nome_beneficiario" class="form-control">
-                </input>
+                <select id="nome_beneficiario" class="form-control">    
+                </select>
               </div>
             </div>
             <div class="form-row">
@@ -486,21 +486,21 @@ if ($_SESSION['admin'] == false){
 
     <!-- Logout Modal-->
     <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Pronto para deslogar?</h5>
-            <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">×</span>
-            </button>
-          </div>
-          <div class="modal-body">Selecione logout caso deseje finalizar a sessão.</div>
-          <div class="modal-footer">
-            <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-            <a class="btn btn-primary" href="index.html">Logout</a>
-          </div>
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Pronto para deslogar?</h5>
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">Selecione logout caso deseje finalizar a sessão.</div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                    <a class="btn btn-primary" href="../phpwsdb/logout.php">Logout</a>
+                </div>
+            </div>
         </div>
-      </div>
     </div>
   <!-- ./wrapper -->
 
@@ -561,8 +561,15 @@ if ($_SESSION['admin'] == false){
       console.log('pasou aqui');
     });
 
-    function CarregarComboPDV() {
-
+    function CarregarComboPDV(){
+      $.getJSON("../phpwsdb/get_nomes.php", function(data){
+          for (var i = 0, len = data.length; i < len; i++) {
+            $('#nome_beneficiario').append($('<option>', {
+                value: data[i].nome_registro,
+                text: data[i].nome_registro
+            }));
+          }
+      });
     }
 
     function NovoUsuario() {
