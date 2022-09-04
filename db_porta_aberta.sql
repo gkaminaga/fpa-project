@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 01-Set-2022 às 05:46
+-- Tempo de geração: 04-Set-2022 às 23:31
 -- Versão do servidor: 10.4.24-MariaDB
 -- versão do PHP: 8.1.6
 
@@ -114,7 +114,7 @@ CREATE TABLE `beneficiarios` (
 --
 
 INSERT INTO `beneficiarios` (`id`, `unidade`, `data_cadastro`, `encaminhado_por`, `ativo`, `motivo_saida`, `data_saida`, `obito`, `data_obito`, `numero_beneficiario`, `nome_registro`, `nome_social`, `nacionalidade`, `naturalidade`, `sexo`, `etnia`, `orientacao_sexual`, `data_nascimento`, `estado_civil`, `renda_familiar`, `beneficio`, `tipo_moradia`, `endereco`, `rg`, `orgao_emissor`, `uf_emissor`, `cpf`, `cartao_sus`, `cartao_cidadao`, `telefone_fixo`, `telefone_celular`, `nome_mae`, `nome_pai`, `qtd_filhos`, `nome_filho1`, `idade_filho1`, `nome_filho2`, `idade_filho2`, `nome_filho3`, `idade_filho3`, `nome_filho4`, `idade_filho4`, `nome_filho5`, `idade_filho5`, `grau_escolaridade`, `nome_curso_se_cursando`, `deficiencia`, `necessidade_educacional`, `gestante`, `doenca`, `tratamento`, `substancia_psicoativa`, `peridiocidade`, `tempo_uso`, `medicacao`, `ubs_referencia`, `raps_referencia`, `ultimo_trabalho_formal`, `ultimo_trabalho_informal`, `experiencias_anteriores`, `trabalho_marcante`, `area_interesse`, `cursos_anteriores`, `capacitacao_tecnica`, `atividade_complementar`, `pendencia_judicial`, `tipo_pendencia_judicial`, `egresso_sistema_prisional`, `processo_formativo_inserido`, `o_que_espera`, `observacoes`, `servico_referencia`, `tecnico_referencia`, `cargo_tecnico`, `contato_tecnico`, `territorio_referencia`, `tecnico_ref_fpa`, `responsavel_pelo_cadastro`, `data_corrente`) VALUES
-(3, 'Campo Belo ', '2021-10-07', 'CAPS - Capela do Socorro', 1, NULL, NULL, NULL, NULL, '', 'Aldjanio dos Santos Pereira', 'Aldjanio dos Santos Pereira', 'Brasileiro', 'Saloá - PE', 'Masculino', 'parda', 'heterossexual', '1977-01-28', 'solteiro', '150', 'Bolsa Familia', 'Residência Prórpia', 'Rua Manga Natal, 261 - casa 1', '255752155', 'ssp', 'SP', '26957073807', '', '', '11972297897', '11949633256', 'Ivanete dos Santos Pereira', 'Severino Pereira da Silva', 0, '', '', '', '', '', '', '', '', '', '', 'Ens Fund Incompleto', '', '', '', '', 'Cirrose Hepatica ', '', 'alcool,cocaina', '2 dias atras alcool / 1 semana atras cocaina', '30 anos', 'Fluoxtina, carbamazepina', 'Jardim Clipa', 'CAPS - Capela do Socorro', '2021-01-06', '2021-12-15', 'Auxiliar de cozinha, Estoquista, Ajudante de pedreiro, Porteiro, Metalurgico', 'Auxiliar de Limpeza', 'Auxiliar de Limpeza', 'Corte e Costura (FPA)', '', '', 'nao', '', 'nao', 'higienizacao e limpeza', 'Trabalhar para continuar a construção da sua casa', '', 'CAPS - Capela do Socorro', 'Luciana', 'Psicologa', '', '', 'Fabiana', 'Fabiana dos Santos de Souza', '2021-10-07'),
+(3, 'Campo Belo ', '2021-10-07', 'CAPS - Capela do Socorro', 0, '123', '2022-09-04', 0, '0000-00-00', '', 'Aldjanio dos Santos Pereira', 'Aldjanio dos Santos Pereira', 'Brasileiro', 'Saloá - PE', 'Masculino', 'parda', 'heterossexual', '1977-01-28', 'solteiro', '150', 'Bolsa Familia', 'Residência Prórpia', 'Rua Manga Natal, 261 - casa 1', '255752155', 'ssp', 'SP', '26957073807', '', '', '11972297897', '11949633256', 'Ivanete dos Santos Pereira', 'Severino Pereira da Silva', 0, '', '', '', '', '', '', '', '', '', '', 'Ens Fund Incompleto', '', '', '', '', 'Cirrose Hepatica ', '', 'alcool,cocaina', '2 dias atras alcool / 1 semana atras cocaina', '30 anos', 'Fluoxtina, carbamazepina', 'Jardim Clipa', 'CAPS - Capela do Socorro', '2021-01-06', '2021-12-15', 'Auxiliar de cozinha, Estoquista, Ajudante de pedreiro, Porteiro, Metalurgico', 'Auxiliar de Limpeza', 'Auxiliar de Limpeza', 'Corte e Costura (FPA)', '', '', 'nao', '', 'nao', 'higienizacao e limpeza', 'Trabalhar para continuar a construção da sua casa', '', 'CAPS - Capela do Socorro', 'Luciana', 'Psicologa', '', '', 'Fabiana', 'Fabiana dos Santos de Souza', '2021-10-07'),
 (12, '', '0000-00-00', '', 1, NULL, NULL, NULL, NULL, '', '', '', '', '', '', '', '', '0000-00-00', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 0, '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '0000-00-00', '0000-00-00', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '0000-00-00'),
 (13, 'asd', '0000-00-00', '', 1, NULL, NULL, NULL, NULL, '', '', '', '', '', '', '', '', '0000-00-00', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 0, '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '0000-00-00', '0000-00-00', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '0000-00-00'),
 (14, 'uuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuu', '0000-00-00', '', 1, NULL, NULL, NULL, NULL, '', '', '', '', '', '', '', '', '0000-00-00', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 0, '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '0000-00-00', '0000-00-00', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '0000-00-00'),
@@ -122,7 +122,11 @@ INSERT INTO `beneficiarios` (`id`, `unidade`, `data_cadastro`, `encaminhado_por`
 (16, '', '0000-00-00', '', 1, NULL, NULL, NULL, NULL, '', '', '', '', '', '', '', '', '0000-00-00', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 0, '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '0000-00-00', '0000-00-00', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '0000-00-00'),
 (17, '', '0000-00-00', '', 1, NULL, NULL, NULL, NULL, '', '', '', '', '', '', '', '', '0000-00-00', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 0, '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '0000-00-00', '0000-00-00', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '0000-00-00'),
 (18, 'Osasco', '2022-08-22', 'Teste', 1, NULL, NULL, NULL, NULL, 'Teste', 'Teste', 'Teste', 'Teste', 'Teste', 'Masculino', 'amarela', 'heterossexual', '2022-08-22', 'solteiro', '100000', 'Teste', 'Situação de Rua', 'Teste', '123456789', 'asd', 'PA', '123456789123', '123456', '123456', '111111111', '111111111', 'Teste', 'Teste', 2, 'Teste', '4', '', '', '', '', '', '', '', '', 'Cursando', 'Teste', 'Teste', 'Teste', '15 a 18', 'Teste', 'Teste', 'alcool,tabaco,maconha,cocaina', 'Teste', 'Teste', 'Teste', 'Teste', 'Teste', '2022-08-22', '2022-08-22', 'Teste', 'Teste', 'Teste', 'Teste', 'Teste', 'Teste', 'sim', 'Teste', 'nao', 'higienizacao e limpeza', 'Teste', 'Teste', 'Teste', 'Teste', 'Teste', '123456', 'Teste', 'Teste', 'Teste', '2022-08-22'),
-(19, '', '0000-00-00', '', 1, NULL, NULL, NULL, NULL, '', '', '', '', '', '', '', '', '0000-00-00', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 0, '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '0000-00-00', '0000-00-00', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '0000-00-00');
+(19, '', '0000-00-00', '', 1, NULL, NULL, NULL, NULL, '', '', '', '', '', '', '', '', '0000-00-00', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 0, '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '0000-00-00', '0000-00-00', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '0000-00-00'),
+(20, '', '0000-00-00', '', 1, NULL, NULL, NULL, NULL, '', '', '', '', '', '', '', '', '0000-00-00', '', '', '', 'Residência Aluguel', '', '', '', '', '', '', '', '', '', '', '', 0, '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '0000-00-00', '0000-00-00', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '0000-00-00'),
+(21, '', '0000-00-00', '', 1, NULL, NULL, NULL, NULL, '', '', '', '', '', '', '', '', '0000-00-00', '', '', '', 'SIAT II', '', '', '', '', '', '', '', '', '', '', '', 0, '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '0000-00-00', '0000-00-00', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '2022-09-04'),
+(22, '', '0000-00-00', '', 1, NULL, NULL, NULL, NULL, '', '', '', '', '', '', '', '', '0000-00-00', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 0, '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '0000-00-00', '0000-00-00', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '2022-09-04'),
+(23, 'Brasilândia', '0000-00-00', '', 1, NULL, NULL, NULL, NULL, '', '', '', '', '', '', '', '', '0000-00-00', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 0, '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '0000-00-00', '0000-00-00', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '2022-09-04');
 
 -- --------------------------------------------------------
 
@@ -146,6 +150,34 @@ INSERT INTO `eps` (`Id`, `sigla`, `descricao`, `pdv`) VALUES
 (27, 'Administrador', 'Todas as funções e autorizações para criação de usuários', NULL),
 (28, 'Coord adm, Téc administrador', 'Relatórios gerenciais', NULL),
 (29, 'Educador e Agente de ação social', 'Atividades pedagógicas', NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `historico`
+--
+
+CREATE TABLE `historico` (
+  `id` int(11) NOT NULL,
+  `id_beneficiario` int(11) DEFAULT NULL,
+  `nome_beneficiario` varchar(250) DEFAULT NULL,
+  `ativo` tinyint(1) DEFAULT NULL,
+  `motivo` varchar(250) DEFAULT NULL,
+  `data_evento` date DEFAULT NULL,
+  `obito` tinyint(1) DEFAULT NULL,
+  `data_obito` date DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Extraindo dados da tabela `historico`
+--
+
+INSERT INTO `historico` (`id`, `id_beneficiario`, `nome_beneficiario`, `ativo`, `motivo`, `data_evento`, `obito`, `data_obito`) VALUES
+(1, 3, 'Aldjanio dos Santos Pereira', 1, NULL, '2022-09-04', 0, NULL),
+(2, 3, 'Aldjanio dos Santos Pereira', 0, NULL, '2022-09-04', 0, NULL),
+(3, 3, 'Aldjanio dos Santos Pereira', 1, NULL, '2022-09-04', 0, NULL),
+(4, 3, 'Aldjanio dos Santos Pereira', 0, NULL, '2022-09-04', 1, NULL),
+(7, 3, 'Aldjanio dos Santos Pereira', 0, '123', '2022-09-04', 0, '0000-00-00');
 
 -- --------------------------------------------------------
 
@@ -279,6 +311,12 @@ ALTER TABLE `eps`
   ADD PRIMARY KEY (`Id`);
 
 --
+-- Índices para tabela `historico`
+--
+ALTER TABLE `historico`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Índices para tabela `logusuario`
 --
 ALTER TABLE `logusuario`
@@ -304,13 +342,19 @@ ALTER TABLE `usuario`
 -- AUTO_INCREMENT de tabela `beneficiarios`
 --
 ALTER TABLE `beneficiarios`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
 -- AUTO_INCREMENT de tabela `eps`
 --
 ALTER TABLE `eps`
   MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
+
+--
+-- AUTO_INCREMENT de tabela `historico`
+--
+ALTER TABLE `historico`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT de tabela `prs`
