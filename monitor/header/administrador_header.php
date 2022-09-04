@@ -42,6 +42,7 @@
                         <a class="collapse-item" href="beneficiarios.php">Todos</a>
                         <a class="collapse-item" href="beneficiarios_ativos.php">Ativos</a>
                         <a class="collapse-item" href="beneficiarios_inativos.php">Inativos</a>
+                        <a class="collapse-item" href="beneficiarios_historicos.php">Históricos</a>
                     </div>
                 </div>
             </li>

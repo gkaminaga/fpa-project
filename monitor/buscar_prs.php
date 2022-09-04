@@ -66,10 +66,7 @@ if ($_SESSION['admin'] == false){
     table.table-bordered.dataTable tbody td {
       cursor: pointer;
       border-bottom-width: 0;
-    }
-   
-        
-    
+    }   
   </style>
 </head>
 <!-- Carrega o Menu para a EPS - Administrador -->
