@@ -91,7 +91,7 @@ if (!$nome) {
         <!-- /.card-header -->
         <div class="card-body">
 
-            <table id="dash1" class="table table-bordered table-striped">
+            <table id="dash1" class="table table-bordered table-striped" data-sort-order="desc">
                 <thead>
                     <tr>
                         <th>ID</th>
@@ -254,10 +254,12 @@ if (!$nome) {
 <script>
     function Listar() {
         var table = $('#dash1').DataTable();
+        
         table.destroy();
 
         $($("#dash1").DataTable({
             dom: "Bfrtip",
+            order: [ 0, "desc" ],
             ajax: {
                 url: "../phpwsdb/lista_historico.php",
                 type: 'GET',
