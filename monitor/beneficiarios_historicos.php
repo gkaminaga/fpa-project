@@ -99,6 +99,7 @@ if (!$nome) {
                         <th>ID DO BENEFICIÁRIO</th>
                         <th>NOME DO BENEFICIÁRIO</th>
                         <th>DATA</th>
+                        <th>DATA OBITO</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -110,6 +111,7 @@ if (!$nome) {
                         <th>ID DO BENEFICIÁRIO</th>
                         <th>NOME DO BENEFICIÁRIO</th>
                         <th>DATA</th>
+                        <th>DATA OBITO</th>
                     </tr>
                 </tfoot>
             </table>
@@ -282,6 +284,9 @@ if (!$nome) {
                 },
                 {
                     mData: 'data_evento'
+                },
+                {
+                    mData: 'data_obito'
                 }
             ]
         }))
@@ -307,7 +312,7 @@ if (!$nome) {
             $("#modalUsuario").modal('show');
         })
     }
-
+    
     $(document).ready(async function() {
         Listar();
     });
