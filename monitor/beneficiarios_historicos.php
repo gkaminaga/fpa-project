@@ -254,18 +254,17 @@ if (!$nome) {
 <script>
     function Listar() {
         var table = $('#dash1').DataTable();
-        
+
         table.destroy();
 
         $($("#dash1").DataTable({
             dom: "Bfrtip",
-            order: [ 0, "desc" ],
+            order: [0, "desc"],
             ajax: {
                 url: "../phpwsdb/lista_historico.php",
                 type: 'GET',
                 dataType: 'json'
             },
-
             "responsive": true,
             "lengthChange": false,
             "autoWidth": false,
@@ -295,12 +294,16 @@ if (!$nome) {
     });
 
     function Carregar(id) {
-        console.log(id)
         $.getJSON("../phpwsdb/historico_detalhado.php?id=" + id, function(data) {
             $('#nome_beneficiario').val(data[0].nome_beneficiario);
-            $('#unidade').val(data[0].unidade);
             $('#motivo').val(data[0].motivo);
-            $('#data_evento').val(data[0].data_evento);
+            if (data[0].obito == 0) {
+                $('#data_evento').val(data[0].data_evento);            
+                $('#obito').val("Não");
+            } else {
+                $('#data_evento').val(data[0].data_obito);            
+                $('#obito').val("Sim");
+            }
             $("#modalUsuario").modal('show');
         })
     }
