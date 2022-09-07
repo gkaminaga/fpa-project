@@ -1260,6 +1260,7 @@ class api_sqlsrv
 		while ($myrow = mysqli_fetch_object($result)) {
 			$list[] = $myrow;
 		}
+		
 		return $list;
 		$db->close();
 
