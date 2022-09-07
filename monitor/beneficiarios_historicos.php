@@ -131,10 +131,17 @@ if (!$nome) {
             <div class="modal-body">
                 <div id="divModalUsuarioValidacao"></div>
                 <form>
+                <div class="form-row">
+                        <div class="form-group col-md-5">
+                            <label>Status:</label>
+                            <input type="text" class="form-control" id="ativo" placeholder="Status" disabled>
+                            </select>
+                        </div>
+                    </div>
                     <div class="form-row">
                         <div class="form-group col-md-5">
                             <label>Nome do Beneficiário:</label>
-                            <input type="text" class="form-control" id="nome_beneficiario" placeholder="nome_beneficiario" disabled>
+                            <input type="text" class="form-control" id="nome_beneficiario" placeholder="Nome do beneficiário" disabled>
                             </select>
                         </div>
                     </div>
@@ -300,6 +307,7 @@ if (!$nome) {
 
     function Carregar(id) {
         $.getJSON("../phpwsdb/historico_detalhado.php?id=" + id, function(data) {
+            $('#ativo').val(data[0].ativo);
             $('#nome_beneficiario').val(data[0].nome_beneficiario);
             $('#motivo').val(data[0].motivo);
             if (data[0].obito == 0) {
