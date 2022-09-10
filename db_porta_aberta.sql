@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 04-Set-2022 às 23:31
+-- Tempo de geração: 10-Set-2022 às 14:25
 -- Versão do servidor: 10.4.24-MariaDB
 -- versão do PHP: 8.1.6
 
@@ -114,11 +114,11 @@ CREATE TABLE `beneficiarios` (
 --
 
 INSERT INTO `beneficiarios` (`id`, `unidade`, `data_cadastro`, `encaminhado_por`, `ativo`, `motivo_saida`, `data_saida`, `obito`, `data_obito`, `numero_beneficiario`, `nome_registro`, `nome_social`, `nacionalidade`, `naturalidade`, `sexo`, `etnia`, `orientacao_sexual`, `data_nascimento`, `estado_civil`, `renda_familiar`, `beneficio`, `tipo_moradia`, `endereco`, `rg`, `orgao_emissor`, `uf_emissor`, `cpf`, `cartao_sus`, `cartao_cidadao`, `telefone_fixo`, `telefone_celular`, `nome_mae`, `nome_pai`, `qtd_filhos`, `nome_filho1`, `idade_filho1`, `nome_filho2`, `idade_filho2`, `nome_filho3`, `idade_filho3`, `nome_filho4`, `idade_filho4`, `nome_filho5`, `idade_filho5`, `grau_escolaridade`, `nome_curso_se_cursando`, `deficiencia`, `necessidade_educacional`, `gestante`, `doenca`, `tratamento`, `substancia_psicoativa`, `peridiocidade`, `tempo_uso`, `medicacao`, `ubs_referencia`, `raps_referencia`, `ultimo_trabalho_formal`, `ultimo_trabalho_informal`, `experiencias_anteriores`, `trabalho_marcante`, `area_interesse`, `cursos_anteriores`, `capacitacao_tecnica`, `atividade_complementar`, `pendencia_judicial`, `tipo_pendencia_judicial`, `egresso_sistema_prisional`, `processo_formativo_inserido`, `o_que_espera`, `observacoes`, `servico_referencia`, `tecnico_referencia`, `cargo_tecnico`, `contato_tecnico`, `territorio_referencia`, `tecnico_ref_fpa`, `responsavel_pelo_cadastro`, `data_corrente`) VALUES
-(3, 'Campo Belo ', '2021-10-07', 'CAPS - Capela do Socorro', 0, '123', '2022-09-04', 0, '0000-00-00', '', 'Aldjanio dos Santos Pereira', 'Aldjanio dos Santos Pereira', 'Brasileiro', 'Saloá - PE', 'Masculino', 'parda', 'heterossexual', '1977-01-28', 'solteiro', '150', 'Bolsa Familia', 'Residência Prórpia', 'Rua Manga Natal, 261 - casa 1', '255752155', 'ssp', 'SP', '26957073807', '', '', '11972297897', '11949633256', 'Ivanete dos Santos Pereira', 'Severino Pereira da Silva', 0, '', '', '', '', '', '', '', '', '', '', 'Ens Fund Incompleto', '', '', '', '', 'Cirrose Hepatica ', '', 'alcool,cocaina', '2 dias atras alcool / 1 semana atras cocaina', '30 anos', 'Fluoxtina, carbamazepina', 'Jardim Clipa', 'CAPS - Capela do Socorro', '2021-01-06', '2021-12-15', 'Auxiliar de cozinha, Estoquista, Ajudante de pedreiro, Porteiro, Metalurgico', 'Auxiliar de Limpeza', 'Auxiliar de Limpeza', 'Corte e Costura (FPA)', '', '', 'nao', '', 'nao', 'higienizacao e limpeza', 'Trabalhar para continuar a construção da sua casa', '', 'CAPS - Capela do Socorro', 'Luciana', 'Psicologa', '', '', 'Fabiana', 'Fabiana dos Santos de Souza', '2021-10-07'),
-(12, '', '0000-00-00', '', 1, NULL, NULL, NULL, NULL, '', '', '', '', '', '', '', '', '0000-00-00', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 0, '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '0000-00-00', '0000-00-00', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '0000-00-00'),
-(13, 'asd', '0000-00-00', '', 1, NULL, NULL, NULL, NULL, '', '', '', '', '', '', '', '', '0000-00-00', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 0, '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '0000-00-00', '0000-00-00', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '0000-00-00'),
-(14, 'uuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuu', '0000-00-00', '', 1, NULL, NULL, NULL, NULL, '', '', '', '', '', '', '', '', '0000-00-00', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 0, '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '0000-00-00', '0000-00-00', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '0000-00-00'),
-(15, 'asd11111111111111111', '2022-08-02', 'asd', 1, NULL, NULL, NULL, NULL, 'asd', 'asd', 'asd', '', '', '', '', '', '0000-00-00', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 0, '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '0000-00-00', '0000-00-00', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '0000-00-00'),
+(3, 'Campo Belo ', '2021-10-07', 'CAPS - Capela do Socorro', 1, '', '2022-09-04', NULL, NULL, '', 'Aldjanio dos Santos Pereira', 'Aldjanio dos Santos Pereira', 'Brasileiro', 'Saloá - PE', 'Masculino', 'parda', 'heterossexual', '1977-01-28', 'solteiro', '150', 'Bolsa Familia', 'Residência Prórpia', 'Rua Manga Natal, 261 - casa 1', '255752155', 'ssp', 'SP', '26957073807', '', '', '11972297897', '11949633256', 'Ivanete dos Santos Pereira', 'Severino Pereira da Silva', 0, '', '', '', '', '', '', '', '', '', '', 'Ens Fund Incompleto', '', '', '', '', 'Cirrose Hepatica ', '', 'alcool,cocaina', '2 dias atras alcool / 1 semana atras cocaina', '30 anos', 'Fluoxtina, carbamazepina', 'Jardim Clipa', 'CAPS - Capela do Socorro', '2021-01-06', '2021-12-15', 'Auxiliar de cozinha, Estoquista, Ajudante de pedreiro, Porteiro, Metalurgico', 'Auxiliar de Limpeza', 'Auxiliar de Limpeza', 'Corte e Costura (FPA)', '', '', 'nao', '', 'nao', 'higienizacao e limpeza', 'Trabalhar para continuar a construção da sua casa', '', 'CAPS - Capela do Socorro', 'Luciana', 'Psicologa', '', '', 'Fabiana', 'Fabiana dos Santos de Souza', '2021-10-07'),
+(12, 'Brasilândia', '0000-00-00', '', 1, NULL, NULL, NULL, NULL, '', 'Adriano Santos', 'Adriano Santos', '', '', '', '', '', '0000-00-00', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 0, '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '0000-00-00', '0000-00-00', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '0000-00-00'),
+(13, 'Heliópolis', '0000-00-00', '', 1, NULL, NULL, NULL, NULL, '', 'Jonas Silva', 'Jonas Silva', '', '', '', '', '', '0000-00-00', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 0, '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '0000-00-00', '0000-00-00', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '0000-00-00'),
+(14, 'Centro', '0000-00-00', '', 1, NULL, NULL, NULL, NULL, '', 'Aline Souza', 'Aline Souza', '', '', '', '', '', '0000-00-00', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 0, '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '0000-00-00', '0000-00-00', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '0000-00-00'),
+(15, 'Ermelino Matarazzo', '2022-08-02', '', 1, NULL, NULL, NULL, NULL, 'asd', 'Marcos Assunção', 'Marcos Assunção', '', '', '', '', '', '0000-00-00', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 0, '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '0000-00-00', '0000-00-00', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '0000-00-00'),
 (16, '', '0000-00-00', '', 1, NULL, NULL, NULL, NULL, '', '', '', '', '', '', '', '', '0000-00-00', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 0, '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '0000-00-00', '0000-00-00', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '0000-00-00'),
 (17, '', '0000-00-00', '', 1, NULL, NULL, NULL, NULL, '', '', '', '', '', '', '', '', '0000-00-00', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 0, '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '0000-00-00', '0000-00-00', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '0000-00-00'),
 (18, 'Osasco', '2022-08-22', 'Teste', 1, NULL, NULL, NULL, NULL, 'Teste', 'Teste', 'Teste', 'Teste', 'Teste', 'Masculino', 'amarela', 'heterossexual', '2022-08-22', 'solteiro', '100000', 'Teste', 'Situação de Rua', 'Teste', '123456789', 'asd', 'PA', '123456789123', '123456', '123456', '111111111', '111111111', 'Teste', 'Teste', 2, 'Teste', '4', '', '', '', '', '', '', '', '', 'Cursando', 'Teste', 'Teste', 'Teste', '15 a 18', 'Teste', 'Teste', 'alcool,tabaco,maconha,cocaina', 'Teste', 'Teste', 'Teste', 'Teste', 'Teste', '2022-08-22', '2022-08-22', 'Teste', 'Teste', 'Teste', 'Teste', 'Teste', 'Teste', 'sim', 'Teste', 'nao', 'higienizacao e limpeza', 'Teste', 'Teste', 'Teste', 'Teste', 'Teste', '123456', 'Teste', 'Teste', 'Teste', '2022-08-22'),
@@ -136,6 +136,7 @@ INSERT INTO `beneficiarios` (`id`, `unidade`, `data_cadastro`, `encaminhado_por`
 
 CREATE TABLE `eps` (
   `Id` int(11) NOT NULL,
+  `id_eps` int(11) DEFAULT NULL,
   `sigla` varchar(45) DEFAULT NULL,
   `descricao` varchar(100) DEFAULT NULL,
   `pdv` varchar(100) DEFAULT NULL
@@ -145,11 +146,15 @@ CREATE TABLE `eps` (
 -- Extraindo dados da tabela `eps`
 --
 
-INSERT INTO `eps` (`Id`, `sigla`, `descricao`, `pdv`) VALUES
-(26, 'Diretoria, Coord geral, Coord pedagogica', 'Todas as funções', NULL),
-(27, 'Administrador', 'Todas as funções e autorizações para criação de usuários', NULL),
-(28, 'Coord adm, Téc administrador', 'Relatórios gerenciais', NULL),
-(29, 'Educador e Agente de ação social', 'Atividades pedagógicas', NULL);
+INSERT INTO `eps` (`Id`, `id_eps`, `sigla`, `descricao`, `pdv`) VALUES
+(26, 2, 'Diretor(a)', 'Todas as funções', NULL),
+(27, 1, 'Administrador(a)', 'Todas as funções e autorizações para criação de usuários', NULL),
+(28, 3, 'Coordenador(a) Administrativo', 'Relatórios gerenciais', NULL),
+(29, 4, 'Educador', 'Atividades pedagógicas', NULL),
+(31, 2, 'Coordenador(a) Geral', 'Todas as funções', NULL),
+(32, 2, 'Coordenador(a) Pedagógico(a)', 'Todas as funções', NULL),
+(33, 3, 'Técnico(a) Administrador(a)', 'Relatórios gerenciais', NULL),
+(34, 4, 'Agente de Ação Social', 'Atividades pedagógicas', NULL);
 
 -- --------------------------------------------------------
 
@@ -176,8 +181,8 @@ INSERT INTO `historico` (`id`, `id_beneficiario`, `nome_beneficiario`, `ativo`, 
 (1, 3, 'Aldjanio dos Santos Pereira', 1, NULL, '2022-09-04', 0, NULL),
 (2, 3, 'Aldjanio dos Santos Pereira', 0, NULL, '2022-09-04', 0, NULL),
 (3, 3, 'Aldjanio dos Santos Pereira', 1, NULL, '2022-09-04', 0, NULL),
-(4, 3, 'Aldjanio dos Santos Pereira', 0, NULL, '2022-09-04', 1, NULL),
-(7, 3, 'Aldjanio dos Santos Pereira', 0, '123', '2022-09-04', 0, '0000-00-00');
+(4, 3, 'Aldjanio dos Santos Pereira', 0, NULL, NULL, 1, '2022-09-01'),
+(7, 3, 'Aldjanio dos Santos Pereira', 0, '123', '2022-09-04', 0, NULL);
 
 -- --------------------------------------------------------
 
@@ -208,6 +213,35 @@ CREATE TABLE `logusuario` (
 INSERT INTO `logusuario` (`UsuarioLogado`, `DateTime`, `Acao`, `NomeAntigo`, `EmailAntigo`, `AtivoAntigo`, `AdminAntigo`, `EpsAntiga`, `NomeNovo`, `EmailNovo`, `AtivoNovo`, `AdminNovo`, `EpsNova`) VALUES
 ('Admin', '31/08/2022 10:12:11', 'Criacao de Usuario', '', '', '', '', '', 'Psicologa', 'psico@teste.com', '1', '1', '26'),
 ('Usuario teste', '08/08/2022 13:50:36', 'Criacao de Usuario', '', '', '', '', '', 'Fabiana ', 'fabiana@teste.com', '1', '0', '26');
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `matricula`
+--
+
+CREATE TABLE `matricula` (
+  `id` int(11) NOT NULL,
+  `id_projeto` int(11) DEFAULT NULL,
+  `id_turma` int(11) DEFAULT NULL,
+  `id_beneficiario` int(11) DEFAULT NULL,
+  `data_criacao` date DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `projeto`
+--
+
+CREATE TABLE `projeto` (
+  `id` int(11) NOT NULL,
+  `nome_projeto` varchar(80) DEFAULT NULL,
+  `tipo_projeto` varchar(80) DEFAULT NULL,
+  `id_responsavel` int(11) DEFAULT NULL,
+  `nome_responsavel` varchar(80) DEFAULT NULL,
+  `data_criacao` date DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -267,6 +301,21 @@ INSERT INTO `prs` (`id`, `nome_beneficiario`, `unidade`, `data_corrente`, `compo
 -- --------------------------------------------------------
 
 --
+-- Estrutura da tabela `turmaprojeto`
+--
+
+CREATE TABLE `turmaprojeto` (
+  `id` int(11) NOT NULL,
+  `nome_turma` varchar(80) DEFAULT NULL,
+  `id_projeto` int(11) DEFAULT NULL,
+  `data_criacao` date DEFAULT current_timestamp(),
+  `data_inicio` date DEFAULT NULL,
+  `data_termino` date DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
 -- Estrutura da tabela `usuario`
 --
 
@@ -287,12 +336,12 @@ CREATE TABLE `usuario` (
 --
 
 INSERT INTO `usuario` (`id`, `Senha`, `Email`, `Nome`, `EpsId`, `Admin`, `Ativo`, `pdv`, `Skill`) VALUES
-(23, 'MTIz', 'psicologa@teste.com', 'Fabiana ', 26, '0', 1, NULL, NULL),
-(24, 'MTIz', 'admin@teste.com', 'Admin', 27, '1', 1, NULL, NULL),
-(25, 'MTIz', 'lucas@teste.com', 'Lucas', 28, '0', 1, NULL, NULL),
-(26, 'MTIz', 'amanda@teste.com', 'Amanda', 29, '0', 1, NULL, NULL),
-(27, 'MTIz', 'psico@teste.com', 'Psicologa', 26, '0', 1, NULL, NULL),
-(29, 'MTIz', 'ivan@teste.com.br', 'Ivan', 26, '0', 1, NULL, NULL);
+(23, 'MTIz', 'psicologa@teste.com', 'Fabiana ', 2, '0', 1, NULL, NULL),
+(24, 'MTIz', 'admin@teste.com', 'Admin', 1, '1', 1, NULL, NULL),
+(25, 'MTIz', 'lucas@teste.com', 'Lucas', 3, '0', 1, NULL, NULL),
+(26, 'MTIz', 'amanda@teste.com', 'Amanda', 4, '0', 1, NULL, NULL),
+(27, 'MTIz', 'psico@teste.com', 'Psicologa', 2, '0', 1, NULL, NULL),
+(29, 'MTIz', 'ivan@teste.com.br', 'Ivan', 2, '0', 1, NULL, NULL);
 
 --
 -- Índices para tabelas despejadas
@@ -323,9 +372,27 @@ ALTER TABLE `logusuario`
   ADD PRIMARY KEY (`UsuarioLogado`);
 
 --
+-- Índices para tabela `matricula`
+--
+ALTER TABLE `matricula`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Índices para tabela `projeto`
+--
+ALTER TABLE `projeto`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Índices para tabela `prs`
 --
 ALTER TABLE `prs`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Índices para tabela `turmaprojeto`
+--
+ALTER TABLE `turmaprojeto`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -348,7 +415,7 @@ ALTER TABLE `beneficiarios`
 -- AUTO_INCREMENT de tabela `eps`
 --
 ALTER TABLE `eps`
-  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
+  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
 
 --
 -- AUTO_INCREMENT de tabela `historico`
@@ -357,10 +424,28 @@ ALTER TABLE `historico`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
+-- AUTO_INCREMENT de tabela `matricula`
+--
+ALTER TABLE `matricula`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT de tabela `projeto`
+--
+ALTER TABLE `projeto`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT de tabela `prs`
 --
 ALTER TABLE `prs`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+
+--
+-- AUTO_INCREMENT de tabela `turmaprojeto`
+--
+ALTER TABLE `turmaprojeto`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de tabela `usuario`
