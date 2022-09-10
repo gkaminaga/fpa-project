@@ -67,244 +67,244 @@ if ($_SESSION['admin'] == false){
     }
   </style>
 </head>
-    <!-- Carrega o Menu para a EPS - Administrador -->
-    <?php if ($_SESSION['eps'] === '27') include __DIR__.'/header/administrador_header.php'; ?>
+<!-- Carrega o Menu para a EPS - Administrador -->
+<?php if ($_SESSION['eps'] === '1') include __DIR__ . '/header/administrador_header.php'; ?>
 
-    <!-- Carrega o Menu para a EPS - Diretor -->
-    <?php if ($_SESSION['eps'] === '26') include __DIR__.'/header/diretor_header.php'; ?>
+<!-- Carrega o Menu para a EPS - Diretor(a), Coordenador(a) Geral, Coordenador(a) Pedagógico(a) -->
+<?php if ($_SESSION['eps'] === '2') include __DIR__ . '/header/diretor_header.php'; ?>
 
-    <!-- Carrega o Menu para a EPS - Coordenador -->
-    <?php if ($_SESSION['eps'] === '28') include __DIR__.'/header/coordenador_header.php'; ?>
+<!-- Controle de acessos para a EPS - Coordenador(a) Administrativo, Técnico(a) Administrador(a) -->
+<?php if ($_SESSION['eps'] === '3') header('Location: beneficiarios.php'); ?>
 
-    <!-- Controle de acessos para a EPS - Educador -->
-    <?php if ($_SESSION['eps'] === '29') header('Location: beneficiarios.php'); ?>
+<!-- Controle de acessos para a EPS - Educador, Agente de Ação Social -->
+<?php if ($_SESSION['eps'] === '4') header('Location: beneficiarios.php'); ?>
 
-        <!-- Content Wrapper. Contains page content -->
-        <div class="container-fluid">
-          <!-- Content Header (Page header) -->
-          <!--<div>
+<!-- Content Wrapper. Contains page content -->
+<div class="container-fluid">
+  <!-- Content Header (Page header) -->
+  <!--<div>
         <button type="button" class="btn btn-block btn-primary" onclick="javascript:NovoUsuario();">Novo Painel</button>
       </div> -->
-          <div class="card">
-            <div class="card-header">
-              <h3 class="card-title">Listagem de Beneficiários Inativos</h3>
-            </div>
-            <!-- /.card-header -->
-            <div class="card-body">
-              <table id="dash1" class="table table-bordered table-striped">
-                <thead>
-                  <tr>
-                    <th>ID</th>
-                    <th>NOME REGISTRO</th>
-                    <th>RG</th>
-                    <th>CPF</th>
-                    <th>DATA NASCIMENTO</th>
-                    <th>UNIDADE</th>
-                    <th>ATIVO</th>
-                    <th>MOTIVO SAÍDA</th>
-                    <th>DATA SAÍDA</th>
-                    <th>OBITO</th>
-                  </tr>
-                </thead>
-                <tbody>
-                </tbody>
-                <tfoot>
-                  <tr>
-                    <th>ID</th>
-                    <th>NOME REGISTRO</th>
-                    <th>RG</th>
-                    <th>CPF</th>
-                    <th>DATA NASCIMENTO</th>
-                    <th>UNIDADE</th>
-                    <th>ATIVO</th>
-                    <th>MOTIVO SAÍDA</th>
-                    <th>DATA SAÍDA</th>
-                    <th>OBITO</th>
-                  </tr>
-                </tfoot>
-              </table>
-            </div>
-            <!-- /.card-body -->
-          </div>
-          <!-- /.content -->
-        </div>
-        <!-- /.content-wrapper -->
-
-      <!-- Footer -->
-        <footer class="sticky-footer bg-white">
-          <div class="container my-auto">
-            <div class="copyright text-center my-auto">
-              <span>Copyright &copy; Fundação Porta Aberta 2022</span>
-            </div>
-          </div>
-        </footer>
-        <!-- End of Footer -->
-
-      </div>
-      <!-- End of Content Wrapper -->
-
+  <div class="card">
+    <div class="card-header">
+      <h3 class="card-title">Listagem de Beneficiários Inativos</h3>
     </div>
-    <!-- End of Page Wrapper -->
+    <!-- /.card-header -->
+    <div class="card-body">
+      <table id="dash1" class="table table-bordered table-striped">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>NOME REGISTRO</th>
+            <th>RG</th>
+            <th>CPF</th>
+            <th>DATA NASCIMENTO</th>
+            <th>UNIDADE</th>
+            <th>ATIVO</th>
+            <th>MOTIVO SAÍDA</th>
+            <th>DATA SAÍDA</th>
+            <th>OBITO</th>
+          </tr>
+        </thead>
+        <tbody>
+        </tbody>
+        <tfoot>
+          <tr>
+            <th>ID</th>
+            <th>NOME REGISTRO</th>
+            <th>RG</th>
+            <th>CPF</th>
+            <th>DATA NASCIMENTO</th>
+            <th>UNIDADE</th>
+            <th>ATIVO</th>
+            <th>MOTIVO SAÍDA</th>
+            <th>DATA SAÍDA</th>
+            <th>OBITO</th>
+          </tr>
+        </tfoot>
+      </table>
+    </div>
+    <!-- /.card-body -->
+  </div>
+  <!-- /.content -->
+</div>
+<!-- /.content-wrapper -->
 
-    <!-- Scroll to Top Button-->
-    <a class="scroll-to-top rounded" href="#page-top">
-      <i class="fas fa-angle-up"></i>
-    </a>
+<!-- Footer -->
+<footer class="sticky-footer bg-white">
+  <div class="container my-auto">
+    <div class="copyright text-center my-auto">
+      <span>Copyright &copy; Fundação Porta Aberta 2022</span>
+    </div>
+  </div>
+</footer>
+<!-- End of Footer -->
 
-    <!-- Logout Modal-->
-    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Pronto para deslogar?</h5>
-            <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">×</span>
-            </button>
-          </div>
-          <div class="modal-body">Selecione logout caso deseje finalizar a sessão.</div>
-          <div class="modal-footer">
-            <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-            <a class="btn btn-primary" href="../phpwsdb/logout.php">Logout</a>
-          </div>
-        </div>
+</div>
+<!-- End of Content Wrapper -->
+
+</div>
+<!-- End of Page Wrapper -->
+
+<!-- Scroll to Top Button-->
+<a class="scroll-to-top rounded" href="#page-top">
+  <i class="fas fa-angle-up"></i>
+</a>
+
+<!-- Logout Modal-->
+<div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Pronto para deslogar?</h5>
+        <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">×</span>
+        </button>
+      </div>
+      <div class="modal-body">Selecione logout caso deseje finalizar a sessão.</div>
+      <div class="modal-footer">
+        <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+        <a class="btn btn-primary" href="../phpwsdb/logout.php">Logout</a>
       </div>
     </div>
-    <!-- ./wrapper -->
+  </div>
+</div>
+<!-- ./wrapper -->
 
-    <!-- jQuery -->
-    <script src="plugins/jquery/jquery.min.js"></script>
-    <!-- jQuery UI 1.11.4 -->
-    <script src="plugins/jquery-ui/jquery-ui.min.js"></script>
-    <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
-    <script>
-      $.widget.bridge('uibutton', $.ui.button)
-    </script>
-    <!-- Bootstrap 4 -->
-    <script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <!-- ChartJS -->
-    <script src="plugins/chart.js/Chart.min.js"></script>
-    <!-- Sparkline -->
-    <script src="plugins/sparklines/sparkline.js"></script>
-    <!-- JQVMap -->
-    <script src="plugins/jqvmap/jquery.vmap.min.js"></script>
-    <script src="plugins/jqvmap/maps/jquery.vmap.usa.js"></script>
-    <!-- jQuery Knob Chart -->
-    <script src="plugins/jquery-knob/jquery.knob.min.js"></script>
-    <!-- daterangepicker -->
-    <script src="plugins/moment/moment.min.js"></script>
-    <script src="plugins/daterangepicker/daterangepicker.js"></script>
-    <!-- Tempusdominus Bootstrap 4 -->
-    <script src="plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js"></script>
-    <!-- Summernote -->
-    <script src="plugins/summernote/summernote-bs4.min.js"></script>
-    <!-- overlayScrollbars -->
-    <script src="plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
-    <!-- AdminLTE App -->
-    <script src="dist/js/adminlte.js"></script>
-    <!-- AdminLTE for demo purposes -->
-    <script src="dist/js/demo.js"></script>
-    <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
-    <script src="dist/js/pages/dashboard.js"></script>
-    <!-- DataTables  & Plugins -->
-    <script src="plugins/datatables/jquery.dataTables.min.js"></script>
-    <script src="plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
-    <script src="plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
-    <script src="plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
-    <script src="plugins/datatables-buttons/js/dataTables.buttons.min.js"></script>
-    <script src="plugins/datatables-buttons/js/buttons.bootstrap4.min.js"></script>
-    <script src="plugins/jszip/jszip.min.js"></script>
-    <script src="plugins/pdfmake/pdfmake.min.js"></script>
-    <script src="plugins/pdfmake/vfs_fonts.js"></script>
-    <script src="plugins/datatables-buttons/js/buttons.html5.min.js"></script>
-    <script src="plugins/datatables-buttons/js/buttons.print.min.js"></script>
-    <script src="plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
-    <!-- Custom scripts for all pages-->
-    <script src="./js/sb-admin-2.min.js"></script>
-    <script>
-      function Listar() {
-        var table = $('#dash1').DataTable();
-        table.destroy();
+<!-- jQuery -->
+<script src="plugins/jquery/jquery.min.js"></script>
+<!-- jQuery UI 1.11.4 -->
+<script src="plugins/jquery-ui/jquery-ui.min.js"></script>
+<!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
+<script>
+  $.widget.bridge('uibutton', $.ui.button)
+</script>
+<!-- Bootstrap 4 -->
+<script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- ChartJS -->
+<script src="plugins/chart.js/Chart.min.js"></script>
+<!-- Sparkline -->
+<script src="plugins/sparklines/sparkline.js"></script>
+<!-- JQVMap -->
+<script src="plugins/jqvmap/jquery.vmap.min.js"></script>
+<script src="plugins/jqvmap/maps/jquery.vmap.usa.js"></script>
+<!-- jQuery Knob Chart -->
+<script src="plugins/jquery-knob/jquery.knob.min.js"></script>
+<!-- daterangepicker -->
+<script src="plugins/moment/moment.min.js"></script>
+<script src="plugins/daterangepicker/daterangepicker.js"></script>
+<!-- Tempusdominus Bootstrap 4 -->
+<script src="plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js"></script>
+<!-- Summernote -->
+<script src="plugins/summernote/summernote-bs4.min.js"></script>
+<!-- overlayScrollbars -->
+<script src="plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
+<!-- AdminLTE App -->
+<script src="dist/js/adminlte.js"></script>
+<!-- AdminLTE for demo purposes -->
+<script src="dist/js/demo.js"></script>
+<!-- AdminLTE dashboard demo (This is only for demo purposes) -->
+<script src="dist/js/pages/dashboard.js"></script>
+<!-- DataTables  & Plugins -->
+<script src="plugins/datatables/jquery.dataTables.min.js"></script>
+<script src="plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
+<script src="plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
+<script src="plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
+<script src="plugins/datatables-buttons/js/dataTables.buttons.min.js"></script>
+<script src="plugins/datatables-buttons/js/buttons.bootstrap4.min.js"></script>
+<script src="plugins/jszip/jszip.min.js"></script>
+<script src="plugins/pdfmake/pdfmake.min.js"></script>
+<script src="plugins/pdfmake/vfs_fonts.js"></script>
+<script src="plugins/datatables-buttons/js/buttons.html5.min.js"></script>
+<script src="plugins/datatables-buttons/js/buttons.print.min.js"></script>
+<script src="plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
+<!-- Custom scripts for all pages-->
+<script src="./js/sb-admin-2.min.js"></script>
+<script>
+  function Listar() {
+    var table = $('#dash1').DataTable();
+    table.destroy();
 
-        $($("#dash1").DataTable({
-          dom: "Bfrtip",
-          ajax: {
-            url: "../phpwsdb/beneficiarios_inativos.php",
-            type: 'GET',
-            dataType: 'json'
-          },
+    $($("#dash1").DataTable({
+      dom: "Bfrtip",
+      ajax: {
+        url: "../phpwsdb/beneficiarios_inativos.php",
+        type: 'GET',
+        dataType: 'json'
+      },
 
-          "responsive": true,
-          "lengthChange": false,
-          "autoWidth": false,
-          "columns": [
+      "responsive": true,
+      "lengthChange": false,
+      "autoWidth": false,
+      "columns": [
 
-            {
-              mData: 'id'
-            },
-            {
-              mData: 'nome_registro'
-            },
-            {
-              mData: 'rg'
-            },
-            {
-              mData: 'cpf'
-            },
-            {
-              mData: 'data_nascimento'
-            },
-            {
-              mData: 'unidade'
-            },
-            {
-              mData: 'ativo'
-            },
-            {
-              mData: 'motivo_saida'
-            },
-            {
-              mData: 'data_saida'
-            },
-            {
-              mData: 'obito'
-            }
-
-          ]
-        }));
-      }
-
-      $(document).ready(async function() {
-        Listar();
-        //await CarregarComboPDV();
-        //console.log(pdv.length);
-        /*
-        if (pdv.length > 0){            
-            $('#li-bi').addClass('d-lg-none');
-        }
-        */
-      });
-
-      function displayCustomMessage(div, message, type) {
-        var strAlert = '';
-        var strAlertCss = '';
-
-        if (type == "error") {
-          strAlertCss = "alert-danger";
-        } else if (type == "success") {
-          strAlertCss = "alert-success";
-        } else {
-          strAlertCss = "alert-info";
+        {
+          mData: 'id'
+        },
+        {
+          mData: 'nome_registro'
+        },
+        {
+          mData: 'rg'
+        },
+        {
+          mData: 'cpf'
+        },
+        {
+          mData: 'data_nascimento'
+        },
+        {
+          mData: 'unidade'
+        },
+        {
+          mData: 'ativo'
+        },
+        {
+          mData: 'motivo_saida'
+        },
+        {
+          mData: 'data_saida'
+        },
+        {
+          mData: 'obito'
         }
 
-        strAlert = "<div id=\"" + div + "-erro\"></div>";
-        strAlert = "<div class=\"alert " + strAlertCss + " role=\"alert\">";
-        strAlert += "     " + message + "";
-        strAlert += "</div>";
+      ]
+    }));
+  }
 
-        $("#" + div).html(strAlert);
-        $("#" + div).show(100);
-      }
-    </script>
+  $(document).ready(async function() {
+    Listar();
+    //await CarregarComboPDV();
+    //console.log(pdv.length);
+    /*
+    if (pdv.length > 0){            
+        $('#li-bi').addClass('d-lg-none');
+    }
+    */
+  });
+
+  function displayCustomMessage(div, message, type) {
+    var strAlert = '';
+    var strAlertCss = '';
+
+    if (type == "error") {
+      strAlertCss = "alert-danger";
+    } else if (type == "success") {
+      strAlertCss = "alert-success";
+    } else {
+      strAlertCss = "alert-info";
+    }
+
+    strAlert = "<div id=\"" + div + "-erro\"></div>";
+    strAlert = "<div class=\"alert " + strAlertCss + " role=\"alert\">";
+    strAlert += "     " + message + "";
+    strAlert += "</div>";
+
+    $("#" + div).html(strAlert);
+    $("#" + div).show(100);
+  }
+</script>
 </body>
 
 </html>

@@ -63,16 +63,16 @@ if (!$nome) {
     <link href="./css/sb-admin-2.min.css" rel="stylesheet">
 </head>
 <!-- Carrega o Menu para a EPS - Administrador -->
-<?php if ($_SESSION['eps'] === '27') include __DIR__ . '/header/administrador_header.php'; ?>
+<?php if ($_SESSION['eps'] === '1') include __DIR__ . '/header/administrador_header.php'; ?>
 
-<!-- Carrega o Menu para a EPS - Diretor -->
-<?php if ($_SESSION['eps'] === '26') include __DIR__ . '/header/diretor_header.php'; ?>
+<!-- Carrega o Menu para a EPS - Diretor(a), Coordenador(a) Geral, Coordenador(a) Pedagógico(a) -->
+<?php if ($_SESSION['eps'] === '2') include __DIR__ . '/header/diretor_header.php'; ?>
 
-<!-- Controle de acessos para a EPS - Coordenador -->
-<?php if ($_SESSION['eps'] === '28') header('Location: beneficiarios.php'); ?>
+<!-- Controle de acessos para a EPS - Coordenador(a) Administrativo, Técnico(a) Administrador(a) -->
+<?php if ($_SESSION['eps'] === '3') header('Location: beneficiarios.php'); ?>
 
-<!-- Controle de acessos para a EPS - Educador -->
-<?php if ($_SESSION['eps'] === '29') header('Location: beneficiarios.php'); ?>
+<!-- Controle de acessos para a EPS - Educador, Agente de Ação Social -->
+<?php if ($_SESSION['eps'] === '4') header('Location: beneficiarios.php'); ?>
 
 <!-- Begin Page Content -->
 <div class="container-fluid">

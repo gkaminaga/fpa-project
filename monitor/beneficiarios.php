@@ -68,13 +68,13 @@ if ($_SESSION['admin'] == false){
   </style>
 </head>
 <!-- Carrega o Menu para a EPS - Administrador -->
-<?php if ($_SESSION['eps'] === '27') include __DIR__ . '/header/administrador_header.php'; ?>
+<?php if ($_SESSION['eps'] === '1') include __DIR__ . '/header/administrador_header.php'; ?>
 
 <!-- Carrega o Menu para a EPS - Diretor -->
 <?php if ($_SESSION['eps'] === '26') include __DIR__ . '/header/diretor_header.php'; ?>
 
 <!-- Carrega o Menu para a EPS - Coordenador -->
-<?php if ($_SESSION['eps'] === '28') include __DIR__ . '/header/coordenador_header.php'; ?>
+<?php if ($_SESSION['eps'] === '28') include __DIR__ . '/header/coordenador_adm_header.php'; ?>
 
 <!-- Carrega o Menu para a EPS - Educador -->
 <?php if ($_SESSION['eps'] === '29') include __DIR__ . '/header/educador_header.php'; ?>

@@ -38,7 +38,7 @@ class api_sqlsrv
 			die("Erro na conexão " . $db->connect_error);
 		}
 
-		$query = "SELECT t1.*, t2.sigla, t2.pdv from usuario t1 inner join eps t2 on t1.EpsId = t2.Id  where email = '{email}' and senha = '{senha}'";
+		$query = "SELECT t1.*, t2.sigla, t2.pdv from usuario t1 inner join eps t2 on t1.EpsId = t2.id_eps  where email = '{email}' and senha = '{senha}'";
 		$query = str_replace('{email}', $params['email'], $query);
 		$query = str_replace('{senha}', base64_encode($params['senha']), $query);
 		$result = mysqli_query($db, $query);
