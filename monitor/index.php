@@ -56,11 +56,11 @@ if (!$nome) {
     <link rel="stylesheet" href="plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     <link rel="stylesheet" href="/resources/demos/style.css">
-    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-    <script src="js/config.js?versao=1" type="text/javascript"></script>
+    <!-- Select -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.18/css/bootstrap-select.min.css" rel="stylesheet" />
     <!-- Custom styles for this template-->
     <link href="./css/sb-admin-2.min.css" rel="stylesheet">
+    <script src="js/config.js?versao=1" type="text/javascript"></script>
 </head>
 <!-- Carrega o Menu para a EPS - Administrador -->
 <?php if ($_SESSION['eps'] === '1') include __DIR__ . '/header/administrador_header.php'; ?>
@@ -87,7 +87,7 @@ if (!$nome) {
                 <div class="form-row">
                     <div class="form-group col-md-4">
                         <label>Unidade</label>
-                        <select id="unidade" class="form-control">
+                        <select id="unidade" title="Unidade" class="selectpicker form-control" data-live-search="true">
                             <option selected></option>
                             <option>Brasilândia</option>
                             <option>Campo Belo</option>
@@ -132,7 +132,7 @@ if (!$nome) {
                 <div class="form-row">
                     <div class="form-group col-md-4">
                         <label>Sexo/Gênero</label>
-                        <select id="sexo" class="form-control">
+                        <select id="sexo" title="Sexo/Gênero" class="selectpicker form-control" data-live-search="true">
                             <option selected value=""></option>
                             <option value="Masculino">Masculino</option>
                             <option value="Feminino">Feminino</option>
@@ -140,7 +140,7 @@ if (!$nome) {
                     </div>
                     <div class="form-group col-md-4">
                         <label>Etnia</label>
-                        <select id="etnia" class="form-control">
+                        <select id="etnia" title="Etnia" class="selectpicker form-control" data-live-search="true">
                             <option selected value=""></option>
                             <option value="branca">Branca</option>
                             <option value="negra">Negra</option>
@@ -152,7 +152,7 @@ if (!$nome) {
                     </div>
                     <div class="form-group col-md-4">
                         <label>Orientação Sexual</label>
-                        <select id="orientacao_sexual" class="form-control">
+                        <select id="orientacao_sexual" title="Orientação Sexual" class="selectpicker form-control" data-live-search="true">
                             <option selected value=""></option>
                             <option value="heterossexual">Heterossexual</option>
                             <option value="homossexual">Homossexual</option>
@@ -170,7 +170,7 @@ if (!$nome) {
                     </div>
                     <div class="form-group col-md-4">
                         <label>Estado Civil</label>
-                        <select id="estado_civil" class="form-control">
+                        <select id="estado_civil" title="Estado Civil" class="selectpicker form-control" data-live-search="true">
                             <option selected value=""></option>
                             <option value="solteiro">Solteiro(a)</option>
                             <option value="casado">Casado(a)</option>
@@ -191,8 +191,7 @@ if (!$nome) {
                     </div>
                     <div class="form-group col-md-6">
                         <label>Tipo de Moradia</label>
-                        <select id="tipo_moradia" class="form-control">
-                            <option selected></option>
+                        <select id="tipo_moradia" title="Tipo de Moradia" class="selectpicker form-control" data-live-search="true">
                             <option>Residência Própria</option>
                             <option>Residência Aluguel</option>
                             <option>Centro de Acolhida</option>
@@ -220,8 +219,7 @@ if (!$nome) {
                     </div>
                     <div class="form-group col-md-4">
                         <label>UF</label>
-                        <select id="uf" class="form-control">
-                            <option selected></option>
+                        <select id="uf" class="selectpicker form-control" title="UF" data-live-search="true">
                             <option>RO</option>
                             <option>AC</option>
                             <option>AM</option>
@@ -458,7 +456,8 @@ if (!$nome) {
                     </div>
                     <div class="form-group col-md-6">
                         <label>Serviço RAPS de Referência</label>
-                        <input type="text" class="form-control" id="raps_referencia" placeholder="RAPS">
+                        <select id="sigla_origem" class="selectpicker form-control" title="RAPS" data-live-search="true">
+                        </select>
                     </div>
                 </div>
                 <br>
@@ -540,7 +539,7 @@ if (!$nome) {
                 <div class="form-row">
                     <div class="form-group col-md-4">
                         <label>Processo formativo o qual será inserido</label>
-                        <select id="processo_formativo_inserido" class="form-control">
+                        <select id="processo_formativo_inserido" class="selectpicker form-control" title="Selecione" data-live-search="true">
                             <option selected value=""></option>
                             <option value="artes e empreendedorismo">Artes e Empreendedorismo</option>
                             <option value="auxiliar de cozinha">Auxiliar de Cozinha - Panificação e Confeitaria</option>
@@ -662,9 +661,28 @@ if (!$nome) {
     </div>
 </div>
 
+<!--JQuery -->
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 <!-- Bootstrap core JavaScript-->
 <script src="./vendor/jquery/jquery.min.js"></script>
 <script src="./vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- DataTables  & Plugins -->
+<script src="plugins/datatables/jquery.dataTables.min.js"></script>
+<script src="plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
+<script src="plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
+<script src="plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
+<script src="plugins/datatables-buttons/js/dataTables.buttons.min.js"></script>
+<script src="plugins/datatables-buttons/js/buttons.bootstrap4.min.js"></script>
+<script src="plugins/jszip/jszip.min.js"></script>
+<script src="plugins/pdfmake/pdfmake.min.js"></script>
+<script src="plugins/pdfmake/vfs_fonts.js"></script>
+<script src="plugins/datatables-buttons/js/buttons.html5.min.js"></script>
+<script src="plugins/datatables-buttons/js/buttons.print.min.js"></script>
+<script src="plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
+<!-- Select -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.6/js/bootstrap-select.min.js"></script>
 <!-- Core plugin JavaScript-->
 <script src="./vendor/jquery-easing/jquery.easing.min.js"></script>
 <!-- Custom scripts for all pages-->
@@ -875,6 +893,17 @@ if (!$nome) {
             $("#modalUsuario").modal('show');
         });
     }
+
+    $(document).ready(function() {
+        $.getJSON("../phpwsdb/get_origem.php", function(data) {
+            for (var i = 0, len = data.length; i < len; i++) {
+                $('#sigla_origem').append($('<option>', {
+                    value: data[i].sigla_origem,
+                    text: data[i].sigla_origem
+                }));
+            }
+        });
+    });
 
     function SalvarNovaSenha() {
         var id = $("#txtID").val();

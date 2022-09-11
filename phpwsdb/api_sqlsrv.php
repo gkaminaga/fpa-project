@@ -1265,4 +1265,26 @@ class api_sqlsrv
 		$db->close();
 
 	}
+
+	function get_origem()
+	{
+		$confdb = json_decode(file_get_contents('configuration.json'), TRUE);
+
+		$db = new mysqli($confdb['host_sqlsrv'], $confdb['user_sqlsrv'], $confdb['password_sqlsrv'], $confdb['database_sqlsrv']);
+		//$teste = 3;
+		$query = "SELECT sigla_origem FROM origem";
+
+		$result = mysqli_query($db, $query);
+		if (!$result) {
+			echo "Problem with query " . $query . "<br/>";
+			echo mysqli_errors();
+			exit();
+		}
+		$list = array();
+		while ($myrow = mysqli_fetch_object($result)) {
+			$list[] = $myrow;
+		}
+		return $list;
+		$db->close();
+	}
 }
