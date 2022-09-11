@@ -12,6 +12,6 @@ $results = array(
     "aaData"=>$data
 );
 
-echo json_encode($results);
+echo json_encode($results); 
 
 ?>

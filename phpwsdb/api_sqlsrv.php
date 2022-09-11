@@ -102,7 +102,17 @@ class api_sqlsrv
 		//$db = sqlsrv_connect( $serverName, $connectionInfo);
 		$db = new mysqli($confdb['host_sqlsrv'], $confdb['user_sqlsrv'], $confdb['password_sqlsrv'], "db_porta_aberta");
 
-		$query = "SELECT nome, email, u.id, case ativo when 1 then 'Sim' when 0 then 'Não' end as ativo, case admin when 1 then 'Sim' when 0 then 'Não' end as admin,sigla, ifnull(u.pdv,'Todos') as pdv FROM usuario u  inner join eps e  on u.EpsId = e.Id order by u.id";
+		// $query = "SELECT nome, email, u.id, 
+		// case ativo when 1 then 'Sim' when 0 then 'Não' end as ativo, 
+		// case admin when 1 then 'Sim' when 0 then 'Não' end as 
+		// admin,sigla, ifnull(u.pdv,'Todos') as pdv 
+		// FROM usuario u  inner join eps e  on u.EpsId = e.id_eps order by u.id";
+
+		$query = "SELECT nome, email, u.id, 
+		case ativo when 1 then 'Sim' when 0 then 'Não' end as ativo, 
+		case admin when 1 then 'Sim' when 0 then 'Não' end as 
+		admin,sigla, ifnull(u.pdv,'Todos') as pdv 
+		FROM usuario u  inner join eps e  on u.IdCargo = e.id order by u.id";
 
 		$result = mysqli_query($db, $query);
 
@@ -393,20 +403,13 @@ class api_sqlsrv
 		//$db = sqlsrv_connect( $serverName, $connectionInfo);
 		$db = new mysqli($confdb['host_sqlsrv'], $confdb['user_sqlsrv'], $confdb['password_sqlsrv'], $confdb['database_sqlsrv']);
 
-		$query = "INSERT INTO usuario
-						(EpsId
-						,Nome
-						,Email
-						,Senha
-						,Admin
-						,Ativo)
-				VALUES
-						({eps}
-						,'{nome}'
-						,'{email}'
-						,'{senha}'
-						,{admin}
-						,{ativo})";
+		// $query = "INSERT INTO usuario (IdCargo, Nome, Email, Senha, Admin, Ativo) 
+		// 			VALUES ({eps}, '{nome}', '{email}', '{senha}', {admin}, {ativo})";
+
+		$query = "INSERT INTO usuario (IdCargo, Nome, Email, Senha, Admin, Ativo, Cargo, EpsId) 
+					VALUES ({eps}, '{nome}', '{email}', '{senha}', {admin}, {ativo}, 
+					(SELECT sigla FROM eps WHERE id = {eps}),
+					(SELECT id_eps FROM eps WHERE id = {eps}));";
 
 		$query = str_replace('{eps}', $params['eps'], $query);
 		$query = str_replace('{nome}', $params['nome'], $query);
@@ -688,10 +691,6 @@ class api_sqlsrv
 			die("Erro na conexão " . $db->connect_error);
 		}
 
-
-
-
-
 		$query = "INSERT INTO prs
 				(
 				nome_beneficiario,
@@ -774,11 +773,6 @@ class api_sqlsrv
 		$query = str_replace('{nome_beneficiario}', $params['nome_beneficiario'], $query);
 		$query = str_replace('{unidade}', $params['unidade'], $query);
 		$query = str_replace('{data_corrente}', $params['data_corrente'], $query);
-
-
-
-
-
 		$query = str_replace('{composicao_familiar}', $params['composicao_familiar'], $query);
 		$query = str_replace('{hist_vida}', $params['hist_vida'], $query);
 		$query = str_replace('{hist_cuidados_clinicos}', $params['hist_cuidados_clinicos'], $query);
@@ -813,11 +807,6 @@ class api_sqlsrv
 		$query = str_replace('{data_reavaliacao}', $params['data_reavaliacao'], $query);
 		$query = str_replace('{pontos_reavaliacao_prs}', $params['pontos_reavaliacao_prs'], $query);
 		$query = str_replace('{obs2}', $params['obs2'], $query);
-
-
-
-
-
 
 		mysqli_query($db, $query);
 		$db->close();
@@ -1193,7 +1182,8 @@ class api_sqlsrv
 		}
 	}
 
-	function adicionar_historico($params) {
+	function adicionar_historico($params)
+	{
 		$confdb = json_decode(file_get_contents('configuration.json'), TRUE);
 		$serverName = $confdb['host_sqlsrv'];
 		$connectionInfo = array("Database" => $confdb['database_sqlsrv'], "UID" => $confdb['user_sqlsrv'], "PWD" => $confdb['password_sqlsrv']);
@@ -1202,7 +1192,7 @@ class api_sqlsrv
 
 		$query = "INSERT INTO historico (id_beneficiario, nome_beneficiario, ativo, motivo, data_evento, obito, data_obito)
 			VALUES ({id}, '{nome}', {ativo}, '{motivo}', '{data_evento}', '{obito}', '{data_obito}');";
-		
+
 		$query = str_replace('{id}', $params['id'], $query);
 		$query = str_replace('{nome}', $params['nome'], $query);
 		$query = str_replace('{ativo}', $params['ativo'], $query);
@@ -1215,7 +1205,8 @@ class api_sqlsrv
 		$db->close();
 	}
 
-	function lista_historico() {
+	function lista_historico()
+	{
 		$confdb = json_decode(file_get_contents('configuration.json'), TRUE);
 		$serverName = $confdb['host_sqlsrv'];
 		$connectionInfo = array("Database" => $confdb['database_sqlsrv'], "UID" => $confdb['user_sqlsrv'], "PWD" => $confdb['password_sqlsrv']);
@@ -1236,10 +1227,10 @@ class api_sqlsrv
 		}
 		return $list;
 		$db->close();
-
 	}
 
-	function historico_detalhado($params) {
+	function historico_detalhado($params)
+	{
 		$confdb = json_decode(file_get_contents('configuration.json'), TRUE);
 		$serverName = $confdb['host_sqlsrv'];
 		$connectionInfo = array("Database" => $confdb['database_sqlsrv'], "UID" => $confdb['user_sqlsrv'], "PWD" => $confdb['password_sqlsrv']);
@@ -1260,10 +1251,9 @@ class api_sqlsrv
 		while ($myrow = mysqli_fetch_object($result)) {
 			$list[] = $myrow;
 		}
-		
+
 		return $list;
 		$db->close();
-
 	}
 
 	function get_origem()
