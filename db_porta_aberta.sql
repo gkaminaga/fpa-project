@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 10-Set-2022 às 14:25
+-- Tempo de geração: 11-Set-2022 às 16:57
 -- Versão do servidor: 10.4.24-MariaDB
 -- versão do PHP: 8.1.6
 
@@ -150,7 +150,7 @@ INSERT INTO `eps` (`Id`, `id_eps`, `sigla`, `descricao`, `pdv`) VALUES
 (26, 2, 'Diretor(a)', 'Todas as funções', NULL),
 (27, 1, 'Administrador(a)', 'Todas as funções e autorizações para criação de usuários', NULL),
 (28, 3, 'Coordenador(a) Administrativo', 'Relatórios gerenciais', NULL),
-(29, 4, 'Educador', 'Atividades pedagógicas', NULL),
+(29, 4, 'Educador(a)', 'Atividades pedagógicas', NULL),
 (31, 2, 'Coordenador(a) Geral', 'Todas as funções', NULL),
 (32, 2, 'Coordenador(a) Pedagógico(a)', 'Todas as funções', NULL),
 (33, 3, 'Técnico(a) Administrador(a)', 'Relatórios gerenciais', NULL),
@@ -225,8 +225,39 @@ CREATE TABLE `matricula` (
   `id_projeto` int(11) DEFAULT NULL,
   `id_turma` int(11) DEFAULT NULL,
   `id_beneficiario` int(11) DEFAULT NULL,
-  `data_criacao` date DEFAULT NULL
+  `data_criacao` date DEFAULT NULL,
+  `data_alteracao` date DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `origem`
+--
+
+CREATE TABLE `origem` (
+  `id` int(11) NOT NULL,
+  `sigla_origem` varchar(100) DEFAULT NULL,
+  `nome_origem` varchar(255) DEFAULT NULL,
+  `contato_origem` varchar(20) DEFAULT NULL,
+  `endereco_origem` varchar(255) DEFAULT NULL,
+  `data_criacao` date DEFAULT NULL,
+  `data_alteracao` date DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Extraindo dados da tabela `origem`
+--
+
+INSERT INTO `origem` (`id`, `sigla_origem`, `nome_origem`, `contato_origem`, `endereco_origem`, `data_criacao`, `data_alteracao`) VALUES
+(1, 'CAPS II AD JABAQUARA', 'Centros de Atenção Psicossocial II Álcool e Drogas - Jabaquara', '(11) 5011-1583', 'Praça Barão de Japurá, 1 - Vila Guarani (Zona Sul), São Paulo - SP, 04313-160', '2022-09-10', '2022-09-10'),
+(2, 'CAPS AD II SANTO AMARO', 'Centros de Atenção Psicossocial II Álcool e Drogas - Santo Amaro', '(11) 5523-3566', 'R. Bela Vista, 269 - Jardim Francisco Mendes, São Paulo - SP, 04709-001', '2022-09-10', '2022-09-10'),
+(3, 'CAPS AD III CAMPO LIMPO', 'Centros de Atenção Psicossocial III Álcool e Drogas - Jabaquara', '(11) 5841-0472', 'R. Domingos Bicudo, 385 - Vila Pirajussara, São Paulo - SP, 05786-080', '2022-09-10', '2022-09-10'),
+(4, 'CAPS AD III GRAJAÚ', 'Centros de Atenção Psicossocial III Álcool e Drogas - Grajaú', '(11) 5528-0280', 'Rua Engenheiro Guaracy Torres, 1253 - Jardim Shangrilá (Zona Sul), São Paulo - SP, 04852-000', '2022-09-10', '2022-09-10'),
+(5, 'CAPS AD III CAPELA DO SOCORRO', 'Centros de Atenção Psicossocial III Álcool e Drogas - Capela do Socorro', '(11) 5667-6277', 'Rua Luiz Rotta, 300 - Jardim Panorama, São Paulo - SP, 04836-500', '2022-09-10', '2022-09-10'),
+(6, 'CAPS AD III JD. SÃO LUIZ', 'Centros de Atenção Psicossocial III Álcool e Drogas - Jardim São Luiz', '(11) 5851-9146', 'R. Luciano Silva, 179 - Vila das Belezas, São Paulo - SP, 05841-000', '2022-09-10', '2022-09-10'),
+(7, 'CAPS III AD JD ANGELA', 'Centros de Atenção Psicossocial III Álcool e Drogas - Jardim Ângela', '(11) 5833-2838', 'R. Padre Claro, 51 - Riviera Paulista, São Paulo - SP, 04923-120', '2022-09-10', '2022-09-10'),
+(8, 'CRATOD', 'Centro de Referência de Atendimento a Tabaco, Álcool e Outras Drogas', '0800 227 2863', 'Rua Prates, 165 - Luz, São Paulo - SP, 01121-000', '2022-09-10', '2022-09-10');
 
 -- --------------------------------------------------------
 
@@ -308,10 +339,36 @@ CREATE TABLE `turmaprojeto` (
   `id` int(11) NOT NULL,
   `nome_turma` varchar(80) DEFAULT NULL,
   `id_projeto` int(11) DEFAULT NULL,
-  `data_criacao` date DEFAULT current_timestamp(),
   `data_inicio` date DEFAULT NULL,
-  `data_termino` date DEFAULT NULL
+  `data_termino` date DEFAULT NULL,
+  `data_criacao` date DEFAULT current_timestamp(),
+  `data_alteracao` date DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `unidade`
+--
+
+CREATE TABLE `unidade` (
+  `id` int(11) NOT NULL,
+  `nome_unidade` varchar(100) DEFAULT NULL,
+  `contato_unidade` varchar(20) DEFAULT NULL,
+  `endereco_unidade` varchar(100) DEFAULT NULL,
+  `ativo` tinyint(1) DEFAULT NULL,
+  `data_criacao` date DEFAULT NULL,
+  `data_alteracao` date DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Extraindo dados da tabela `unidade`
+--
+
+INSERT INTO `unidade` (`id`, `nome_unidade`, `contato_unidade`, `endereco_unidade`, `ativo`, `data_criacao`, `data_alteracao`) VALUES
+(1, 'Campo Belo', ' (11) 3115-1250', 'R. José dos Santos Júnior, 563 - Campo Belo, São Paulo - SP, 04609-011', 1, '2022-09-11', '2022-09-11'),
+(2, 'Centro', '(11) 3214-0830', 'R. Júlio Conceição, 320 - Bom Retiro, São Paulo - SP, 01126-000', 1, '2022-09-11', '2022-09-11'),
+(3, 'Ermelino Matarazzo', '(11) 2623-5656', 'Rua Saivá, 59 - Vila Marieta, São Paulo - SP, 03617-020', 1, '2022-09-11', '2022-09-11');
 
 -- --------------------------------------------------------
 
@@ -327,21 +384,23 @@ CREATE TABLE `usuario` (
   `EpsId` int(11) DEFAULT NULL,
   `Admin` varchar(45) DEFAULT NULL,
   `Ativo` int(11) DEFAULT NULL,
-  `pdv` varchar(45) DEFAULT NULL,
-  `Skill` varchar(45) DEFAULT NULL
+  `IdCargo` int(11) DEFAULT NULL,
+  `Cargo` varchar(45) DEFAULT NULL,
+  `pdv` varchar(45) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Tabela de Usuários';
 
 --
 -- Extraindo dados da tabela `usuario`
 --
 
-INSERT INTO `usuario` (`id`, `Senha`, `Email`, `Nome`, `EpsId`, `Admin`, `Ativo`, `pdv`, `Skill`) VALUES
-(23, 'MTIz', 'psicologa@teste.com', 'Fabiana ', 2, '0', 1, NULL, NULL),
-(24, 'MTIz', 'admin@teste.com', 'Admin', 1, '1', 1, NULL, NULL),
-(25, 'MTIz', 'lucas@teste.com', 'Lucas', 3, '0', 1, NULL, NULL),
-(26, 'MTIz', 'amanda@teste.com', 'Amanda', 4, '0', 1, NULL, NULL),
-(27, 'MTIz', 'psico@teste.com', 'Psicologa', 2, '0', 1, NULL, NULL),
-(29, 'MTIz', 'ivan@teste.com.br', 'Ivan', 2, '0', 1, NULL, NULL);
+INSERT INTO `usuario` (`id`, `Senha`, `Email`, `Nome`, `EpsId`, `Admin`, `Ativo`, `IdCargo`, `Cargo`, `pdv`) VALUES
+(23, 'MTIz', 'psicologa@teste.com', 'Fabiana (Coordenador(a) Geral)', 2, '0', 1, 31, 'Coordenador(a) Geral', NULL),
+(24, 'MTIz', 'admin@teste.com', 'Admin', 1, '1', 1, 27, 'Administrador(a)', NULL),
+(25, 'MTIz', 'lucas@teste.com', 'Lucas (Coord. Adm.)', 3, '0', 1, 28, 'Coordenador(a) Administrativo', NULL),
+(26, 'MTIz', 'amanda@teste.com', 'Amanda (Educador(a))', 4, '0', 1, 29, 'Educador(a)', NULL),
+(27, 'MTIz', 'psico@teste.com', 'Psicologa (Coordenador(a) Pedagógico(a))', 2, '0', 1, 32, 'Coordenador(a) Pedagógico(a)', NULL),
+(29, 'MTIz', 'ivan@teste.com.br', 'Ivan (Diretor(a))', 2, '0', 1, 26, 'Diretor(a)', NULL),
+(31, 'MTIz', 'fernando@teste.com', 'Fernando', 3, '0', 1, 33, 'Técnico(a) Administrador(a)', NULL);
 
 --
 -- Índices para tabelas despejadas
@@ -378,6 +437,12 @@ ALTER TABLE `matricula`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Índices para tabela `origem`
+--
+ALTER TABLE `origem`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Índices para tabela `projeto`
 --
 ALTER TABLE `projeto`
@@ -393,6 +458,12 @@ ALTER TABLE `prs`
 -- Índices para tabela `turmaprojeto`
 --
 ALTER TABLE `turmaprojeto`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Índices para tabela `unidade`
+--
+ALTER TABLE `unidade`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -430,6 +501,12 @@ ALTER TABLE `matricula`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
+-- AUTO_INCREMENT de tabela `origem`
+--
+ALTER TABLE `origem`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
+--
 -- AUTO_INCREMENT de tabela `projeto`
 --
 ALTER TABLE `projeto`
@@ -448,10 +525,16 @@ ALTER TABLE `turmaprojeto`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
+-- AUTO_INCREMENT de tabela `unidade`
+--
+ALTER TABLE `unidade`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
 -- AUTO_INCREMENT de tabela `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
