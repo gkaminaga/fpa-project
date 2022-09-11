@@ -114,14 +114,14 @@ if (!$nome) {
             <h5>Altere uma unidade no sistema</h5>
         </div>
         <div class="card-body mb-5">
-            <table id="dash1" class="table table-bordered table-striped" data-sort-order="desc">
+            <table id="dash1" class="table table-bordered table-striped">
                 <thead>
                     <tr>
                         <th>ID</th>
-                        <th>STATUS</th>
                         <th>UNIDADE</th>
                         <th>CONTATO</th>
                         <th>ENDERECO</th>
+                        <th>STATUS</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -129,10 +129,10 @@ if (!$nome) {
                 <tfoot>
                     <tr>
                         <th>ID</th>
-                        <th>STATUS</th>
                         <th>UNIDADE</th>
                         <th>CONTATO</th>
                         <th>ENDERECO</th>
+                        <th>STATUS</th>
                     </tr>
                 </tfoot>
             </table>
@@ -141,58 +141,47 @@ if (!$nome) {
     </div>
     <!-- /.content -->
 </div>
-<!-- /.content-wrapper
+<!-- /.content-wrapper -->
 <input type="hidden" id="hidIdUsuario" />
 <div id="modalUsuario" class="modal fade modal-fullscreen" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" data-keyboard="false" data-backdrop="static">
     <div class="modal-dialog modal-xl">
         <div class="modal-content">
             <div class="modal-header">
-                Histórico
+                Unidade
             </div>
             <div class="modal-body">
                 <div id="divModalUsuarioValidacao"></div>
                 <form>
                     <div class="form-row">
-                        <div class="form-group col-md-5">
+                        <div class="form-group col-md-6">
+                            <label>Nome:</label>
+                            <input type="text" class="form-control" id="modal_nome" placeholder="Unidade">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label>Contato:</label>
+                            <input type="text" class="form-control" id="modal_contato" placeholder="Contato">
+                        </div>
+                        <div class="form-group col-md-9">
+                            <label>Endereço:</label>
+                            <input type="text" class="form-control" id="modal_endereco" placeholder="Endereço">
+                        </div>
+                        <div class="form-group col-md-3">
                             <label>Status:</label>
-                            <input type="text" class="form-control" id="ativo" placeholder="Status" disabled>
+                            <select class="form-control" id="modal_status">
+                                <option value=1>Ativo</option>
+                                <option value=2>Inativo</option>
                             </select>
-                        </div>
-                    </div>
-                    <div class="form-row">
-                        <div class="form-group col-md-5">
-                            <label>Nome do Beneficiário:</label>
-                            <input type="text" class="form-control" id="nome_beneficiario" placeholder="Nome do beneficiário" disabled>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="form-row">
-                        <div class="form-group col-md-10">
-                            <label>Motivo:</label>
-                            <input type="text" class="form-control" id="motivo" placeholder="Motivo" disabled>
-                        </div>
-                    </div>
-                    <div class="form-row">
-                        <div class="form-group col-md-3">
-                            <label>Obito:</label>
-                            <input type="text" class="form-control" id="obito" placeholder="Obito" disabled>
-                        </div>
-                    </div>
-                    <div class="form-row">
-                        <div class="form-group col-md-3">
-                            <label>Data:</label>
-                            <input type="date" class="form-control" id="data_evento" placeholder="Data" disabled>
                         </div>
                     </div>
                 </form>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                <button id="submitButton" type="button" class="btn btn-success" onclick="window.print()">Imprimir</button>
+                <button id="submitButton" type="button" class="btn btn-primary">Salvar</button>
             </div>
         </div>
     </div>
-</div> -->
+</div>
 
 <!-- Footer -->
 <footer class="sticky-footer bg-white">
@@ -281,7 +270,7 @@ if (!$nome) {
 <script src="plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
 <!-- Custom scripts for all pages-->
 <script src="./js/sb-admin-2.min.js"></script>
-<!-- <script>
+<script>
     function Listar() {
         var table = $('#dash1').DataTable();
         table.destroy();
@@ -300,9 +289,6 @@ if (!$nome) {
                     mData: 'id'
                 },
                 {
-                    mData: 'ativo'
-                },
-                {
                     mData: 'nome_unidade'
                 },
                 {
@@ -310,6 +296,9 @@ if (!$nome) {
                 },
                 {
                     mData: 'endereco_unidade'
+                },
+                {
+                    mData: 'ativo'
                 }
             ]
         }))
@@ -319,25 +308,20 @@ if (!$nome) {
             $tds = $row.find("td:nth-child(1)"); // Finds the 2nd <td> element     
         $tds1 = $row.find("td:nth-child(2)");
         Carregar($tds.text(), $tds1.text());
-    }); -->
+    });
 
-<!-- // function Carregar(id) {
-    //     $.getJSON("../phpwsdb/historico_detalhado.php?id=" + id, function(data) {
-    //         $('#ativo').val(data[0].ativo);
-    //         $('#nome_beneficiario').val(data[0].nome_beneficiario);
-    //         $('#motivo').val(data[0].motivo);
-    //         if (data[0].obito == 0) {
-    //             $('#data_evento').val(data[0].data_evento);
-    //             $('#obito').val("Não");
-    //         } else {
-    //             $('#data_evento').val(data[0].data_obito);
-    //             $('#obito').val("Sim");
-    //         }
-    //         $("#modalUsuario").modal('show');
-    //     })
-    // }
+    function Carregar(id) {
+        $.getJSON("../phpwsdb/dados_unidades.php?id=" + id, function(data) {
+            $('#modal_nome').val(data[0].nome_unidade);
+            $('#modal_contato').val(data[0].contato_unidade);
+            $('#modal_endereco').val(data[0].endereco_unidade);
+            $('#modal_status').val(data[0].ativo);
+
+            $("#modalUsuario").modal('show');
+        })
+    }
 
     $(document).ready(async function() {
         Listar();
     });
-</script> -->
+</script>

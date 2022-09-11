@@ -1185,9 +1185,7 @@ class api_sqlsrv
 	function adicionar_historico($params)
 	{
 		$confdb = json_decode(file_get_contents('configuration.json'), TRUE);
-		$serverName = $confdb['host_sqlsrv'];
-		$connectionInfo = array("Database" => $confdb['database_sqlsrv'], "UID" => $confdb['user_sqlsrv'], "PWD" => $confdb['password_sqlsrv']);
-		//$db = sqlsrv_connect( $serverName, $connectionInfo);
+
 		$db = new mysqli($confdb['host_sqlsrv'], $confdb['user_sqlsrv'], $confdb['password_sqlsrv'], $confdb['database_sqlsrv']);
 
 		$query = "INSERT INTO historico (id_beneficiario, nome_beneficiario, ativo, motivo, data_evento, obito, data_obito)
@@ -1208,9 +1206,7 @@ class api_sqlsrv
 	function lista_historico()
 	{
 		$confdb = json_decode(file_get_contents('configuration.json'), TRUE);
-		$serverName = $confdb['host_sqlsrv'];
-		$connectionInfo = array("Database" => $confdb['database_sqlsrv'], "UID" => $confdb['user_sqlsrv'], "PWD" => $confdb['password_sqlsrv']);
-		//$db = sqlsrv_connect( $serverName, $connectionInfo);
+
 		$db = new mysqli($confdb['host_sqlsrv'], $confdb['user_sqlsrv'], $confdb['password_sqlsrv'], $confdb['database_sqlsrv']);
 
 		$query = "SELECT * FROM historico";
@@ -1232,9 +1228,7 @@ class api_sqlsrv
 	function historico_detalhado($params)
 	{
 		$confdb = json_decode(file_get_contents('configuration.json'), TRUE);
-		$serverName = $confdb['host_sqlsrv'];
-		$connectionInfo = array("Database" => $confdb['database_sqlsrv'], "UID" => $confdb['user_sqlsrv'], "PWD" => $confdb['password_sqlsrv']);
-		//$db = sqlsrv_connect( $serverName, $connectionInfo);
+
 		$db = new mysqli($confdb['host_sqlsrv'], $confdb['user_sqlsrv'], $confdb['password_sqlsrv'], $confdb['database_sqlsrv']);
 
 		$query = "SELECT * FROM historico WHERE id = {id}";
@@ -1261,7 +1255,7 @@ class api_sqlsrv
 		$confdb = json_decode(file_get_contents('configuration.json'), TRUE);
 
 		$db = new mysqli($confdb['host_sqlsrv'], $confdb['user_sqlsrv'], $confdb['password_sqlsrv'], $confdb['database_sqlsrv']);
-		//$teste = 3;
+		
 		$query = "SELECT sigla_origem FROM origem";
 
 		$result = mysqli_query($db, $query);
@@ -1325,9 +1319,7 @@ class api_sqlsrv
 	function dados_origens($params)
 	{
 		$confdb = json_decode(file_get_contents('configuration.json'), TRUE);
-		$serverName = $confdb['host_sqlsrv'];
-		$connectionInfo = array("Database" => $confdb['database_sqlsrv'], "UID" => $confdb['user_sqlsrv'], "PWD" => $confdb['password_sqlsrv']);
-		//$db = sqlsrv_connect( $serverName, $connectionInfo);
+
 		$db = new mysqli($confdb['host_sqlsrv'], $confdb['user_sqlsrv'], $confdb['password_sqlsrv'], $confdb['database_sqlsrv']);
 
 		$query = "SELECT * FROM origem WHERE id = {id}";
@@ -1348,4 +1340,30 @@ class api_sqlsrv
 		return $list;
 		$db->close();
 	}
+
+	function dados_unidades($params)
+	{
+		$confdb = json_decode(file_get_contents('configuration.json'), TRUE);
+
+		$db = new mysqli($confdb['host_sqlsrv'], $confdb['user_sqlsrv'], $confdb['password_sqlsrv'], $confdb['database_sqlsrv']);
+
+		$query = "SELECT * FROM unidade WHERE id = {id}";
+
+		$query = str_replace('{id}', $params['id'], $query);
+
+		$result = mysqli_query($db, $query);
+		if (!$result) {
+			echo "Problem with query " . $query . "<br/>";
+			echo mysqli_errors();
+			exit();
+		}
+		$list = array();
+		while ($myrow = mysqli_fetch_object($result)) {
+			$list[] = $myrow;
+		}
+
+		return $list;
+		$db->close();
+	}
+
 }

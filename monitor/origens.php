@@ -180,7 +180,7 @@ if (!$nome) {
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                <button id="submitButton" type="button" class="btn btn-success" onclick="window.print()">Imprimir</button>
+                <button id="submitButton" type="button" class="btn btn-primary">Salvar</button>
             </div>
         </div>
     </div>
@@ -315,7 +315,7 @@ if (!$nome) {
     });
 
     function Carregar(id) {
-        $.getJSON("../phpwsdb/dados_origem.php?id=" + id, function(data) {
+        $.getJSON("../phpwsdb/dados_origens.php?id=" + id, function(data) {
             $('#modal_sigla').val(data[0].sigla_origem);
             $('#modal_nome').val(data[0].nome_origem);
             $('#modal_contato').val(data[0].contato_origem);
