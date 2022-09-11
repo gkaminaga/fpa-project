@@ -25,7 +25,7 @@ if (!$nome) {
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>FPA - Histórico</title>
+    <title>FPA - Origens</title>
 
     <link rel="icon" type="image/x-icon" href="./img/logo.ico">
     <!-- Google Font: Source Sans Pro -->
@@ -73,7 +73,7 @@ if (!$nome) {
 <?php if ($_SESSION['eps'] === '1') include __DIR__ . '/header/administrador_header.php'; ?>
 
 <!-- Carrega o Menu para a EPS - Diretor(a), Coordenador(a) Geral, Coordenador(a) Pedagógico(a) -->
-<?php if ($_SESSION['eps'] === '2') include __DIR__ . '/header/diretor_header.php'; ?>
+<?php if ($_SESSION['eps'] === '2') header('Location: beneficiarios.php'); ?>
 
 <!-- Controle de acessos para a EPS - Coordenador(a) Administrativo, Técnico(a) Administrador(a) -->
 <?php if ($_SESSION['eps'] === '3') header('Location: beneficiarios.php'); ?>
@@ -85,21 +85,48 @@ if (!$nome) {
 <div class="container-fluid">
     <div class="card">
         <div class="card-header">
-            <h3 class="card-title">Buscar Histórico do Beneficiário</h3>
-            <h5>Duplo clique para exibir detalhes do histórico!</h5>
+            <h3 class="card-title">Cadastrar Origem</h3>
+            <h5>Cadastre uma nova origem no sistema</h5>
         </div>
         <!-- /.card-header -->
-        <div class="card-body">
+        <div class="card-body mb-5">
+            <form>
+                <div class="form-row">
+                    <div class="form-group col-md-3">
+                        <label>Sigla</label>
+                        <input type="text" class="form-control" id="sigla" placeholder="Sigla">
+                    </div>
+                    <div class="form-group col-md-9">
+                        <label>Nome</label>
+                        <input type="" class="form-control" id="nome" placeholder="Nome">
+                    </div>
+                    <div class="form-group col-md-3">
+                        <label>Contato</label>
+                        <input type="" class="form-control" id="contato" placeholder="Contato">
+                    </div>
+                    <div class="form-group col-md-9">
+                        <label>Endereço</label>
+                        <input type="text" class="form-control" id="endereco" placeholder="Endereço">
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary" onclick="javascript:cadastro();">Cadastrar</button>
+            </form>
+        </div>
 
+        <div class="card-header">
+            <h3 class="card-title">Alterar Origem</h3>
+            <h5>Altere uma origem do sistema</h5>
+        </div>
+
+        <div class="card-body">
             <table id="dash1" class="table table-bordered table-striped" data-sort-order="desc">
                 <thead>
                     <tr>
                         <th>ID</th>
-                        <th>STATUS</th>
-                        <th>ID DO BENEFICIÁRIO</th>
-                        <th>NOME DO BENEFICIÁRIO</th>
-                        <th>DATA</th>
-                        <th>DATA OBITO</th>
+                        <th>SIGLA</th>
+                        <th>NOME</th>
+                        <th>CONTATO</th>
+                        <th>ENDERECO</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -107,60 +134,46 @@ if (!$nome) {
                 <tfoot>
                     <tr>
                         <th>ID</th>
-                        <th>STATUS</th>
-                        <th>ID DO BENEFICIÁRIO</th>
-                        <th>NOME DO BENEFICIÁRIO</th>
-                        <th>DATA</th>
-                        <th>DATA OBITO</th>
+                        <th>SIGLA</th>
+                        <th>NOME</th>
+                        <th>CONTATO</th>
+                        <th>ENDERECO</th>
                     </tr>
                 </tfoot>
             </table>
         </div>
-        <!-- /.card-body -->
     </div>
-    <!-- /.content -->
+    <!-- /.card-body -->
 </div>
-<!-- /.content-wrapper -->
+<!-- /.content -->
+</div>
+<!--.content-wrapper -->
 <input type="hidden" id="hidIdUsuario" />
 <div id="modalUsuario" class="modal fade modal-fullscreen" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" data-keyboard="false" data-backdrop="static">
     <div class="modal-dialog modal-xl">
         <div class="modal-content">
             <div class="modal-header">
-                Histórico
+                Origem
             </div>
             <div class="modal-body">
                 <div id="divModalUsuarioValidacao"></div>
                 <form>
-                <div class="form-row">
-                        <div class="form-group col-md-5">
-                            <label>Status:</label>
-                            <input type="text" class="form-control" id="ativo" placeholder="Status" disabled>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="form-row">
-                        <div class="form-group col-md-5">
-                            <label>Nome do Beneficiário:</label>
-                            <input type="text" class="form-control" id="nome_beneficiario" placeholder="Nome do beneficiário" disabled>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="form-row">
-                        <div class="form-group col-md-10">
-                            <label>Motivo:</label>
-                            <input type="text" class="form-control" id="motivo" placeholder="Motivo" disabled>
-                        </div>
-                    </div>
                     <div class="form-row">
                         <div class="form-group col-md-3">
-                            <label>Obito:</label>
-                            <input type="text" class="form-control" id="obito" placeholder="Obito" disabled>
+                            <label>Sigla:</label>
+                            <input type="text" class="form-control" id="modal_sigla" placeholder="Sigla">
                         </div>
-                    </div>
-                    <div class="form-row">
+                        <div class="form-group col-md-9">
+                            <label>Nome:</label>
+                            <input type="text" class="form-control" id="modal_nome" placeholder="Nome">
+                        </div>
                         <div class="form-group col-md-3">
-                            <label>Data:</label>
-                            <input type="date" class="form-control" id="data_evento" placeholder="Data" disabled>
+                            <label>Contato:</label>
+                            <input type="text" class="form-control" id="modal_contato" placeholder="(DDD)XXXX-XXXX">
+                        </div>
+                        <div class="form-group col-md-9">
+                            <label>Endereço:</label>
+                            <input type="text" class="form-control" id="modal_endereco" placeholder="Endereço">
                         </div>
                     </div>
                 </form>
@@ -268,9 +281,8 @@ if (!$nome) {
 
         $($("#dash1").DataTable({
             dom: "Bfrtip",
-            order: [0, "desc"],
             ajax: {
-                url: "../phpwsdb/lista_historico.php",
+                url: "../phpwsdb/lista_origem.php",
                 type: 'GET',
                 dataType: 'json'
             },
@@ -281,19 +293,16 @@ if (!$nome) {
                     mData: 'id'
                 },
                 {
-                    mData: 'ativo'
+                    mData: 'sigla_origem'
                 },
                 {
-                    mData: 'id_beneficiario'
+                    mData: 'nome_origem'
                 },
                 {
-                    mData: 'nome_beneficiario'
+                    mData: 'contato_origem'
                 },
                 {
-                    mData: 'data_evento'
-                },
-                {
-                    mData: 'data_obito'
+                    mData: 'endereco_origem'
                 }
             ]
         }))
@@ -306,21 +315,16 @@ if (!$nome) {
     });
 
     function Carregar(id) {
-        $.getJSON("../phpwsdb/historico_detalhado.php?id=" + id, function(data) {
-            $('#ativo').val(data[0].ativo);
-            $('#nome_beneficiario').val(data[0].nome_beneficiario);
-            $('#motivo').val(data[0].motivo);
-            if (data[0].obito == 0) {
-                $('#data_evento').val(data[0].data_evento);            
-                $('#obito').val("Não");
-            } else {
-                $('#data_evento').val(data[0].data_obito);            
-                $('#obito').val("Sim");
-            }
+        $.getJSON("../phpwsdb/dados_origem.php?id=" + id, function(data) {
+            $('#modal_sigla').val(data[0].sigla_origem);
+            $('#modal_nome').val(data[0].nome_origem);
+            $('#modal_contato').val(data[0].contato_origem);
+            $('#modal_endereco').val(data[0].endereco_origem);
+
             $("#modalUsuario").modal('show');
         })
     }
-    
+
     $(document).ready(async function() {
         Listar();
     });

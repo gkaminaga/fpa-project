@@ -88,7 +88,6 @@ if (!$nome) {
                     <div class="form-group col-md-4">
                         <label>Unidade</label>
                         <select id="unidade" title="Unidade" class="selectpicker form-control" data-live-search="true">
-                            <option selected></option>
                             <option>Brasilândia</option>
                             <option>Campo Belo</option>
                             <option>Centro</option>
@@ -133,7 +132,6 @@ if (!$nome) {
                     <div class="form-group col-md-4">
                         <label>Sexo/Gênero</label>
                         <select id="sexo" title="Sexo/Gênero" class="selectpicker form-control" data-live-search="true">
-                            <option selected value=""></option>
                             <option value="Masculino">Masculino</option>
                             <option value="Feminino">Feminino</option>
                         </select>
@@ -141,7 +139,6 @@ if (!$nome) {
                     <div class="form-group col-md-4">
                         <label>Etnia</label>
                         <select id="etnia" title="Etnia" class="selectpicker form-control" data-live-search="true">
-                            <option selected value=""></option>
                             <option value="branca">Branca</option>
                             <option value="negra">Negra</option>
                             <option value="amarela">Amarela</option>
@@ -153,7 +150,6 @@ if (!$nome) {
                     <div class="form-group col-md-4">
                         <label>Orientação Sexual</label>
                         <select id="orientacao_sexual" title="Orientação Sexual" class="selectpicker form-control" data-live-search="true">
-                            <option selected value=""></option>
                             <option value="heterossexual">Heterossexual</option>
                             <option value="homossexual">Homossexual</option>
                             <option value="lesbica">Lésbica</option>
@@ -171,7 +167,6 @@ if (!$nome) {
                     <div class="form-group col-md-4">
                         <label>Estado Civil</label>
                         <select id="estado_civil" title="Estado Civil" class="selectpicker form-control" data-live-search="true">
-                            <option selected value=""></option>
                             <option value="solteiro">Solteiro(a)</option>
                             <option value="casado">Casado(a)</option>
                             <option value="divorciado">Divorciado(a)</option>
@@ -540,7 +535,6 @@ if (!$nome) {
                     <div class="form-group col-md-4">
                         <label>Processo formativo o qual será inserido</label>
                         <select id="processo_formativo_inserido" class="selectpicker form-control" title="Selecione" data-live-search="true">
-                            <option selected value=""></option>
                             <option value="artes e empreendedorismo">Artes e Empreendedorismo</option>
                             <option value="auxiliar de cozinha">Auxiliar de Cozinha - Panificação e Confeitaria</option>
                             <option value="higienizacao e limpeza">Higienização e Limpeza</option>

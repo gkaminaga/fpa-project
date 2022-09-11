@@ -82,13 +82,17 @@ if ($_SESSION['admin'] == false){
 <!-- Content Wrapper. Contains page content -->
 <div class="container-fluid">
   <!-- Content Header (Page header) -->
-  <div>
-    <button type="button" class="btn btn-block btn-primary" onclick="javascript:NovoUsuario();">Novo Usuário</button>
+  <div class="card">
+    <div class="card-header m-5">
+      <button type="button" class="btn btn-block btn-primary" onclick="javascript:NovoUsuario();">Cadastrar novo usuário</button>
+    </div>
   </div>
+
   <div class="card">
     <div class="card-header">
       <h3 class="card-title">Usuarios cadastrados</h3>
     </div>
+
     <!-- /.card-header -->
     <div class="card-body">
 
@@ -119,7 +123,7 @@ if ($_SESSION['admin'] == false){
           </tr>
         </tfoot>
       </table>
-      </div>
+    </div>
     <!-- /.card-body -->
   </div>
   <!-- /.content -->

@@ -25,7 +25,7 @@ if (!$nome) {
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>FPA - Histórico</title>
+    <title>FPA - Unidades</title>
 
     <link rel="icon" type="image/x-icon" href="./img/logo.ico">
     <!-- Google Font: Source Sans Pro -->
@@ -73,7 +73,7 @@ if (!$nome) {
 <?php if ($_SESSION['eps'] === '1') include __DIR__ . '/header/administrador_header.php'; ?>
 
 <!-- Carrega o Menu para a EPS - Diretor(a), Coordenador(a) Geral, Coordenador(a) Pedagógico(a) -->
-<?php if ($_SESSION['eps'] === '2') include __DIR__ . '/header/diretor_header.php'; ?>
+<?php if ($_SESSION['eps'] === '2') header('Location: beneficiarios.php'); ?>
 
 <!-- Controle de acessos para a EPS - Coordenador(a) Administrativo, Técnico(a) Administrador(a) -->
 <?php if ($_SESSION['eps'] === '3') header('Location: beneficiarios.php'); ?>
@@ -85,21 +85,43 @@ if (!$nome) {
 <div class="container-fluid">
     <div class="card">
         <div class="card-header">
-            <h3 class="card-title">Buscar Histórico do Beneficiário</h3>
-            <h5>Duplo clique para exibir detalhes do histórico!</h5>
+            <h3 class="card-title">Cadastrar Unidade</h3>
+            <h5>Cadastre uma nova unidade no sistema</h5>
         </div>
         <!-- /.card-header -->
-        <div class="card-body">
+        <div class="card-body mb-5">
+            <form>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label>Unidade</label>
+                        <input type="text" class="form-control" id="unidade" placeholder="Unidade">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label>Contato</label>
+                        <input type="" class="form-control" id="contato" placeholder="Contato">
+                    </div>
+                    <div class="form-group col-md-12">
+                        <label>Endereço</label>
+                        <input type="text" class="form-control" id="endereco" placeholder="Endereço">
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary" onclick="javascript:cadastro();">Cadastrar</button>
+            </form>
+        </div>
 
+        <div class="card-header">
+            <h3 class="card-title">Alterar Unidade</h3>
+            <h5>Altere uma unidade no sistema</h5>
+        </div>
+        <div class="card-body mb-5">
             <table id="dash1" class="table table-bordered table-striped" data-sort-order="desc">
                 <thead>
                     <tr>
                         <th>ID</th>
                         <th>STATUS</th>
-                        <th>ID DO BENEFICIÁRIO</th>
-                        <th>NOME DO BENEFICIÁRIO</th>
-                        <th>DATA</th>
-                        <th>DATA OBITO</th>
+                        <th>UNIDADE</th>
+                        <th>CONTATO</th>
+                        <th>ENDERECO</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -108,10 +130,9 @@ if (!$nome) {
                     <tr>
                         <th>ID</th>
                         <th>STATUS</th>
-                        <th>ID DO BENEFICIÁRIO</th>
-                        <th>NOME DO BENEFICIÁRIO</th>
-                        <th>DATA</th>
-                        <th>DATA OBITO</th>
+                        <th>UNIDADE</th>
+                        <th>CONTATO</th>
+                        <th>ENDERECO</th>
                     </tr>
                 </tfoot>
             </table>
@@ -120,7 +141,7 @@ if (!$nome) {
     </div>
     <!-- /.content -->
 </div>
-<!-- /.content-wrapper -->
+<!-- /.content-wrapper
 <input type="hidden" id="hidIdUsuario" />
 <div id="modalUsuario" class="modal fade modal-fullscreen" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" data-keyboard="false" data-backdrop="static">
     <div class="modal-dialog modal-xl">
@@ -131,7 +152,7 @@ if (!$nome) {
             <div class="modal-body">
                 <div id="divModalUsuarioValidacao"></div>
                 <form>
-                <div class="form-row">
+                    <div class="form-row">
                         <div class="form-group col-md-5">
                             <label>Status:</label>
                             <input type="text" class="form-control" id="ativo" placeholder="Status" disabled>
@@ -171,7 +192,7 @@ if (!$nome) {
             </div>
         </div>
     </div>
-</div>
+</div> -->
 
 <!-- Footer -->
 <footer class="sticky-footer bg-white">
@@ -260,17 +281,15 @@ if (!$nome) {
 <script src="plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
 <!-- Custom scripts for all pages-->
 <script src="./js/sb-admin-2.min.js"></script>
-<script>
+<!-- <script>
     function Listar() {
         var table = $('#dash1').DataTable();
-
         table.destroy();
 
         $($("#dash1").DataTable({
             dom: "Bfrtip",
-            order: [0, "desc"],
             ajax: {
-                url: "../phpwsdb/lista_historico.php",
+                url: "../phpwsdb/lista_unidade.php",
                 type: 'GET',
                 dataType: 'json'
             },
@@ -284,16 +303,13 @@ if (!$nome) {
                     mData: 'ativo'
                 },
                 {
-                    mData: 'id_beneficiario'
+                    mData: 'nome_unidade'
                 },
                 {
-                    mData: 'nome_beneficiario'
+                    mData: 'contato_unidade'
                 },
                 {
-                    mData: 'data_evento'
-                },
-                {
-                    mData: 'data_obito'
+                    mData: 'endereco_unidade'
                 }
             ]
         }))
@@ -303,25 +319,25 @@ if (!$nome) {
             $tds = $row.find("td:nth-child(1)"); // Finds the 2nd <td> element     
         $tds1 = $row.find("td:nth-child(2)");
         Carregar($tds.text(), $tds1.text());
-    });
+    }); -->
 
-    function Carregar(id) {
-        $.getJSON("../phpwsdb/historico_detalhado.php?id=" + id, function(data) {
-            $('#ativo').val(data[0].ativo);
-            $('#nome_beneficiario').val(data[0].nome_beneficiario);
-            $('#motivo').val(data[0].motivo);
-            if (data[0].obito == 0) {
-                $('#data_evento').val(data[0].data_evento);            
-                $('#obito').val("Não");
-            } else {
-                $('#data_evento').val(data[0].data_obito);            
-                $('#obito').val("Sim");
-            }
-            $("#modalUsuario").modal('show');
-        })
-    }
-    
+<!-- // function Carregar(id) {
+    //     $.getJSON("../phpwsdb/historico_detalhado.php?id=" + id, function(data) {
+    //         $('#ativo').val(data[0].ativo);
+    //         $('#nome_beneficiario').val(data[0].nome_beneficiario);
+    //         $('#motivo').val(data[0].motivo);
+    //         if (data[0].obito == 0) {
+    //             $('#data_evento').val(data[0].data_evento);
+    //             $('#obito').val("Não");
+    //         } else {
+    //             $('#data_evento').val(data[0].data_obito);
+    //             $('#obito').val("Sim");
+    //         }
+    //         $("#modalUsuario").modal('show');
+    //     })
+    // }
+
     $(document).ready(async function() {
         Listar();
     });
-</script>
+</script> -->

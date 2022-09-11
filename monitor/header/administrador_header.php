@@ -20,12 +20,15 @@
             <!-- Nav Item - Pages Collapse Menu -->
             <li class="nav-item active">
                 <a class="nav-link collapsed" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
-                <i class="nav-icon fa fa-address-card"></i>
-                    <span>Usuários</span>
+                    <i class="nav-icon fa fa-address-card"></i>
+                    <span>Cadastrar</span>
                 </a>
                 <div class="collapse" id="collapseExample">
                     <div class="bg-white py-2 collapse-inner rounded">
-                    <a class="collapse-item" href="usuarios.php">Cadastrar</a>                    </div>
+                        <a class="collapse-item" href="usuarios.php">Usuários</a>
+                        <a class="collapse-item" href="unidades.php">Unidades</a>
+                        <a class="collapse-item" href="origens.php">Origem </a>
+                    </div>
                 </div>
             </li>
 
@@ -108,11 +111,11 @@
                         <!-- <li class="nav-item dropdown no-arrow mx-1">
                             <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <i class="fas fa-bell fa-fw"></i> -->
-                                <!-- Counter - Alerts -->
-                                <!-- <span class="badge badge-danger badge-counter">3+</span>
+                        <!-- Counter - Alerts -->
+                        <!-- <span class="badge badge-danger badge-counter">3+</span>
                             </a> -->
-                            <!-- Dropdown - Alerts -->
-                            <!-- <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="alertsDropdown">
+                        <!-- Dropdown - Alerts -->
+                        <!-- <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="alertsDropdown">
                                 <h6 class="dropdown-header">
                                     Alerts Center
                                 </h6>
