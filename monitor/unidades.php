@@ -94,7 +94,7 @@ if (!$nome) {
                 <div class="form-row">
                     <div class="form-group col-md-6">
                         <label>Unidade</label>
-                        <input type="text" class="form-control" id="unidade" placeholder="Unidade">
+                        <input type="text" class="form-control" id="unidade" placeholder="Unidade" required>
                     </div>
                     <div class="form-group col-md-6">
                         <label>Contato</label>
@@ -155,7 +155,7 @@ if (!$nome) {
                     <div class="form-row">
                         <div class="form-group col-md-6">
                             <label>Nome:</label>
-                            <input type="text" class="form-control" id="modal_nome" placeholder="Unidade">
+                            <input type="text" class="form-control" id="modal_nome" placeholder="Unidade" required>
                         </div>
                         <div class="form-group col-md-6">
                             <label>Contato:</label>

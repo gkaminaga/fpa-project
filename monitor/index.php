@@ -88,11 +88,6 @@ if (!$nome) {
                     <div class="form-group col-md-4">
                         <label>Unidade</label>
                         <select id="unidade" title="Unidade" class="selectpicker form-control" data-live-search="true">
-                            <option>Brasilândia</option>
-                            <option>Campo Belo</option>
-                            <option>Centro</option>
-                            <option>Ermelino Matarazzo</option>
-                            <option>Heliópolis</option>
                         </select>
                     </div>
                     <div class="form-group col-md-4">
@@ -894,6 +889,14 @@ if (!$nome) {
                 $('#sigla_origem').append($('<option>', {
                     value: data[i].sigla_origem,
                     text: data[i].sigla_origem
+                }));
+            }
+        });
+        $.getJSON("../phpwsdb/get_unidade.php", function(data) {
+            for (var i = 0, len = data.length; i < len; i++) {
+                $('#unidade').append($('<option>', {
+                    value: data[i].nome_unidade,
+                    text: data[i].nome_unidade
                 }));
             }
         });
