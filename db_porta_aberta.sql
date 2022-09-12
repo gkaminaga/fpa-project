@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 11-Set-2022 às 16:57
+-- Tempo de geração: 12-Set-2022 às 04:05
 -- Versão do servidor: 10.4.24-MariaDB
 -- versão do PHP: 8.1.6
 
@@ -271,8 +271,17 @@ CREATE TABLE `projeto` (
   `tipo_projeto` varchar(80) DEFAULT NULL,
   `id_responsavel` int(11) DEFAULT NULL,
   `nome_responsavel` varchar(80) DEFAULT NULL,
-  `data_criacao` date DEFAULT NULL
+  `data_criacao` date DEFAULT NULL,
+  `data_alteracao` date DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Extraindo dados da tabela `projeto`
+--
+
+INSERT INTO `projeto` (`id`, `nome_projeto`, `tipo_projeto`, `id_responsavel`, `nome_responsavel`, `data_criacao`, `data_alteracao`) VALUES
+(1, 'Jardinagem e Horta', 'POT - Programa Operação Trabalho', 26, 'Amanda (Educador(a))', '2022-09-11', '2022-09-11'),
+(2, 'Agricultura Urbana', 'Curso Geral', 26, 'Amanda (Educador(a))', '2022-09-11', '2022-09-11');
 
 -- --------------------------------------------------------
 
@@ -510,7 +519,7 @@ ALTER TABLE `origem`
 -- AUTO_INCREMENT de tabela `projeto`
 --
 ALTER TABLE `projeto`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de tabela `prs`
