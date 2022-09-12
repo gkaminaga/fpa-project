@@ -1388,4 +1388,73 @@ class api_sqlsrv
 		$db->close();
 	}
 
+	function lista_projeto()
+	{
+		$confdb = json_decode(file_get_contents('configuration.json'), TRUE);
+
+		$db = new mysqli($confdb['host_sqlsrv'], $confdb['user_sqlsrv'], $confdb['password_sqlsrv'], $confdb['database_sqlsrv']);
+		
+		$query = "SELECT id, nome_projeto, tipo_projeto, nome_responsavel FROM projeto";
+
+		$result = mysqli_query($db, $query);
+		if (!$result) {
+			echo "Problem with query " . $query . "<br/>";
+			echo mysqli_errors();
+			exit();
+		}
+		$list = array();
+		while ($myrow = mysqli_fetch_object($result)) {
+			$list[] = $myrow;
+		}
+		return $list;
+		$db->close();
+	}
+
+	function dados_projetos($params)
+	{
+		$confdb = json_decode(file_get_contents('configuration.json'), TRUE);
+
+		$db = new mysqli($confdb['host_sqlsrv'], $confdb['user_sqlsrv'], $confdb['password_sqlsrv'], $confdb['database_sqlsrv']);
+
+		$query = "SELECT * FROM projeto WHERE id = {id}";
+
+		$query = str_replace('{id}', $params['id'], $query);
+
+		$result = mysqli_query($db, $query);
+		if (!$result) {
+			echo "Problem with query " . $query . "<br/>";
+			echo mysqli_errors();
+			exit();
+		}
+		$list = array();
+		while ($myrow = mysqli_fetch_object($result)) {
+			$list[] = $myrow;
+		}
+
+		return $list;
+		$db->close();
+	}
+
+	function get_projeto_responsavel()
+	{
+		$confdb = json_decode(file_get_contents('configuration.json'), TRUE);
+
+		$db = new mysqli($confdb['host_sqlsrv'], $confdb['user_sqlsrv'], $confdb['password_sqlsrv'], $confdb['database_sqlsrv']);
+		
+		$query = "SELECT id, Nome FROM usuario WHERE EpsId = 4 AND Ativo = 1";
+
+		$result = mysqli_query($db, $query);
+		if (!$result) {
+			echo "Problem with query " . $query . "<br/>";
+			echo mysqli_errors();
+			exit();
+		}
+		$list = array();
+		while ($myrow = mysqli_fetch_object($result)) {
+			$list[] = $myrow;
+		}
+		return $list;
+		$db->close();
+	}
+
 }

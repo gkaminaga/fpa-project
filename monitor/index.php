@@ -87,7 +87,7 @@ if (!$nome) {
                 <div class="form-row">
                     <div class="form-group col-md-4">
                         <label>Unidade</label>
-                        <select id="unidade" title="Unidade" class="selectpicker form-control" data-live-search="true">
+                        <select id="unidade" class="selectpicker form-control" title="Unidade" data-live-search="true">
                         </select>
                     </div>
                     <div class="form-group col-md-4">

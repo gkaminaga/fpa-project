@@ -26,8 +26,9 @@
                 <div class="collapse" id="collapseExample">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <a class="collapse-item" href="usuarios.php">Usuários</a>
+                        <a class="collapse-item" href="projetos.php">Projetos</a>
                         <a class="collapse-item" href="unidades.php">Unidades</a>
-                        <a class="collapse-item" href="origens.php">Origem </a>
+                        <a class="collapse-item" href="origens.php">Origem</a>
                     </div>
                 </div>
             </li>
