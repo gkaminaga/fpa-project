@@ -712,7 +712,8 @@ if ($_SESSION['admin'] == false){
     strAlert += "</div>";
 
     $("#" + div).html(strAlert);
-    $("#" + div).show(100);
+    $("#" + div).show(1000);
+    $("#" + div).delay(1000).hide(1000);
   }
 </script>
 </body>

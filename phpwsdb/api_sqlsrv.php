@@ -1255,7 +1255,7 @@ class api_sqlsrv
 		$confdb = json_decode(file_get_contents('configuration.json'), TRUE);
 
 		$db = new mysqli($confdb['host_sqlsrv'], $confdb['user_sqlsrv'], $confdb['password_sqlsrv'], $confdb['database_sqlsrv']);
-		
+
 		$query = "SELECT sigla_origem FROM origem";
 
 		$result = mysqli_query($db, $query);
@@ -1371,7 +1371,7 @@ class api_sqlsrv
 		$confdb = json_decode(file_get_contents('configuration.json'), TRUE);
 
 		$db = new mysqli($confdb['host_sqlsrv'], $confdb['user_sqlsrv'], $confdb['password_sqlsrv'], $confdb['database_sqlsrv']);
-		
+
 		$query = "SELECT nome_unidade FROM unidade";
 
 		$result = mysqli_query($db, $query);
@@ -1393,8 +1393,8 @@ class api_sqlsrv
 		$confdb = json_decode(file_get_contents('configuration.json'), TRUE);
 
 		$db = new mysqli($confdb['host_sqlsrv'], $confdb['user_sqlsrv'], $confdb['password_sqlsrv'], $confdb['database_sqlsrv']);
-		
-		$query = "SELECT id, nome_projeto, tipo_projeto, nome_responsavel FROM projeto";
+
+		$query = "SELECT id, nome_projeto, tipo_projeto, id_responsavel, nome_responsavel FROM projeto";
 
 		$result = mysqli_query($db, $query);
 		if (!$result) {
@@ -1440,7 +1440,7 @@ class api_sqlsrv
 		$confdb = json_decode(file_get_contents('configuration.json'), TRUE);
 
 		$db = new mysqli($confdb['host_sqlsrv'], $confdb['user_sqlsrv'], $confdb['password_sqlsrv'], $confdb['database_sqlsrv']);
-		
+
 		$query = "SELECT id, Nome FROM usuario WHERE EpsId = 4 AND Ativo = 1";
 
 		$result = mysqli_query($db, $query);
@@ -1457,4 +1457,43 @@ class api_sqlsrv
 		$db->close();
 	}
 
+	function inserir_projeto($params)
+	{
+		$confdb = json_decode(file_get_contents('configuration.json'), TRUE);
+
+		$db = new mysqli($confdb['host_sqlsrv'], $confdb['user_sqlsrv'], $confdb['password_sqlsrv'], $confdb['database_sqlsrv']);
+
+		$query = "INSERT INTO projeto (nome_projeto, tipo_projeto, id_responsavel, nome_responsavel) 
+		VALUES ('{nome}', '{tipo}', {id_responsavel}, (SELECT Nome FROM usuario WHERE id={id_responsavel}))";
+
+		$query = str_replace('{nome}', $params['nome'], $query);
+		$query = str_replace('{tipo}', $params['tipo'], $query);
+		$query = str_replace('{id_responsavel}', $params['id_responsavel'], $query);
+
+		mysqli_query($db, $query);
+		$db->close();
+	}
+
+	function alterar_projeto($params)
+	{
+		$confdb = json_decode(file_get_contents('configuration.json'), TRUE);
+
+		$db = new mysqli($confdb['host_sqlsrv'], $confdb['user_sqlsrv'], $confdb['password_sqlsrv'], $confdb['database_sqlsrv']);
+
+		$query = "UPDATE projeto SET 
+				nome_projeto = '{nome}', 
+				tipo_projeto = '{tipo}', 
+				id_responsavel = {id_responsavel}, 
+				nome_responsavel = '{responsavel}'
+				WHERE id = {id}";
+
+		$query = str_replace('{id}', $params['id'], $query);
+		$query = str_replace('{nome}', $params['nome'], $query);
+		$query = str_replace('{tipo}', $params['tipo'], $query);
+		$query = str_replace('{id_responsavel}', $params['id_responsavel'], $query);
+		$query = str_replace('{responsavel}', $params['responsavel'], $query);
+		
+		mysqli_query($db, $query);
+		$db->close();
+	}
 }

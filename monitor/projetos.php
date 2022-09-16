@@ -88,8 +88,10 @@ if (!$nome) {
             <h3 class="card-title">Cadastrar Projetos</h3>
             <h5>Cadastre uma novo projeto no sistema</h5>
         </div>
+
         <!-- /.card-header -->
         <div class="card-body mb-5">
+            <div id="validacao"></div>
             <form>
                 <div class="form-row">
                     <div class="form-group col-md-6">
@@ -98,15 +100,15 @@ if (!$nome) {
                     </div>
                     <div class="form-group col-md-6">
                         <label>Tipo</label>
-                        <input type="" class="form-control" id="tipo" placeholder="Tipo">
+                        <input type="text" class="form-control" id="tipo" placeholder="Tipo">
                     </div>
                     <div class="form-group col-md-12">
                         <label>Nome do Responsável</label>
-                        <select id="resposavel" class="selectpicker form-control" title="Nome" data-live-search="true">
+                        <select id="id_responsavel" class="selectpicker form-control" title="Nome" data-live-search="true">
                         </select>
                     </div>
                 </div>
-                <button type="submit" class="btn btn-primary">Cadastrar</button>
+                <button id="submitButton" type="button" class="btn btn-primary" onclick="Salvar()">Cadastrar</button>
             </form>
         </div>
 
@@ -123,6 +125,7 @@ if (!$nome) {
                         <th>NOME</th>
                         <th>TIPO</th>
                         <th>RESPONSÁVEL</th>
+                        <th>ID RES.</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -133,6 +136,7 @@ if (!$nome) {
                         <th>NOME</th>
                         <th>TIPO</th>
                         <th>RESPONSÁVEL</th>
+                        <th>ID RES.</th>
                     </tr>
                 </tfoot>
             </table>
@@ -148,10 +152,10 @@ if (!$nome) {
     <div class="modal-dialog modal-xl">
         <div class="modal-content">
             <div class="modal-header">
-                Origem
+                Projetos
             </div>
             <div class="modal-body">
-                <div id="divModalUsuarioValidacao"></div>
+                <div id="modal_validacao"></div>
                 <form>
                     <div class="form-row">
                         <input class="d-none" id="modal_id">
@@ -165,8 +169,12 @@ if (!$nome) {
                         </div>
                         <input class="d-none" id="modal_id_responsavel">
                         <div class="form-group col-md-3">
-                            <label>Resposável:</label>
-                            <select id="modal_resposavel" class="selectpicker form-control" title="Nome" data-live-search="true">
+                            <label>Responsável atual:</label>
+                            <input type="text" class="form-control" id="modal_responsavel_atual" placeholder="Responsável atual" disabled>
+                        </div>
+                        <div class="form-group col-md-3">
+                            <label>Novo resposável:</label>
+                            <select id="modal_responsavel" class="selectpicker form-control" title="Nome" data-live-search="true">
                             </select>
                         </div>
                     </div>
@@ -174,7 +182,7 @@ if (!$nome) {
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                <button id="submitButton" type="button" class="btn btn-primary">Salvar</button>
+                <button id="submitButton" type="button" class="btn btn-primary" onclick="Alterar()">Salvar</button>
             </div>
         </div>
     </div>
@@ -300,6 +308,9 @@ if (!$nome) {
                 },
                 {
                     mData: 'nome_responsavel'
+                },
+                {
+                    mData: 'id_responsavel'
                 }
             ]
         }))
@@ -317,7 +328,7 @@ if (!$nome) {
             $('#modal_nome').val(data[0].nome_projeto);
             $('#modal_tipo').val(data[0].tipo_projeto);
             $('#modal_id_responsavel').val(data[0].id_responsavel);
-            $('#modal_responsavel').val(data[0].nome_responsavel);
+            $('#modal_responsavel_atual').val(data[0].nome_responsavel);
 
             $("#modalUsuario").modal('show');
         })
@@ -326,13 +337,125 @@ if (!$nome) {
     $(document).ready(function() {
         $.getJSON("../phpwsdb/get_projeto_responsavel.php", function(data) {
             for (var i = 0, len = data.length; i < len; i++) {
-                $('#resposavel').append($('<option>', {
-                    value: data[i].Nome,
+                $('#id_responsavel').append($('<option>', {
+                    value: data[i].id,
                     text: data[i].Nome
                 }));
             }
         });
     });
+
+    $.getJSON("../phpwsdb/get_projeto_responsavel.php", function(data) {
+        for (var i = 0, len = data.length; i < len; i++) {
+            $('#modal_responsavel').append($('<option>', {
+                value: data[i].Nome,
+                text: data[i].Nome
+            }));
+        }
+    });
+
+    function Salvar() {
+        var nome = $("#nome").val();
+        var tipo = $("#tipo").val();
+        var id_responsavel = $("#id_responsavel").val();
+        var erro = '';
+
+        if (nome.length == 0) {
+            erro += '- Nome <br />';
+        }
+        if (tipo.length == 0) {
+            erro += '- Tipo <br />';
+        }
+        if (id_responsavel.length == 0) {
+            erro += '- Responsável <br />';
+        }
+        if (erro.length != 0) {
+            displayCustomMessage('validacao', erro, 'error');
+            return;
+        } else {
+            var jsonData = {
+                nome: nome,
+                tipo: tipo,
+                id_responsavel: id_responsavel
+            };
+
+            $.ajax({
+                url: "../phpwsdb/projeto_salvar.php",
+                data: jsonData,
+                type: 'POST',
+                success: function(data) {
+                    window.location.reload();
+                }
+            });
+        }
+    }
+
+    function Alterar() {
+        var modal_nome = $("#modal_nome").val();
+        var modal_tipo = $("#modal_tipo").val();
+        var modal_responsavel = $("#modal_responsavel").val();
+        var modal_id = $("#modal_id").val();
+        var modal_id_responsavel = $("#modal_id_responsavel").val();
+        var erro = '';
+
+        if (modal_nome.length == 0) {
+            erro += '- Nome <br />';
+        }
+        if (modal_tipo.length == 0) {
+            erro += '- Tipo <br />';
+        }
+        if (modal_responsavel.length == 0) {
+            erro += '- Responsável <br />';
+        }
+        if (erro.length != 0) {
+            displayCustomMessage('modal_validacao', erro, 'error');
+            return;
+        } else {
+            var jsonData = {
+                id: modal_id,
+                nome: modal_nome,
+                tipo: modal_tipo,
+                responsavel: modal_responsavel,
+                id_responsavel: modal_id_responsavel
+            };
+            $.ajax({
+                url: "../phpwsdb/projeto_alterar.php",
+                data: jsonData,
+                type: 'POST',
+                success: function(data) {
+                    window.location.reload();
+                }
+            });
+        }
+    }
+
+    function ClearForm() {
+        $("#nome").val('');
+        $("#tipo").val('');
+        $("#id_responsavel").val('');
+    }
+
+    function displayCustomMessage(div, message, type) {
+        var strAlert = '';
+        var strAlertCss = '';
+
+        if (type == "error") {
+            strAlertCss = "alert-danger";
+        } else if (type == "success") {
+            strAlertCss = "alert-success";
+        } else {
+            strAlertCss = "alert-info";
+        }
+
+        strAlert = "<div id=\"" + div + "-erro\"></div>";
+        strAlert = "<div class=\"alert " + strAlertCss + " role=\"alert\">";
+        strAlert += "     " + message + "";
+        strAlert += "</div>";
+
+        $("#" + div).html(strAlert);
+        $("#" + div).show(1000);
+        $("#" + div).delay(1000).hide(1000);
+    }
 
     $(document).ready(async function() {
         Listar();

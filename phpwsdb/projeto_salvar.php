@@ -5,11 +5,11 @@ $api = new api_sqlsrv();
 
 $nome = $_POST['nome'];
 $tipo = $_POST['tipo'];
-$responsavel = $_POST['responsavel'];
+$responsavel = $_POST['id_responsavel'];
 
 $params = array();
-$params['nome'] = $id;
-$params['tipo'] = $sigla;
-$params['responsavel'] = $descricao;
+$params['nome'] = $nome;
+$params['tipo'] = $tipo;
+$params['id_responsavel'] = $responsavel;
 
-$api->InsertEps($params);
+$api->inserir_projeto($params);
