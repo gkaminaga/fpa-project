@@ -428,13 +428,7 @@ if (!$nome) {
             });
         }
     }
-
-    function ClearForm() {
-        $("#nome").val('');
-        $("#tipo").val('');
-        $("#id_responsavel").val('');
-    }
-
+    
     function displayCustomMessage(div, message, type) {
         var strAlert = '';
         var strAlertCss = '';

@@ -1492,7 +1492,88 @@ class api_sqlsrv
 		$query = str_replace('{tipo}', $params['tipo'], $query);
 		$query = str_replace('{id_responsavel}', $params['id_responsavel'], $query);
 		$query = str_replace('{responsavel}', $params['responsavel'], $query);
-		
+
+		mysqli_query($db, $query);
+		$db->close();
+	}
+
+	function inserir_unidade($params)
+	{
+		$confdb = json_decode(file_get_contents('configuration.json'), TRUE);
+
+		$db = new mysqli($confdb['host_sqlsrv'], $confdb['user_sqlsrv'], $confdb['password_sqlsrv'], $confdb['database_sqlsrv']);
+
+		$query = "INSERT INTO unidade (nome_unidade, contato_unidade, endereco_unidade, ativo) 
+		VALUES ('{unidade}', '{contato}', '{endereco}', 1)";
+
+		$query = str_replace('{unidade}', $params['unidade'], $query);
+		$query = str_replace('{contato}', $params['contato'], $query);
+		$query = str_replace('{endereco}', $params['endereco'], $query);
+
+		mysqli_query($db, $query);
+		$db->close();
+	}
+
+	function alterar_unidade($params)
+	{
+		$confdb = json_decode(file_get_contents('configuration.json'), TRUE);
+
+		$db = new mysqli($confdb['host_sqlsrv'], $confdb['user_sqlsrv'], $confdb['password_sqlsrv'], $confdb['database_sqlsrv']);
+
+		$query = "UPDATE unidade SET 
+				nome_unidade = '{unidade}', 
+				contato_unidade = '{contato}', 
+				endereco_unidade = '{endereco}',
+				ativo = {status}
+				WHERE id = {id}";
+
+		$query = str_replace('{id}', $params['id'], $query);
+		$query = str_replace('{unidade}', $params['unidade'], $query);
+		$query = str_replace('{contato}', $params['contato'], $query);
+		$query = str_replace('{endereco}', $params['endereco'], $query);
+		$query = str_replace('{status}', $params['status'], $query);
+
+		mysqli_query($db, $query);
+		$db->close();
+	}
+
+	function inserir_origem($params)
+	{
+		$confdb = json_decode(file_get_contents('configuration.json'), TRUE);
+
+		$db = new mysqli($confdb['host_sqlsrv'], $confdb['user_sqlsrv'], $confdb['password_sqlsrv'], $confdb['database_sqlsrv']);
+
+		$query = "INSERT INTO origem (sigla_origem, nome_origem, contato_origem, endereco_origem) 
+		VALUES ('{sigla}', '{nome}', '{contato}', '{endereco}')";
+
+		$query = str_replace('{sigla}', $params['sigla'], $query);
+		$query = str_replace('{nome}', $params['nome'], $query);
+		$query = str_replace('{contato}', $params['contato'], $query);
+		$query = str_replace('{endereco}', $params['endereco'], $query);
+
+		mysqli_query($db, $query);
+		$db->close();
+	}
+
+	function alterar_origem($params)
+	{
+		$confdb = json_decode(file_get_contents('configuration.json'), TRUE);
+
+		$db = new mysqli($confdb['host_sqlsrv'], $confdb['user_sqlsrv'], $confdb['password_sqlsrv'], $confdb['database_sqlsrv']);
+
+		$query = "UPDATE origem SET 
+				sigla_origem = '{sigla}',
+				nome_origem = '{nome}', 
+				contato_origem = '{contato}', 
+				endereco_origem = '{endereco}'
+				WHERE id = {id}";
+
+		$query = str_replace('{id}', $params['id'], $query);
+		$query = str_replace('{sigla}', $params['sigla'], $query);
+		$query = str_replace('{nome}', $params['nome'], $query);
+		$query = str_replace('{contato}', $params['contato'], $query);
+		$query = str_replace('{endereco}', $params['endereco'], $query);
+
 		mysqli_query($db, $query);
 		$db->close();
 	}

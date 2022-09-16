@@ -90,11 +90,12 @@ if (!$nome) {
         </div>
         <!-- /.card-header -->
         <div class="card-body mb-5">
+            <div id="validacao"></div>
             <form>
                 <div class="form-row">
                     <div class="form-group col-md-6">
                         <label>Unidade</label>
-                        <input type="text" class="form-control" id="unidade" placeholder="Unidade" required>
+                        <input type="text" class="form-control" id="unidade" placeholder="Unidade">
                     </div>
                     <div class="form-group col-md-6">
                         <label>Contato</label>
@@ -105,7 +106,7 @@ if (!$nome) {
                         <input type="text" class="form-control" id="endereco" placeholder="Endereço">
                     </div>
                 </div>
-                <button type="submit" class="btn btn-primary" onclick="javascript:cadastro();">Cadastrar</button>
+                <button id="submitButton" type="button" class="btn btn-primary"  onclick="Salvar();">Cadastrar</button>
             </form>
         </div>
 
@@ -150,12 +151,12 @@ if (!$nome) {
                 Unidade
             </div>
             <div class="modal-body">
-                <div id="divModalUsuarioValidacao"></div>
+                <div id="modal_validacao"></div>
                 <form>
                     <div class="form-row">
                         <div class="form-group col-md-6">
                             <label>Nome:</label>
-                            <input type="text" class="form-control" id="modal_nome" placeholder="Unidade" required>
+                            <input type="text" class="form-control" id="modal_unidade" placeholder="Unidade" required>
                         </div>
                         <div class="form-group col-md-6">
                             <label>Contato:</label>
@@ -169,7 +170,8 @@ if (!$nome) {
                             <label>Status:</label>
                             <select class="form-control" id="modal_status">
                                 <option value=1>Ativo</option>
-                                <option value=2>Inativo</option>
+                                <option value=0>Inativo</option>
+                                <input class="d-none" id="modal_id">
                             </select>
                         </div>
                     </div>
@@ -177,7 +179,7 @@ if (!$nome) {
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                <button id="submitButton" type="button" class="btn btn-primary">Salvar</button>
+                <button id="submitButton" type="button" class="btn btn-primary" onclick="Alterar()">Salvar</button>
             </div>
         </div>
     </div>
@@ -285,7 +287,8 @@ if (!$nome) {
             "responsive": true,
             "lengthChange": false,
             "autoWidth": false,
-            "columns": [{
+            "columns": [
+                {
                     mData: 'id'
                 },
                 {
@@ -303,6 +306,7 @@ if (!$nome) {
             ]
         }))
     }
+
     $('#dash1 tbody').on('dblclick', 'td', function() {
         var $row = $(this).closest("tr"), // Finds the closest row <tr> 
             $tds = $row.find("td:nth-child(1)"); // Finds the 2nd <td> element     
@@ -312,13 +316,111 @@ if (!$nome) {
 
     function Carregar(id) {
         $.getJSON("../phpwsdb/dados_unidades.php?id=" + id, function(data) {
-            $('#modal_nome').val(data[0].nome_unidade);
+            $('#modal_id').val(data[0].id);
+            $('#modal_unidade').val(data[0].nome_unidade);
             $('#modal_contato').val(data[0].contato_unidade);
             $('#modal_endereco').val(data[0].endereco_unidade);
             $('#modal_status').val(data[0].ativo);
 
             $("#modalUsuario").modal('show');
         })
+    }
+
+    function Salvar() {
+        var unidade = $("#unidade").val();
+        var contato = $("#contato").val();
+        var endereco = $("#endereco").val();
+        var erro = '';
+
+        if (unidade.length == 0) {
+            erro += '- Unidade <br />';
+        }
+        if (contato.length == 0) {
+            erro += '- Contato <br />';
+        }
+        if (endereco.length == 0) {
+            erro += '- Endereço <br />';
+        }
+        if (erro.length != 0) {
+            displayCustomMessage('validacao', erro, 'error');
+            return;
+        } else {
+            var jsonData = {
+                unidade: unidade,
+                contato: contato,
+                endereco: endereco
+            };
+
+            $.ajax({
+                url: "../phpwsdb/unidade_salvar.php",
+                data: jsonData,
+                type: 'POST',
+                success: function(data) {
+                    window.location.reload();
+                }
+            });
+        }
+    }
+
+    function Alterar() {
+        var id = $("#modal_id").val();
+        var unidade = $("#modal_unidade").val();
+        var contato = $("#modal_contato").val();
+        var endereco = $("#modal_endereco").val();
+        var status = $("#modal_status").val();
+        var erro = '';
+
+        if (unidade.length == 0) {
+            erro += '- Unidade <br />';
+        }
+        if (contato.length == 0) {
+            erro += '- Contato <br />';
+        }
+        if (endereco.length == 0) {
+            erro += '- Endereço <br />';
+        }
+        if (erro.length != 0) {
+            displayCustomMessage('modal_validacao', erro, 'error');
+            return;
+        } else {
+            var jsonData = {
+                id: id,
+                unidade: unidade,
+                contato: contato,
+                endereco: endereco,
+                status: status
+            };
+            $.ajax({
+                url: "../phpwsdb/unidade_alterar.php",
+                data: jsonData,
+                type: 'POST',
+                success: function(data) {
+                    window.location.reload();
+                }
+            });
+        }
+    }
+
+    function displayCustomMessage(div, message, type) {
+        var strAlert = '';
+        var strAlertCss = '';
+
+        if (type == "error") {
+            strAlertCss = "alert-danger";
+        } else if (type == "success") {
+            strAlertCss = "alert-success";
+        } else {
+            strAlertCss = "alert-info";
+        }
+
+        strAlert = "<div id=\"" + div + "-erro\"></div>";
+        strAlert = "<div class=\"alert " + strAlertCss + " role=\"alert\">";
+        strAlert += "     " + message + "";
+        strAlert += "</div>";
+
+        $("#" + div).html(strAlert);
+        $("#" + div).show(1000);
+        $("#" + div).delay(1000).hide(1000);
     }
 
     $(document).ready(async function() {

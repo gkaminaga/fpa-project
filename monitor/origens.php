@@ -90,6 +90,7 @@ if (!$nome) {
         </div>
         <!-- /.card-header -->
         <div class="card-body mb-5">
+            <div id="validacao"></div>
             <form>
                 <div class="form-row">
                     <div class="form-group col-md-3">
@@ -98,18 +99,18 @@ if (!$nome) {
                     </div>
                     <div class="form-group col-md-9">
                         <label>Nome</label>
-                        <input type="" class="form-control" id="nome" placeholder="Nome">
+                        <input type="text" class="form-control" id="nome" placeholder="Nome">
                     </div>
                     <div class="form-group col-md-3">
                         <label>Contato</label>
-                        <input type="" class="form-control" id="contato" placeholder="Contato">
+                        <input type="text" class="form-control" id="contato" placeholder="Contato">
                     </div>
                     <div class="form-group col-md-9">
                         <label>Endereço</label>
                         <input type="text" class="form-control" id="endereco" placeholder="Endereço">
                     </div>
                 </div>
-                <button type="submit" class="btn btn-primary" onclick="javascript:cadastro();">Cadastrar</button>
+                <button id="submitButton" type="button" class="btn btn-primary" onclick="Salvar();">Cadastrar</button>
             </form>
         </div>
 
@@ -156,9 +157,10 @@ if (!$nome) {
                 Origem
             </div>
             <div class="modal-body">
-                <div id="divModalUsuarioValidacao"></div>
+                <div id="modal_validacao"></div>
                 <form>
                     <div class="form-row">
+                        <input class="d-none" id="modal_id">
                         <div class="form-group col-md-3">
                             <label>Sigla:</label>
                             <input type="text" class="form-control" id="modal_sigla" placeholder="Sigla">
@@ -180,7 +182,7 @@ if (!$nome) {
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                <button id="submitButton" type="button" class="btn btn-primary">Salvar</button>
+                <button id="submitButton" type="button" class="btn btn-primary" onclick="Alterar()">Salvar</button>
             </div>
         </div>
     </div>
@@ -289,7 +291,8 @@ if (!$nome) {
             "responsive": true,
             "lengthChange": false,
             "autoWidth": false,
-            "columns": [{
+            "columns": [
+                {
                     mData: 'id'
                 },
                 {
@@ -316,6 +319,7 @@ if (!$nome) {
 
     function Carregar(id) {
         $.getJSON("../phpwsdb/dados_origens.php?id=" + id, function(data) {
+            $('#modal_id').val(data[0].id);
             $('#modal_sigla').val(data[0].sigla_origem);
             $('#modal_nome').val(data[0].nome_origem);
             $('#modal_contato').val(data[0].contato_origem);
@@ -323,6 +327,112 @@ if (!$nome) {
 
             $("#modalUsuario").modal('show');
         })
+    }
+
+
+    function Salvar() {
+        var sigla = $("#sigla").val();
+        var nome = $("#nome").val();
+        var contato = $("#contato").val();        
+        var endereco = $("#endereco").val();
+        var erro = '';
+
+        if (sigla.length == 0) {
+            erro += '- Sigla <br />';
+        }
+        if (nome.length == 0) {
+            erro += '- Nome <br />';
+        }
+        if (contato.length == 0) {
+            erro += '- Contato <br />';
+        }
+        if (endereco.length == 0) {
+            erro += '- Endereço <br />';
+        }
+        if (erro.length != 0) {
+            displayCustomMessage('validacao', erro, 'error');
+            return;
+        } else {
+            var jsonData = {
+                sigla: sigla,
+                nome: nome,
+                contato: contato,
+                endereco: endereco
+            };
+
+            $.ajax({
+                url: "../phpwsdb/origem_salvar.php",
+                data: jsonData,
+                type: 'POST',
+                success: function(data) {
+                    window.location.reload();
+                }
+            });
+        }
+    }
+
+    function Alterar() {
+        var id = $("#modal_id").val();
+        var sigla = $("#modal_sigla").val();
+        var nome = $('#modal_nome').val();
+        var contato = $("#modal_contato").val();
+        var endereco = $("#modal_endereco").val();
+        var erro = '';
+
+        if (sigla.length == 0) {
+            erro += '- Sigla <br />';
+        }
+        if (nome.length == 0) {
+            erro += '- Nome <br />';
+        }
+        if (contato.length == 0) {
+            erro += '- Contato <br />';
+        }
+        if (endereco.length == 0) {
+            erro += '- Endereço <br />';
+        }
+        if (erro.length != 0) {
+            displayCustomMessage('modal_validacao', erro, 'error');
+            return;
+        } else {
+            var jsonData = {
+                id: id,
+                sigla: sigla,
+                nome: nome,
+                contato: contato,
+                endereco: endereco,
+            };
+            $.ajax({
+                url: "../phpwsdb/origem_alterar.php",
+                data: jsonData,
+                type: 'POST',
+                success: function(data) {
+                    window.location.reload();
+                }
+            });
+        }
+    }
+
+    function displayCustomMessage(div, message, type) {
+        var strAlert = '';
+        var strAlertCss = '';
+
+        if (type == "error") {
+            strAlertCss = "alert-danger";
+        } else if (type == "success") {
+            strAlertCss = "alert-success";
+        } else {
+            strAlertCss = "alert-info";
+        }
+
+        strAlert = "<div id=\"" + div + "-erro\"></div>";
+        strAlert = "<div class=\"alert " + strAlertCss + " role=\"alert\">";
+        strAlert += "     " + message + "";
+        strAlert += "</div>";
+
+        $("#" + div).html(strAlert);
+        $("#" + div).show(1000);
+        $("#" + div).delay(1000).hide(1000);
     }
 
     $(document).ready(async function() {
